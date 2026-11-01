@@ -1,0 +1,1783 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>応用情報技術者試験 午後（科目B）対策シート</title><style>:root{
+  --navy:#173a63; --navy2:#22508a; --orange:#e8731a; --orange-bg:#fdf3e8;
+  --green:#2e8b57; --green-bg:#e9f5ee; --blue:#2f6db5; --blue-bg:#eef4fb;
+  --purple:#7a4fb0; --purple-bg:#f4effa; --red:#c94040; --red-bg:#fcefef;
+  --ink:#222b38; --sub:#5d6878; --line:#d5dbe5; --pale:#f4f6fa;
+}
+@page{ size:A4; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:"Noto Sans CJK JP","IPAGothic",sans-serif; color:var(--ink); font-size:10pt; line-height:1.78; margin:0; background:#fff; }
+p{ margin:.45em 0 .7em; text-align:justify; }
+strong{ color:var(--navy); }
+em{ font-style:normal; background:linear-gradient(transparent 62%, #ffe08a 62%); }
+code{ font-family:"Noto Sans Mono CJK JP",monospace; background:#eef1f6; padding:0 .25em; border-radius:2px; font-size:.92em; }
+pre{ background:#f5f7fa; border:1px solid var(--line); padding:8px 12px; font-size:8.6pt; line-height:1.55; border-radius:3px; page-break-inside:avoid; white-space:pre-wrap; }
+pre code{ background:none; padding:0; }
+.mark{ font-size:1px; color:#fff; position:absolute; }
+
+/* 表紙 */
+.cover{ page-break-after:always; padding-top:4mm; }
+.cover-hero{ background:linear-gradient(135deg,#173a63 0%,#1f4f86 70%,#24609e 100%); color:#fff; padding:26px 30px 30px; border-radius:2px; position:relative; overflow:hidden; height:330px; }
+.cover-hero:before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.07); left:-60px; top:-70px; }
+.cover-hero:after{ content:""; position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,.06); right:-80px; bottom:-120px; }
+.cover-badge{ display:inline-block; background:var(--orange); color:#fff; font-weight:700; font-size:9pt; padding:3px 14px; border-radius:12px; letter-spacing:.05em; }
+.cover-h1{ font-size:30pt; font-weight:900; line-height:1.25; margin:14px 0 2px; }
+.cover-h1 span{ color:#ffb36b; }
+.cover-h2{ font-size:16pt; font-weight:700; border-top:2px solid rgba(255,255,255,.8); display:inline-block; padding-top:8px; margin-top:8px; }
+.cover-sub{ font-size:9pt; opacity:.9; margin-top:6px; }
+.cover-pills{ margin-top:18px; }
+.cover-pills span{ display:inline-block; font-size:8.5pt; font-weight:700; padding:3px 12px; border-radius:12px; margin-right:6px; }
+.pill-g{ background:#2e9e5b; } .pill-b{ background:#2f78d0; } .pill-o{ background:var(--orange); }
+.cover-art{ position:absolute; right:34px; top:40px; z-index:1; }
+.cover-title2{ text-align:center; margin-top:34px; }
+.cover-title2 .en{ color:var(--navy); font-weight:700; font-size:13pt; }
+.cover-title2 .ja{ color:var(--navy); font-size:24pt; margin:4px 0; }
+.cover-title2 .meta{ color:var(--sub); font-size:10pt; }
+.feature{ background:var(--blue-bg); border:1px solid #d3e0f0; padding:10px 16px; margin-top:26px; }
+.feature h3{ margin:0 0 6px; color:var(--navy); font-size:11pt; }
+.feature h3:before{ content:none; }
+.feature ul{ margin:0; }
+
+/* 目次 */
+.toc{ page-break-after:always; }
+h2.plain{ color:var(--navy); font-size:15pt; border-bottom:2px solid var(--navy); padding-bottom:4px; margin:0 0 6px; }
+h2.plain:before{ content:none; }
+.toc-t{ width:100%; border-collapse:collapse; font-size:9pt; }
+.toc-t td{ padding:7px 10px; border:none; vertical-align:top; }
+.toc-t tr:nth-child(odd){ background:#f1f4f9; }
+.toc-c{ font-weight:700; color:var(--navy); width:38%; }
+.toc-l{ color:var(--sub); font-size:8.3pt; }
+.toc-p{ width:6%; text-align:right; color:var(--navy2); font-weight:700; }
+
+/* 章 */
+.chapter{ page-break-before:always; position:relative; }
+.ch-banner{ display:flex; align-items:stretch; background:var(--navy); color:#fff; margin-bottom:14px; min-height:46px; }
+.ch-no{ background:var(--orange); font-weight:700; font-size:12pt; padding:0 20px; display:flex; align-items:center; }
+.ch-title{ font-size:17pt; font-weight:700; padding:6px 18px; display:flex; align-items:center; }
+h2{ color:var(--navy); font-size:14pt; border-bottom:2px solid var(--navy); padding-bottom:3px; margin:22px 0 10px; page-break-after:avoid; }
+h3{ color:var(--navy); font-size:11pt; margin:16px 0 4px; page-break-after:avoid; }
+h3:before{ content:"■ "; color:var(--blue); }
+h4{ color:var(--navy2); font-size:10pt; margin:10px 0 2px; page-break-after:avoid; }
+h4:before{ content:"▶ "; color:var(--orange); font-size:.85em; }
+ul,ol{ margin:.3em 0 .7em; padding-left:1.6em; }
+li{ margin:.12em 0; }
+ul li::marker{ color:var(--blue); }
+
+/* 表 */
+table{ border-collapse:collapse; margin:8px 0 12px; font-size:9pt; page-break-inside:avoid; }
+th,td{ border:1px solid #c9d2df; padding:4px 8px; vertical-align:top; line-height:1.55; }
+th{ background:#e4ebf5; color:var(--navy); font-weight:700; }
+table.w{ width:100%; }
+.c{ text-align:center; }
+
+/* ボックス */
+.box{ margin:12px 0; padding:8px 14px 6px; border-left:4px solid; page-break-inside:avoid; font-size:9.4pt; }
+.box p{ margin:.25em 0 .45em; }
+.box-h{ margin-bottom:2px; font-weight:700; }
+.box-l{ margin-right:10px; }
+.box-t{ color:var(--ink); }
+.box-point{ background:var(--orange-bg); border-color:var(--orange); } .box-point .box-l{ color:var(--orange); }
+.box-calc{ background:var(--green-bg); border-color:var(--green); } .box-calc .box-l{ color:var(--green); }
+.box-note{ background:var(--blue-bg); border-color:var(--blue); } .box-note .box-l{ color:var(--blue); }
+.box-exam{ background:var(--purple-bg); border-color:var(--purple); } .box-exam .box-l{ color:var(--purple); }
+.box-trap{ background:var(--red-bg); border-color:var(--red); } .box-trap .box-l{ color:var(--red); }
+.box-how{ background:#fff8dc; border-color:#d4a514; } .box-how .box-l{ color:#9a7400; }
+.box table{ background:#fff; }
+
+/* 図解（インフォグラフィック） */
+.fig{ border:1px solid var(--line); background:#fbfcfe; margin:12px 0 16px; page-break-inside:avoid; }
+.fig-t{ background:var(--navy); color:#fff; font-weight:700; padding:6px 14px; font-size:10.5pt; }
+.fig-t small{ display:block; font-weight:400; font-size:7.8pt; opacity:.85; }
+.fig-b{ padding:12px 14px; }
+.flow{ display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:nowrap; }
+.fb{ flex:1; border:2px solid var(--c,#2f6db5); background:#fff; border-radius:7px; padding:6px 6px; text-align:center; font-size:8.6pt; line-height:1.45; min-width:0; }
+.fb b{ display:block; color:var(--c,#2f6db5); font-size:9.5pt; }
+.fb small{ color:var(--sub); font-size:7.6pt; display:block; }
+.arr{ color:var(--orange); font-weight:900; font-size:14pt; flex:0 0 auto; }
+.cards{ display:grid; grid-template-columns:repeat(var(--n,3),1fr); gap:8px; }
+.card{ background:#fff; border:1px solid var(--line); border-top:4px solid var(--c,#2f6db5); padding:6px 9px; font-size:8.5pt; line-height:1.5; border-radius:3px; }
+.card b{ color:var(--c,#2f6db5); display:block; font-size:9.6pt; margin-bottom:2px; }
+.card .big{ font-size:19pt; font-weight:900; color:var(--c,#2f6db5); line-height:1.15; display:block; }
+.c1{ --c:#2f6db5; } .c2{ --c:#2e9e5b; } .c3{ --c:#7a4fb0; } .c4{ --c:#e8731a; } .c5{ --c:#c94040; } .c6{ --c:#178a94; } .c7{ --c:#8a6d1d; }
+.tip{ background:#fff8e1; border:1px solid #f0d27a; border-radius:6px; padding:6px 12px; font-size:8.6pt; margin-top:10px; }
+.tip b{ color:#9a6a00; }
+.fig svg{ display:block; margin:0 auto; max-width:100%; }
+.cap{ text-align:center; font-size:8pt; color:var(--sub); margin-top:4px; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.kmap td,.kmap th{ text-align:center; width:34px; padding:3px; }
+.kmap .on{ background:#ffe1c4; font-weight:700; }
+.kmap .on2{ background:#cfe6ff; font-weight:700; }
+.chips span{ display:inline-block; border:1px solid var(--c,#2f6db5); color:var(--c,#2f6db5); border-radius:10px; padding:0 8px; margin:2px 3px; font-size:8pt; background:#fff; }
+.layer{ display:flex; border:1px solid var(--line); margin-bottom:3px; font-size:8.6pt; }
+.layer .ln{ width:30%; background:var(--c,#2f6db5); color:#fff; font-weight:700; padding:3px 8px; }
+.layer .ld{ padding:3px 8px; background:#fff; flex:1; }
+.summary{ background:#f1f4f9; border:1px solid #cfd8e6; padding:8px 16px; margin-top:16px; page-break-inside:avoid; }
+.summary h3{ margin-top:4px; }
+.summary h3:before{ content:"✔ "; color:var(--green); }
+.box-sum{ background:#f1f4f9; border-color:var(--navy); border-left-width:6px; } .box-sum .box-l{ color:var(--navy); font-size:10.5pt; }
+table{ width:100%; }
+table.kmap{ width:auto; margin-left:auto; margin-right:auto; }
+table.auto{ width:auto; }
+
+table.long{ page-break-inside:auto; }
+table.long tr{ page-break-inside:avoid; }
+table.long thead{ display:table-header-group; }
+.gl td:first-child{ width:30%; font-weight:700; color:var(--navy); }
+/* ===== 午後対策シート用 ===== */
+.ck ul{list-style:none;padding-left:.3em}
+.ck ul li{padding-left:1.6em;position:relative}
+.ck ul li::before{content:"";position:absolute;left:0;top:.38em;width:.95em;height:.95em;border:1.5px solid var(--navy);border-radius:2px;background:#fff}
+.write{border:1px solid #b9c4d4;border-radius:3px;background:repeating-linear-gradient(#fff 0 27px,#d7deea 27px 28px);min-height:84px;margin:4px 0 12px}
+.write.s{min-height:56px} .write.l{min-height:140px}
+table.rec td{height:30px}
+.q{background:#fff;border:1px solid var(--line);border-left:5px solid var(--navy);padding:8px 14px;margin:10px 0;page-break-inside:avoid}
+.q .qh{font-weight:700;color:var(--navy);margin-bottom:2px}
+.case{background:#f6f8fb;border:1px solid #d5dbe5;padding:10px 16px;margin:10px 0;font-size:9.4pt;page-break-inside:avoid}
+.case .ch{font-weight:700;color:var(--navy);border-bottom:1px solid #cfd8e6;margin-bottom:6px;padding-bottom:2px}
+.ans{background:var(--green-bg);border-left:4px solid var(--green);padding:8px 14px;margin:8px 0 14px;font-size:9.3pt;page-break-inside:avoid}
+.ans .ah{font-weight:700;color:var(--green)}
+.tpl td:first-child{width:22%;font-weight:700;color:var(--navy)}
+td:empty{height:26px}
+.ck ul li::marker{content:""}
+</style></head><body><section class="cover">
+  <div class="cover-hero">
+    <svg class="cover-art" width="230" height="250" viewBox="0 0 230 250" aria-hidden="true">
+      <rect x="40" y="20" width="160" height="210" rx="6" fill="#ffffff" opacity=".95"/>
+      <rect x="40" y="20" width="160" height="34" rx="6" fill="#e8731a"/>
+      <text x="120" y="43" text-anchor="middle" font-size="15" font-weight="900" fill="#fff" font-family="Noto Sans CJK JP">科目B 解答欄</text>
+      <g stroke="#c9d3e2" stroke-width="2"><line x1="58" y1="88" x2="182" y2="88"/><line x1="58" y1="116" x2="182" y2="116"/><line x1="58" y1="144" x2="182" y2="144"/><line x1="58" y1="172" x2="182" y2="172"/><line x1="58" y1="200" x2="182" y2="200"/></g>
+      <g fill="#173a63" font-family="Noto Sans CJK JP" font-size="12" font-weight="700"><text x="58" y="82">設問1　〜のため</text><text x="58" y="110">設問2　(1) ア</text><text x="58" y="138">　　　(2) 12.5</text><text x="58" y="166">設問3　〜を確認する</text></g>
+      <circle cx="186" cy="200" r="20" fill="#2e9e5b"/><text x="186" y="206" text-anchor="middle" font-size="18" font-weight="900" fill="#fff" font-family="Noto Sans CJK JP">◎</text>
+    </svg>
+    <span class="cover-badge">応用情報技術者試験 ／ 科目B（旧 午後）</span>
+    <div class="cover-h1">午後対策<br><span>シート</span></div>
+    <div class="cover-h2">記述式を「型」で解く</div>
+    <div class="cover-sub">全11分野の解き方・チェックリスト・ミニ演習・演習記録</div>
+    <div class="cover-pills"><span class="pill-g">答え方の型</span><span class="pill-b">採点講評の分析</span><span class="pill-o">書き込める記録表</span></div>
+  </div>
+  <div class="cover-title2">
+    <div class="en">Applied Information Technology Engineer Examination — Subject B</div>
+    <div class="ja">午後（科目B）対策シート</div>
+    <div class="meta">問1 情報セキュリティ（必須）＋ 問2〜問11（4問選択）対応 ／ 学習ノート第17章の実践編</div>
+  </div>
+  <div class="feature">
+    <h3>このシートの特徴</h3>
+    <ul>
+      <li>記述問題を「設問の型 → 答え方の型」で解けるよう、型ごとの書き方とフレーズをまとめています。</li>
+      <li>IPAが公開している令和2〜7年度の<b>採点講評</b>を分野別に分析し、受験者がつまずいた点を「採点講評からの注意点」として示しています。</li>
+      <li>各分野に、短いオリジナル事例による<b>ミニ演習</b>（解答例・解説つき）を用意しました。過去問に入る前の準備運動に使えます。</li>
+      <li>選択分野の自己診断、過去問の演習記録表、間違いノートなど、<b>印刷して書き込める</b>シートを収録しています。</li>
+    </ul>
+  </div>
+</section>
+<section class='toc'><h2 class='plain'>目次</h2><table class='toc-t'><tr><td class='toc-c'>はじめに ― このシートの使い方</td><td class='toc-l'>3ステップの演習サイクル、CBT方式の注意点、シートの構成</td><td class='toc-p'>3</td></tr><tr><td class='toc-c'>共通　記述の基本ルールと答え方の型</td><td class='toc-l'>設問タイプ別の答え方、字数の調整、減点されやすい書き方、時間配分、選択分野の自己診断</td><td class='toc-p'>5</td></tr><tr><td class='toc-c'>問1　情報セキュリティ（必須）</td><td class='toc-l'>攻撃の手口→技術的対策→運用的対策。全員が解く最重要の20点</td><td class='toc-p'>8</td></tr><tr><td class='toc-c'>問2　経営戦略</td><td class='toc-l'>フレームワークを事例に当てはめる＋財務計算。読解力で得点しやすい文章系</td><td class='toc-p'>11</td></tr><tr><td class='toc-c'>問3　プログラミング（アルゴリズム）</td><td class='toc-l'>擬似言語の空欄補充とトレース。境界条件を1つずつ確かめれば得点が安定する</td><td class='toc-p'>13</td></tr><tr><td class='toc-c'>問4　システムアーキテクチャ</td><td class='toc-l'>構成図の読み解き＋稼働率・処理能力・容量の計算＋方式の比較</td><td class='toc-p'>16</td></tr><tr><td class='toc-c'>問5　ネットワーク</td><td class='toc-l'>構成図にアドレスと経路を書き込み、パケットの流れを追う</td><td class='toc-p'>18</td></tr><tr><td class='toc-c'>問6　データベース</td><td class='toc-l'>E-R図の多重度とSQLの穴埋め。型が決まっていて最も対策しやすい技術分野</td><td class='toc-p'>20</td></tr><tr><td class='toc-c'>問7　組込みシステム開発</td><td class='toc-l'>仕様の読み取り、状態遷移、タスク設計、時間・電力・メモリの計算</td><td class='toc-p'>23</td></tr><tr><td class='toc-c'>問8　情報システム開発</td><td class='toc-l'>設計図（UML）・テスト・開発手法・並行処理。本文の設計意図を読み取る</td><td class='toc-p'>25</td></tr><tr><td class='toc-c'>問9　プロジェクトマネジメント</td><td class='toc-l'>プロジェクトマネージャの立場で、本文の懸念に先手を打つ。計算は確実に</td><td class='toc-p'>27</td></tr><tr><td class='toc-c'>問10　サービスマネジメント</td><td class='toc-l'>プロセスの区別（インシデント／問題／変更）とSLA。運用の現場感覚で読む</td><td class='toc-p'>29</td></tr><tr><td class='toc-c'>問11　システム監査</td><td class='toc-l'>リスク → コントロール → 監査証拠 → 監査手続。「何の記録で、何を確かめるか」で書く</td><td class='toc-p'>31</td></tr><tr><td class='toc-c'>記録　演習記録・間違いノート・直前チェック</td><td class='toc-l'>印刷して書き込む記録シート。過去問の演習計画、得点の推移、間違いの分析、試験直前の確認</td><td class='toc-p'>33</td></tr></table></section><section class='chapter' id='00_intro'><span class='mark'>CHMARK00introEND</span><div class='ch-banner plain-banner'><span class='ch-title'>はじめに ― このシートの使い方</span></div><p>この「午後対策シート」は、学習ノート第17章「午後試験の全体像と解き方」の <strong>実践編</strong> です。午後（2026年度からは「科目B試験」）は、知識の量よりも「問題文を正確に読み、問われたことに、本文の言葉で答える」力で得点が決まります。その力は、型を覚えて、過去問で繰り返し使うことでしか身に付きません。このシートは、その練習を迷わず回せるように作りました。</p>
+<div class="fig"><div class="fig-t">演習サイクル ― 1分野を3ステップで仕上げる<small>本命4分野＋予備2分野、それぞれでこのサイクルを回す</small></div><div class="fig-b">
+<div class="flow">
+<div class="fb c1"><b>①型を知る</b><small>分野シートの「答え方の型」「チェックリスト」を読み、知識の穴を学習ノートで埋める</small></div><div class="arr">▶</div>
+<div class="fb c2"><b>②ミニ演習</b><small>分野シートのミニ演習を時間を測って解き、解答例と比べる</small></div><div class="arr">▶</div>
+<div class="fb c4"><b>③過去問で実戦</b><small>IPAの過去問を1問30分で解き、解答例と採点講評で答え合わせ。記録表に書く</small></div>
+</div>
+<div class="tip"><b>目安</b>　1分野につき過去問3〜5回分。合計で20〜30問を解けば、どの分野も「いつもの形」に見えてきます。</div>
+</div></div>
+
+<h2>シートの構成</h2>
+<table>
+<thead>
+<tr>
+<th>シート</th>
+<th>内容</th>
+<th>使うタイミング</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>共通シート</td>
+<td>記述の基本ルール、設問の型と答え方、時間配分、選択分野の自己診断</td>
+<td>最初に1回読む。演習のたびに見返す</td>
+</tr>
+<tr>
+<td>分野別シート（問1〜問11）</td>
+<td>出題テーマ、必須知識チェックリスト、頻出設問と答え方、採点講評からの注意点、ミニ演習</td>
+<td>分野ごとの演習の前後</td>
+</tr>
+<tr>
+<td>記録シート</td>
+<td>過去問の演習記録表、間違いノート、直前チェック</td>
+<td>過去問を解くたび。試験直前</td>
+</tr>
+</tbody>
+</table>
+<h2>CBT方式（2026年度〜）の注意</h2>
+<ul>
+<li>科目Bはパソコンで受験し、記述はキーボードで入力します。問題の選択も画面で行います。</li>
+<li>試験画面にはメモ機能と電卓機能があり、入室時にメモ用紙1枚と筆記用具が配布されます（2026年度の案内）。計算や図への書き込みはメモ用紙を使いましょう。</li>
+<li><strong>練習のときから、解答をパソコンで入力する</strong> と本番で慌てません。字数はエディタの文字数カウントで確認できますが、本番の画面での数え方は受験案内で確認してください。</li>
+<li>2026年度の前期・後期が、現行の応用情報技術者試験の最後の実施になる見込みです（学習ノート「はじめに」参照）。</li>
+</ul>
+<h2>過去問題の入手</h2>
+<p>IPAの「過去問題」ページ（https://www.ipa.go.jp/shiken/mondai-kaiotu/）から、各回の <strong>問題冊子・解答例・採点講評</strong> のPDFを無料で入手できます。解答例と採点講評はセットで使います。採点講評には、各設問の正答率の傾向と、受験者がどこでつまずいたかが書かれています。</p>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">このシートで扱う「採点講評からの注意点」について</span></div>
+<p>各分野の注意点は、令和2〜7年度の採点講評に書かれた指摘を、分野ごとに整理・要約したものです。「〇〇と誤って解答した受験者が多かった」という指摘は、そのまま <strong>自分が同じ間違いをしないためのチェック項目</strong> になります。</p>
+</div></section><section class='chapter' id='01_common'><span class='mark'>CHMARK01commonEND</span><div class='ch-banner'><span class='ch-no'>共通</span><span class='ch-title'>記述の基本ルールと答え方の型</span></div><p>午後の設問は、分野が違っても「聞き方」はいくつかの型に分類できます。型ごとに答え方を決めておけば、初めて見る事例でも手が止まりません。</p>
+<h2>1. 記述の大原則</h2>
+<div class="fig"><div class="fig-t">記述の4原則<small>採点講評で毎年のように指摘されるポイント</small></div><div class="fig-b"><div class="cards" style="--n:4">
+<div class="card c1"><b>①問いに正対する</b>「理由」を聞かれたら理由、「対策」なら対策を書く。聞かれていないことは書かない</div>
+<div class="card c2"><b>②根拠は本文から</b>一般論ではなく、本文に書かれた事実（下線部の前後、表、図）を根拠にする</div>
+<div class="card c4"><b>③本文の言葉を使う</b>本文中の用語をそのまま使う。言い換えると意味がずれ、減点されやすい</div>
+<div class="card c3"><b>④具体的に書く</b>「セキュリティが低下する」ではなく、「何が・どうなるか」まで書く</div>
+</div></div></div>
+
+<div class="box box-trap">
+<div class="box-h"><span class="box-l">ひっかけ注意</span><span class="box-t">採点講評で繰り返し指摘されていること（全分野共通）</span></div>
+<ul>
+<li>「設問で問われていることを正しく理解した上で解答してほしい」── 問いの条件（「費用面の」「〇〇の観点から」）を無視した解答</li>
+<li>「単に“アクセス権”としか記述していない解答が多かった」── 用語だけを挙げ、具体的な内容がない解答</li>
+<li>「本文で説明していない用語や機能の解答が散見された」── 本文にない知識で答えてしまう</li>
+<li>「数値が若干異なる解答が散見された」── 計算の条件の読み落とし、単位の換算ミス</li>
+</ul>
+</div>
+<h2>2. 設問の型と答え方の型</h2>
+<div class="tpl">
+<table>
+<thead>
+<tr>
+<th>設問の型</th>
+<th>答え方の型（文末）</th>
+<th>解答例のフレーズ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>理由・目的を問う</td>
+<td>「〜ため」「〜するため」</td>
+<td>「感染した PC から他の PC へ感染が広がるのを防ぐため」</td>
+</tr>
+<tr>
+<td>問題点・リスクを問う</td>
+<td>「〜という問題がある」「〜のおそれがある」</td>
+<td>「同じ経路でパスワードを送るため、盗聴されると内容が漏えいするおそれがある」</td>
+</tr>
+<tr>
+<td>対策・施策を問う</td>
+<td>「〜する」（主語と対象を明確に）</td>
+<td>「管理者アカウントに多要素認証を設定する」</td>
+</tr>
+<tr>
+<td>効果を問う</td>
+<td>「〜できる」「〜が減る」</td>
+<td>「障害時に待機系へ自動で切り替わり、停止時間を短縮できる」</td>
+</tr>
+<tr>
+<td>何を確認すべきか（監査）</td>
+<td>「〜の記録を確認し、〜が行われているかを確かめる」</td>
+<td>「権限見直しの実施記録を閲覧し、四半期ごとに承認されているかを確かめる」</td>
+</tr>
+<tr>
+<td>用語・名称を問う</td>
+<td>用語だけを正確に</td>
+<td>「ファストトラッキング」</td>
+</tr>
+<tr>
+<td>本文から抜き出す</td>
+<td>指定字数で、本文の字句をそのまま</td>
+<td>（「本文中の字句を用いて」という指示に注意）</td>
+</tr>
+<tr>
+<td>計算</td>
+<td>数値（指定された単位・桁数で）</td>
+<td>「12.5（小数第2位を四捨五入）」</td>
+</tr>
+<tr>
+<td>穴埋め（字句・プログラム）</td>
+<td>前後の文・変数の意味から逆算</td>
+<td>「mid＋1」</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>字数の調整</h3>
+<ul>
+<li>指定字数の <strong>8割以上</strong> を目安に書く（30字以内なら24〜30字）。</li>
+<li>字数が足りないとき：「何が」「何を」「どうなる」のうち抜けている要素を足す。</li>
+<li>字数が多すぎるとき：修飾語を削る。2つの要素を書いているなら、問いの核心の1つに絞る。</li>
+<li>「〜の観点から」「本文中の字句を用いて」などの <strong>条件は下線を引いて</strong> から書き始める。</li>
+</ul>
+<h2>3. 時間配分（150分・5問）</h2>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0〜5分</td>
+<td>問2〜問11をざっと見て、選択する4問と順番を決める（得意な分野から）</td>
+</tr>
+<tr>
+<td>5〜35分</td>
+<td>問1（必須）を解く</td>
+</tr>
+<tr>
+<td>35〜140分</td>
+<td>選択問題4問を1問25〜26分で解く。30分を超えたら次へ</td>
+</tr>
+<tr>
+<td>140〜150分</td>
+<td>空欄を埋める、選択の操作を確認する、計算の単位を見直す</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-how">
+<div class="box-h"><span class="box-l">解き方の型</span><span class="box-t">1問30分の使い方</span></div>
+<p><strong>①設問を先に読む（2分）</strong>：何を問われているか、字数と条件を確認。<strong>②本文を読む（10分）</strong>：設問に関係する箇所に印。<strong>③設問を解く（15分）</strong>：解ける設問から。<strong>④見直し（3分）</strong>：文末が問いの形に合っているか。</p>
+</div>
+<h2>4. 選択分野の自己診断シート</h2>
+<p>当てはまるものに○を付け、合計点の高い分野から <strong>本命4分野＋予備2分野</strong> を決めましょう。</p>
+<table>
+<thead>
+<tr>
+<th>分野</th>
+<th>午前の正答率70%以上（2点）</th>
+<th>実務・学習経験がある（1点）</th>
+<th>過去問で6割取れた（2点）</th>
+<th>合計</th>
+<th>本命／予備</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>問2 経営戦略</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問3 プログラミング</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問4 システムアーキテクチャ</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問5 ネットワーク</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問6 データベース</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問7 組込みシステム開発</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問8 情報システム開発</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問9 プロジェクトマネジメント</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問10 サービスマネジメント</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>問11 システム監査</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">迷ったときの定番の組合せ</span></div>
+<p>IT の実務経験が少ない場合：<strong>問2・問9・問10・問11</strong>（文章読解で得点しやすい）＋予備に <strong>問6</strong>（型が決まっていて対策しやすい）。プログラミングが得意な場合は <strong>問3</strong> を本命に入れると得点が安定します。</p>
+</div>
+<h3>私の選択計画</h3>
+<div class="write s"></div></section><section class='chapter' id='02_q1_security'><span class='mark'>CHMARK02q1securityEND</span><div class='ch-banner'><span class='ch-no'>問1</span><span class='ch-title'>情報セキュリティ（必須）</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>内部不正対策 ／ 権威DNSサーバへの攻撃 ／ 物理的セキュリティ ／ 通販サイトの再発防止策 ／ マルウェアの早期発見と活動抑止 ／ インシデント対応と社員教育 ／ PPAPとS/MIME ／ ゼロトラストへの移行 ／ ペネトレーションテストとパスワードの安全な管理 ／ サプライチェーン攻撃（R7春・R7秋）</p>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">毎回同じ流れで出る</span></div>
+<p>「①何が起きたか（攻撃の手口）→ ②なぜ防げなかったか（脆弱性）→ ③技術的にどう防ぐか → ④運用・教育でどう防ぐか」。本文を読むときは、この4つに印を付け分けると設問とすぐ結び付きます。</p>
+</div>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>CIA（機密性・完全性・可用性）と、真正性・責任追跡性・否認防止を区別して説明できる</li>
+<li>共通鍵と公開鍵の違い、ハイブリッド暗号、鍵の数（n(n−1)/2 と 2n）を説明できる</li>
+<li>暗号化とデジタル署名で「誰の」「どちらの」鍵を使うかを言える</li>
+<li>ハッシュ関数の性質（一方向性・衝突発見困難性）と、ソルト・ストレッチングの目的を言える</li>
+<li>証明書の検証項目（発行者の署名、有効期限、失効していないか＝CRL/OCSP、ホスト名）を言える</li>
+<li>SQLインジェクション・XSS・CSRF・ディレクトリトラバーサルとその対策を対応付けられる</li>
+<li>ファイアウォールのルール（送信元・宛先・ポート・許可/拒否、上から順に評価）を読み書きできる</li>
+<li>DMZ、WAF、IDS/IPS、プロキシ、VPN（IPsec/TLS）、EDR、SIEM の役割を一言で言える</li>
+<li>SPF・DKIM・DMARC、S/MIME、PPAPの問題点を説明できる</li>
+<li>パスワードリスト攻撃、リバースブルートフォース攻撃、多要素認証、リスクベース認証を説明できる</li>
+<li>インシデント対応の流れ（検知→封じ込め→根絶→復旧→再発防止）と、初動で「ネットワークから切り離す」理由を言える</li>
+<li>ゼロトラストの考え方と、IDaaS・SWG・CASB・MDM・EDR の役割を言える</li>
+<li>サプライチェーン攻撃（取引先経由、ソフトウェア更新経由）と SBOM の役割を言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「この攻撃の名称を答えよ」</td>
+<td>正式な用語で（例：パスワードリスト攻撃）</td>
+</tr>
+<tr>
+<td>「この対策で防げる理由を答えよ」</td>
+<td>「（攻撃者が）〜できなくなるため」「〜が検知できるため」</td>
+</tr>
+<tr>
+<td>「下線の設定のままだと何が起きるか」</td>
+<td>「〜から〜への通信が許可されてしまい、〜されるおそれがある」</td>
+</tr>
+<tr>
+<td>「ファイアウォールのルールの空欄」</td>
+<td>送信元・宛先・サービス（ポート）・動作。最小限の許可にする</td>
+</tr>
+<tr>
+<td>「初動として実施すべきこと」</td>
+<td>「感染した PC を LAN から切り離す」（理由：感染拡大と外部への情報流出を防ぐため）</td>
+</tr>
+<tr>
+<td>「教育で伝えるべき内容」</td>
+<td>本文の事故の原因（不審メールの添付ファイルを開いた等）に対応させる</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>基礎用語の取り違え</strong>：「情報セキュリティの3要素ではない誤った解答が散見された」（R6秋）。CIA の3つは確実に。</li>
+<li><strong>攻撃名の理解不足</strong>：「リバースブルートフォース攻撃の理解が不十分と思われる解答が散見された」（R7春）。似た攻撃名を区別する。</li>
+<li><strong>本文の動作から推論する</strong>：マルウェアの動作説明から、通信が業務ではなく侵入後の活動であると導く問題（R4秋）。本文の「動作内容」を根拠にする。</li>
+<li><strong>用途ごとの特性</strong>：ハッシュ値は改ざん検知など他の用途にも使われ、用途ごとに必要な特性が違う（R6秋）。</li>
+<li><strong>最小限の原則</strong>：不要なサービスは「最低限必要なものを除き停止する」（R4春）。ルールの設問も同じ発想で。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ａ社の通販サイト</div>
+<p>Ａ社は自社の通販サイトを運営している。会員のパスワードは、データベースに <strong>SHA-256 のハッシュ値</strong> として保存している（ソルトは使っていない）。ある日、サイト管理者が、海外の多数の IP アドレスから、<strong>多数の会員IDに対して少数回ずつ</strong> ログインが試行され、一部の会員アカウントにログインが成功していることに気付いた。調査の結果、ログインに成功した会員は、<strong>他社のサービスと同じ ID・パスワードを使っていた</strong> ことが分かった。Ａ社は対策として、次の2点を検討している。</p>
+<p>(1) パスワードをハッシュ化して保存する方式を見直す。<br />
+(2) 会員がログインする際の認証方式を強化する。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>本文の攻撃の名称を答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>対策(1)について、ソルトを付加してハッシュ化すると、どのような攻撃に対して効果があるか。また、その理由を30字以内で述べよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>対策(2)として有効な認証方式を一つ挙げ、本文の攻撃を防げる理由を35字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：パスワードリスト攻撃<br />
+→ 他社から漏えいした ID とパスワードの組を使う攻撃。「他社のサービスと同じ ID・パスワード」が根拠。多数の ID に少数回ずつ試すのは、アカウントロックを避けるため。</p>
+<p><strong>設問2</strong>：レインボーテーブル攻撃。理由例「同じパスワードでも会員ごとに異なるハッシュ値になるため」（26字）<br />
+→ ソルトは利用者ごとに異なるランダムな値。事前に計算したハッシュ値の表で逆引きできなくなる。さらにストレッチング（ハッシュの繰返し）で総当たりにかかる時間を増やせる。</p>
+<p><strong>設問3</strong>：多要素認証（例：パスワードに加え、会員のスマートフォンに送るワンタイムパスワード）。理由例「漏えいしたパスワードだけでは、会員が持つ端末の確認を通過できないため」（34字）<br />
+→ 本文の攻撃は「パスワードが知られている」ことが原因なので、パスワード以外の要素（所持・生体）を加える対策が正対する。</p>
+</div></section><section class='chapter' id='03_q2_strategy'><span class='mark'>CHMARK03q2strategyEND</span><div class='ch-banner'><span class='ch-no'>問2</span><span class='ch-title'>経営戦略</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>PEST分析 ／ バリューチェーン分析・DXレポート ／ デジタルマーケティング ／ ゲーム理論 ／ 新規事業開発と財務計画 ／ ブルーオーシャン戦略 ／ バランススコアカード・SECIモデル ／ 顧客視点の事業計画 ／ 人的資本・サービスプロフィットチェーン ／ アンゾフの成長マトリクス・クロスSWOT（R7春） ／ 事業領域拡大とブランド浸透（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>SWOT（内部＝強み・弱み、外部＝機会・脅威）に本文の事実を振り分けられる</li>
+<li>クロスSWOT（強み×機会、弱み×脅威など）から戦略を導ける</li>
+<li>PPM の4象限と資金の流れ、アンゾフの成長マトリクス（多角化など）を言える</li>
+<li>5フォース、バリューチェーン（主活動・支援活動）、3C、PEST を区別できる</li>
+<li>BSC の4つの視点と、KGI・CSF・KPI の関係を言える</li>
+<li>マーケティングの STP・4P、プロダクトライフサイクル、価格戦略を言える</li>
+<li>損益分岐点（固定費 ÷ (1−変動費率)）、営業利益、ROI、NPV の計算ができる</li>
+<li>ゲーム理論（ナッシュ均衡、マクシミン）、SECIモデル、サービスプロフィットチェーンを説明できる</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「この施策の狙いは何か」</td>
+<td>本文の課題（「若年層の顧客が少ない」等）に結び付け、「〜することで〜を高めるため」</td>
+</tr>
+<tr>
+<td>「〇〇分析の空欄に入る要素」</td>
+<td>フレームワークの定義どおりに分類する（内部か外部か、プラスかマイナスか）</td>
+</tr>
+<tr>
+<td>「この戦略に該当する用語」</td>
+<td>多角化、差別化、ブルーオーシャン など正式名称</td>
+</tr>
+<tr>
+<td>「営業利益・損益分岐点を求めよ」</td>
+<td>計算式を書いてから代入。単位（百万円など）をそろえる</td>
+</tr>
+<tr>
+<td>「留意すべきリスクは何か」</td>
+<td>本文の事業方針・制約に反する事態を「〜のおそれがある」で</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>事業方針から考える</strong>：「事業方針をよく理解した上で事業に関する機会損失リスクを解答してほしい」（R2）。会社の方針に沿った解答を。</li>
+<li><strong>損益構造の理解</strong>：「景気が悪化すると、売上高が減少しても固定費は減らないので営業利益を減少させる」（R4春）。固定費・変動費の性質を説明できるように。</li>
+<li><strong>手段と目的を混同しない</strong>：システムの導入は手段。設問が成果を問うなら、売上や顧客満足などの成果で答える。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｂ社（地方の洋菓子メーカー）</div>
+<p>Ｂ社は、地元の百貨店向けに焼き菓子を製造・販売している。昨年度の実績は、売上高 400百万円、変動費 240百万円、固定費 120百万円であった。Ｂ社の <strong>職人の手作りによる品質</strong> は高く評価されているが、<strong>若年層の認知度が低い</strong>。近年、<strong>ECサイトで地方の菓子を取り寄せる消費者が増えて</strong> いる一方、<strong>大手メーカーが低価格の類似商品を発売</strong> した。Ｂ社は、新たに自社ECサイトを開設し、若年層向けの小容量商品を販売する計画を立てた。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>本文の下線部に相当する4つの事実を、SWOT分析の強み・弱み・機会・脅威に分類せよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>昨年度の損益分岐点売上高を求めよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>ECサイト開設の計画は、アンゾフの成長マトリクスのどの戦略に該当するか。既存の焼き菓子を新しい顧客層・販路に販売するものとして答えよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：強み＝職人の手作りによる品質、弱み＝若年層の認知度が低い、機会＝ECで地方の菓子を取り寄せる消費者の増加、脅威＝大手メーカーの低価格の類似商品<br />
+→ 自社で変えられる内部要因が強み・弱み、変えられない外部環境が機会・脅威。</p>
+<p><strong>設問2</strong>：変動費率 ＝ 240 ÷ 400 ＝ 0.6。損益分岐点売上高 ＝ 120 ÷ (1 − 0.6) ＝ <strong>300百万円</strong><br />
+→ 実績の営業利益は 400 − 240 − 120 ＝ 40百万円。売上が300百万円を下回ると赤字。</p>
+<p><strong>設問3</strong>：新市場開拓（市場開拓）戦略<br />
+→ 既存製品×新市場。小容量の新商品を作る点を重視すれば「新製品開発」の要素もあるが、設問の条件（既存の焼き菓子を新しい顧客層に）に従う。<strong>設問の条件に正対する</strong> 練習。</p>
+</div></section><section class='chapter' id='04_q3_programming'><span class='mark'>CHMARK04q3programmingEND</span><div class='ch-banner'><span class='ch-no'>問3</span><span class='ch-title'>プログラミング（アルゴリズム）</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>誤差拡散法 ／ k-means法 ／ 一筆書き（グラフ） ／ パズル（深さ優先探索・再帰） ／ 迷路探索（2次元配列・再帰） ／ カラツバ法（多倍長整数） ／ AVL木 ／ ダイクストラ法 ／ エラトステネスの篩 ／ スライドパズル（幅優先探索：R7春） ／ 最長共通部分列（動的計画法：R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>擬似言語（if〜elseif〜endif、while、for、配列の添字が1始まり）を読める</li>
+<li>小さな例で変数の値を表に書いてトレースできる</li>
+<li>スタック・キュー・木（2分探索木、ヒープ）・グラフの基本操作を言える</li>
+<li>深さ優先探索（再帰・スタック）と幅優先探索（キュー）の違いを言える</li>
+<li>再帰呼出しで「呼出し元に戻る」動きを再現できる</li>
+<li>整列・探索の計算量（O(n)、O(n log n)、O(n²)、O(log n)）を判断できる</li>
+<li>動的計画法（表を埋める順番と漸化式）を読める</li>
+<li>mod（剰余）と ÷（商）の性質を使った計算ができる</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>解き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「プログラム中の空欄に入れる字句」</td>
+<td>変数の意味を本文から確認 → 空欄の直後でその変数がどうなっているはずかを考える → 小さな例で確かめる</td>
+</tr>
+<tr>
+<td>「〜のときの変数の値」</td>
+<td>トレース表を作る（繰返しごとに1行）</td>
+</tr>
+<tr>
+<td>「この処理の実行回数」</td>
+<td>ループの回数を n で表す。二重ループなら掛け算</td>
+</tr>
+<tr>
+<td>「計算量」</td>
+<td>ループの入れ子の深さ、半分ずつ減るなら log</td>
+</tr>
+<tr>
+<td>「再帰呼出しの順序」</td>
+<td>呼出しを木の形に書き、戻る順番をたどる</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>境界値を正確に</strong>：「“top が last より小さい” など、等しい場合を含まない誤った解答をした受験者が多かった」（R3秋）。「＜」と「≦」は必ず小さな例で確認する。</li>
+<li><strong>再帰の戻り</strong>：「どちらの方向にも進めなかった場合、呼出し元の関数に戻る再帰関数となっていることを読み取って、動きを再現すればよい」（R4秋）。</li>
+<li><strong>図や表を手がかりに</strong>：本文の図（配列の例示など）を参考に、データ構造の関係を理解する（R3秋）。</li>
+<li><strong>落ち着いて計算</strong>：繰返しの計算（k-means の重心更新など）は、座標が変わらなくなるまで丁寧に（R3春）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">プログラム：整列済み配列の2分探索</div>
+<p>要素数 n の整数型配列 data（添字は1から、昇順に整列済み）から target を探し、見つかればその添字を、見つからなければ −1 を返す。÷ は整数の除算（商）とする。</p>
+<pre><code>○整数型: search(整数型の配列: data, 整数型: n, 整数型: target)
+  整数型: low, high, mid
+  low ← 1
+  high ← n
+  while ( [ a ] )
+    mid ← (low ＋ high) ÷ 2
+    if (data[mid] ＝ target)
+      return mid
+    elseif (data[mid] ＜ target)
+      low ← [ b ]
+    else
+      high ← [ c ]
+    endif
+  endwhile
+  return −1
+</code></pre>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>空欄 a〜c に入れる字句を答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>data ＝ {3, 8, 12, 17, 21, 25, 30}、n ＝ 7、target ＝ 25 のとき、while の本体は何回実行されるか。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>この関数の最悪の場合の計算量を、オーダー記法で答えよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：a ＝ low ≦ high、b ＝ mid ＋ 1、c ＝ mid − 1<br />
+→ a を「low ＜ high」にすると、残り1要素（low ＝ high）を調べずに終わってしまう（境界値の誤り）。b・c で mid を除かないと、無限ループになることがある。</p>
+<p><strong>設問2</strong>：<strong>2回</strong><br />
+| 回 | low | high | mid | data[mid] | 動作 |<br />
+|---|---|---|---|---|---|<br />
+| 1 | 1 | 7 | 4 | 17 | 17 ＜ 25 なので low ← 5 |<br />
+| 2 | 5 | 7 | 6 | 25 | 一致 → 6 を返す |</p>
+<p><strong>設問3</strong>：<strong>O(log n)</strong><br />
+→ 1回の繰返しで探索範囲が半分になる。</p>
+</div></section><section class='chapter' id='05_q4_architecture'><span class='mark'>CHMARK05q4architectureEND</span><div class='ch-banner'><span class='ch-no'>問4</span><span class='ch-title'>システムアーキテクチャ</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>ヘルスケア機器とクラウド ／ LPWA・IoT ／ クラウドストレージとファイル移行 ／ クラウドの性能・料金見積り ／ コンテナ型仮想化 ／ SPA・キャッシュサーバ ／ システム統合 ／ フロントエンドサーバの配置 ／ CPUとGPUの処理時間 ／ BEMSのクラウド移行・非機能要件・SLA（R7春） ／ 動画配信のハードウェア・ネットワーク制約（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>稼働率（MTBF/(MTBF＋MTTR)）、直列・並列の計算ができる</li>
+<li>処理能力（件/秒）、CPU使用率、必要台数（切り上げ）を計算できる</li>
+<li>転送時間（データ量÷実効速度）、ビットとバイトの換算ができる</li>
+<li>スケールアップ／スケールアウト、ホット／コールドスタンバイ、ロードバランサの長所・短所を言える</li>
+<li>仮想化（ハイパーバイザ型・コンテナ型）、IaaS/PaaS/SaaS、サーバレスの特徴を言える</li>
+<li>キャッシュ（ヒット率と効果）、CDN、SPA の仕組みを説明できる</li>
+<li>非機能要件（可用性・性能・拡張性・セキュリティ・移行性）と SLA の関係を言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「必要なサーバの台数」</td>
+<td>1台の処理能力 ×（上限使用率）で割り、<strong>切り上げ</strong></td>
+</tr>
+<tr>
+<td>「移行に要する時間・容量」</td>
+<td>単位をそろえる（GB→MB→ビット）。圧縮率・同時並行数に注意</td>
+</tr>
+<tr>
+<td>「この構成変更の効果」</td>
+<td>「〜の処理を〜に分担させ、〜の応答時間を短縮できる」</td>
+</tr>
+<tr>
+<td>「この方式を採用しなかった理由」</td>
+<td>本文の要件（コスト・停止時間・データ量）と照らし、「〜の要件を満たせないため」</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>条件を過不足なく読む</strong>：「問題文中に示された条件を過不足なく読み取り、正答を導き出してほしい」（R2）。</li>
+<li><strong>用語を並べない</strong>：「単にメモリ、ネットワークなどの用語だけを漠然と挙げた解答が散見された。システムアーキテクチャを意識しながら具体的に」（R2）。</li>
+<li><strong>問われた量で答える</strong>：「本文中では送信データ量に関する解答を求めているのに、通信速度や通信回数に関する解答が散見された」（R3春）。</li>
+<li><strong>落ち着いて計算</strong>：「計算式自体は複雑ではないので、落ち着いて計算するように」（R3春）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｃ社の予約サービス</div>
+<p>Ｃ社の予約サービスは、Webサーバ2台（並列、どちらか1台が稼働していればよい）と、DBサーバ1台（直列）で構成される。Webサーバ1台の稼働率は 0.9、DBサーバの稼働率は 0.98 である。Webサーバ1台は毎秒 50 件の要求を処理でき、CPU使用率を 70% 以下に保つ方針である。キャンペーン時のピークでは毎秒 180 件の要求が見込まれる。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>現在のシステム全体の稼働率を求めよ（小数第4位を四捨五入）。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>ピーク時に方針を守るために必要なWebサーバの台数を求めよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>システム全体の稼働率をさらに高めるために、最も効果の大きい構成変更を30字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：Web部分 ＝ 1 − (1 − 0.9)² ＝ 0.99。全体 ＝ 0.99 × 0.98 ＝ 0.9702 → <strong>0.970</strong></p>
+<p><strong>設問2</strong>：1台で処理させてよい件数 ＝ 50 × 0.7 ＝ 35件/秒。180 ÷ 35 ≒ 5.14 → <strong>6台</strong>（切り上げ）</p>
+<p><strong>設問3</strong>：解答例「DBサーバを2台にして並列の冗長構成にする」（21字）<br />
+→ 単一障害点（並列化されていない装置）が全体の稼働率を下げている。DBを並列にすると 1 − 0.02² ＝ 0.9996 となり、全体は 0.99 × 0.9996 ≒ 0.9896 に上がる。Webサーバを3台にしても 0.999 × 0.98 ≒ 0.979 にとどまる。</p>
+</div></section><section class='chapter' id='06_q5_network'><span class='mark'>CHMARK06q5networkEND</span><div class='ch-banner'><span class='ch-no'>問5</span><span class='ch-title'>ネットワーク</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>VDIのトラフィック ／ HTTPとWebSocket ／ VLANによるサブネット分割 ／ ファイアウォールの負荷集中回避 ／ テレワーク・Web会議 ／ DNSラウンドロビン ／ DNSと電子メール ／ IoT向けプロトコル ／ セキュアWebゲートウェイ ／ 社内LANの障害対応（R7春） ／ クラウド移行（DHCP・DNS・NAT・経路制御：R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>サブネットマスク・プレフィックス長から、ネットワークアドレス・ブロードキャストアドレス・ホスト数を求められる</li>
+<li>ARP・DHCP・DNS・NAT/NAPT・ICMP の役割と動作の順序を説明できる</li>
+<li>ルーティングテーブル（宛先・次の転送先・デフォルトルート）を読める</li>
+<li>VLAN（タグVLAN＝IEEE 802.1Q）、L2スイッチとルータ（L3スイッチ）の違いを言える</li>
+<li>DNS のレコード（A・MX・CNAME・NS・PTR・TXT）、権威DNSとキャッシュDNSの違いを言える</li>
+<li>TLS証明書をどの機器に置くか（TLSを終端する機器）を判断できる</li>
+<li>VPN（IPsec・トンネリング）でパケットのヘッダがどう変わるかを説明できる</li>
+<li>冗長化（VRRP、リンクアグリゲーション、スパニングツリー）を説明できる</li>
+<li>代表的なポート番号（22, 25, 53, 80, 110, 143, 443, 587）を言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>解き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「PC に設定するデフォルトゲートウェイ」</td>
+<td>同じサブネットにあるルータ（L3スイッチ）のインタフェースのアドレス</td>
+</tr>
+<tr>
+<td>「この通信の送信元／宛先IPアドレス」</td>
+<td>途中で NAT・プロキシ・トンネルがあるかを確認し、その区間ごとに考える</td>
+</tr>
+<tr>
+<td>「ファイアウォールに追加すべきルール」</td>
+<td>送信元・宛先・ポートを最小限に。戻りの通信はステートフルで許可されることが多い</td>
+</tr>
+<tr>
+<td>「DNSに登録すべきレコード」</td>
+<td>名前と用途から（メールなら MX と、そのホストの A）</td>
+</tr>
+<tr>
+<td>「障害の原因の切分け」</td>
+<td>「ping が届くか（L3）→ 名前解決できるか（DNS）→ サービスが応答するか」の順</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>固定値に頼らない</strong>：「よく使われるクラスC（24ビット）などの固定値だけでなく、クラスレスの指定を理解してほしい」（R3秋）。</li>
+<li><strong>最小限のアドレス範囲</strong>：「アクセスコントロールリストでは最小限のアドレス範囲を指定して通信を許可する」（R3秋）。</li>
+<li><strong>TLS証明書の場所</strong>：DNSラウンドロビンの構成で、TLS証明書をインストールする機器を問われ、ルータと答える誤りが見られた（R3春）。TLS を終端する機器（Webサーバやロードバランサ）を答える。</li>
+<li><strong>トンネルの中と外</strong>：IPsec のトンネル区間では、内側のパケットの送信元IPアドレスは変わらない（R4春）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｄ社の拠点LAN</div>
+<p>Ｄ社は、拠点のLANに 172.16.8.0/22 を割り当てている。これを、営業部・技術部・管理部・サーバ用の4つの同じ大きさのサブネットに分割し、L3スイッチでサブネット間を中継する。各サブネットのL3スイッチ側のアドレスは、サブネット内で使える最初のアドレスとする。社内のPCはDHCPでアドレスを取得する。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>4分割後の各サブネットのプレフィックス長と、1つのサブネットに割り当てられるホストの最大数を答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>2番目のサブネット（技術部）のネットワークアドレスと、技術部のPCに設定されるデフォルトゲートウェイのアドレスを答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>DHCPサーバをサーバ用サブネットに置いた。営業部のPCがアドレスを取得できるようにするため、L3スイッチに必要な機能を答えよ。また、その理由を30字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：/24、ホスト数 254<br />
+→ /22 を4分割するには2ビット借りる（22＋2＝24）。ホスト部8ビットで 2⁸ − 2 ＝ 254。</p>
+<p><strong>設問2</strong>：ネットワークアドレス 172.16.9.0、デフォルトゲートウェイ 172.16.9.1<br />
+→ 172.16.8.0/22 は 172.16.8.0〜172.16.11.255。/24 に分けると 8.0、9.0、10.0、11.0 の4つ。</p>
+<p><strong>設問3</strong>：DHCPリレーエージェント。理由例「DHCPの要求はブロードキャストで、ルータを越えられないため」（30字）<br />
+→ DHCPDISCOVER はブロードキャストなので、別のサブネットのDHCPサーバに届かない。L3スイッチがユニキャストに変えて中継する。</p>
+</div></section><section class='chapter' id='07_q6_database'><span class='mark'>CHMARK07q6databaseEND</span><div class='ch-banner'><span class='ch-no'>問6</span><span class='ch-title'>データベース</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>予約システムとデータ保全 ／ SoI のデータ分析（スタースキーマ） ／ E-R図・SQL・同時実行制御 ／ 排他制御・連番管理 ／ E-R図・表定義・SQL ／ KPI集計のSQL ／ ウィンドウ関数 ／ マルチテナントとスキーマ ／ 再帰的な問合せ・インデックス設計 ／ データ収集・分析の設計（R7春） ／ スーパータイプ・サブタイプと制約（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>E-R図の多重度（1対1、1対多、多対多）を本文の業務ルールから判断できる</li>
+<li>主キー（実線の下線）・外部キー（破線の下線）を表定義から読み取れる</li>
+<li>正規化（部分関数従属・推移的関数従属）と、その問題点（更新時異状）を説明できる</li>
+<li>SELECT・FROM・WHERE・GROUP BY・HAVING・ORDER BY の処理順序と役割を言える</li>
+<li>内部結合と左外部結合、副問合せ、EXISTS、CASE式を書ける</li>
+<li>集約関数（COUNT・SUM・AVG・MAX・MIN）と COUNT(*) と COUNT(列) の違いを言える</li>
+<li>ウィンドウ関数（RANK() OVER (PARTITION BY … ORDER BY …)）と WITH RECURSIVE の形を読める</li>
+<li>ロック（共有・専有）、隔離性水準、デッドロック、楽観的ロックを説明できる</li>
+<li>インデックスの効果と副作用、スーパータイプ・サブタイプを説明できる</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>解き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「E-R図の空欄にリレーションシップを記入」</td>
+<td>「1つの A に対して B は複数あるか」「1つの B に対して A は複数あるか」を本文から1つずつ確認</td>
+</tr>
+<tr>
+<td>「SQL文の空欄」</td>
+<td>求める結果の列（SELECT）→ 表と結合条件（FROM）→ 行の条件（WHERE）→ まとめる単位（GROUP BY）の順に考える</td>
+</tr>
+<tr>
+<td>「この表の問題点」</td>
+<td>「〜を変更すると複数行を更新する必要があり、不整合が生じるおそれがある」</td>
+</tr>
+<tr>
+<td>「同時に更新したときの不具合」</td>
+<td>ロストアップデートなど。対策は「行を読み込む時点で専有ロックを取得する」など</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>カーディナリティを丁寧に</strong>：「情報端末と契約の関係を1対1とする解答が散見された。関連のカーディナリティを正しく捉えることは概念設計で重要」（R4秋）。</li>
+<li><strong>条件の記述漏れ</strong>：「列名の指定は正しいが、最小値を指定する記述がない解答が散見された」（R2）。</li>
+<li><strong>構文を正確に</strong>：「結合は基本的なデータ操作の一つなので構文を理解してほしい」（R3春）、「“WINDOW”と誤って解答した受験者が散見された」（R5秋：正しくは OVER など）。</li>
+<li><strong>要件とデータを照合</strong>：「業務部門の要件に対して必要なデータが不足していることは現実によくある問題なので、データソースを注意深く精査してほしい」（R3春）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｅ社の研修受講管理</div>
+<p>表の構造（下線は主キー、破線の下線は外部キー）<br />
+社員（<u>社員番号</u>, 氏名, 部署コード）<br />
+研修（<u>研修コード</u>, 研修名, 定員）<br />
+受講（<u>社員番号</u>, <u>研修コード</u>, 受講日, 評価点）　※社員番号・研修コードはそれぞれ外部キー</p>
+<p>業務ルール：1人の社員は複数の研修を受講できる。1つの研修は複数の社員が受講できる。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>「社員」と「研修」の関係の多重度と、それを「受講」表でどのように実現しているかを30字以内で述べよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>研修ごとに受講者数と平均評価点を求め、受講者数が10人以上の研修だけを表示する。空欄 a・b を埋めよ。</p>
+</div>
+<pre><code>SELECT 研修コード, COUNT(*) AS 受講者数, AVG(評価点) AS 平均点
+  FROM 受講
+ [ a ] 研修コード
+ [ b ] COUNT(*) &gt;= 10
+</code></pre>
+<div class="q">
+<div class="qh">設問3</div>
+<p>受講が1件もない研修も含めて、すべての研修の研修名と受講者数を表示したい。このとき使う結合の種類を答えよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：多対多。解答例「両方の主キーを組み合わせた受講表で1対多を二つに分解している」（30字）<br />
+→ 多対多は連関エンティティ（受講）で、社員1対多受講、研修1対多受講に分解する。</p>
+<p><strong>設問2</strong>：a ＝ GROUP BY、b ＝ HAVING<br />
+→ 集約関数の結果で絞り込むので WHERE ではなく HAVING。</p>
+<p><strong>設問3</strong>：左外部結合（研修 LEFT OUTER JOIN 受講）<br />
+→ 内部結合では受講のない研修が消える。左外部結合で研修を全件残し、COUNT(受講.社員番号) とすると受講がない研修は 0 になる（COUNT(*) だと NULL の行も1と数える点に注意）。</p>
+</div></section><section class='chapter' id='08_q7_embedded'><span class='mark'>CHMARK08q7embeddedEND</span><div class='ch-banner'><span class='ch-no'>問7</span><span class='ch-title'>組込みシステム開発</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>両替機の通信仕様とタスク設計 ／ ディジタル補聴器の消費電力 ／ スマート生け簀 ／ ワイヤレスカメラの状態遷移・バッファ ／ 傘シェアリング ／ 電池駆動タグの駆動時間 ／ 自動収穫ロボット ／ コーヒーマシン ／ スマートイヤホンのクロック制御・優先度 ／ 電動キックボードのシェアリング（R7春） ／ 自動給餌システム（リアルタイムOS：R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>状態遷移表・状態遷移図を読み、イベントごとに次の状態を答えられる</li>
+<li>タスクの状態（実行・実行可能・待ち）、優先度、プリエンプションを説明できる</li>
+<li>セマフォ（排他制御）、イベントフラグ、メッセージキュー（タスク間通信）を説明できる</li>
+<li>割込みとタイマの周期、カウント値の計算ができる</li>
+<li>平均消費電流と電池の駆動時間を計算できる</li>
+<li>データ量（ビット・バイト）、バッファ長、通信時間を計算できる</li>
+<li>センサー（加速度、温度、カメラ）とアクチュエータ（モーター）の役割を言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>解き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「状態遷移表の空欄」</td>
+<td>現在の状態とイベントの組合せを本文の仕様で1つずつ確認</td>
+</tr>
+<tr>
+<td>「駆動時間を求めよ」</td>
+<td>動作時と待機時の電流を時間の割合で加重平均 → 容量 ÷ 平均電流</td>
+</tr>
+<tr>
+<td>「バッファに必要な容量」</td>
+<td>データの発生速度 × 保持する時間（またはブロック数 × ブロック長）。<strong>全体の長さ</strong> を問われているか確認</td>
+</tr>
+<tr>
+<td>「この優先度だと何が起きるか」</td>
+<td>高優先度タスクが動き続けると低優先度タスクが実行されない、等</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>仕様とタスク設計を対比</strong>：「システム仕様の内容とタスク設計の内容とを対比しながら検討してほしい」（R2）。</li>
+<li><strong>想定条件の再確認</strong>：「解答した内容で問題の想定条件を満たすことができるかどうかを再確認してほしい」（R2）。</li>
+<li><strong>個数の数え漏れ</strong>：「ステレオカメラ（カメラ2台）なのに、カメラ1台分しか計算していない誤答が散見された」（R3秋）。</li>
+<li><strong>全体か部分か</strong>：「全体のバッファ長について問うたが、バッファを構成するブロック長を答えている解答が散見された」（R3春）。</li>
+<li><strong>式の意味を言葉で</strong>：「判定部の式の意味について問うたが、式をそのまま記述しただけの解答が散見された」（R3春）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｆ社の見守りタグ</div>
+<p>見守りタグは容量 240mAh の電池で動作する。通常は <strong>待機状態</strong>（消費電流 0.05mA）で、<strong>1分ごと</strong> にタイマ割込みで <strong>測位状態</strong> に移り、位置を測定して送信する（2秒間、消費電流 30mA）。送信が終わると待機状態に戻る。ボタンが押されると、どの状態からでも <strong>緊急状態</strong> に移り、位置を連続して送信する。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>緊急状態にならないとき、平均消費電流（mA）を小数第2位まで求めよ（小数第3位を四捨五入）。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>設問1の条件で、タグはおよそ何日動作するか（小数点以下切捨て）。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>次の状態遷移表の空欄 a・b を答えよ。</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>現在の状態 ＼ イベント</th>
+<th>タイマ割込み</th>
+<th>送信完了</th>
+<th>ボタン押下</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>待機</td>
+<td>測位</td>
+<td>―</td>
+<td>[ a ]</td>
+</tr>
+<tr>
+<td>測位</td>
+<td>―</td>
+<td>[ b ]</td>
+<td>緊急</td>
+</tr>
+</tbody>
+</table>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：30 × (2/60) ＋ 0.05 × (58/60) ＝ 1.0 ＋ 0.0483… ≒ <strong>1.05mA</strong></p>
+<p><strong>設問2</strong>：240 ÷ 1.05 ≒ 228.6時間 → 228.6 ÷ 24 ≒ <strong>9日</strong><br />
+→ 時間 → 日 の換算を忘れない。</p>
+<p><strong>設問3</strong>：a ＝ 緊急、b ＝ 待機<br />
+→ 「どの状態からでも緊急状態に移る」「送信が終わると待機状態に戻る」が根拠。仕様の文と表のマスを1つずつ対応させる。</p>
+</div></section><section class='chapter' id='09_q8_dev'><span class='mark'>CHMARK09q8devEND</span><div class='ch-banner'><span class='ch-no'>問8</span><span class='ch-title'>情報システム開発</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>スクラム ／ ノンブロッキングI/O ／ データ中心設計 ／ データ連携（コード体系・ファイル形式） ／ 設計レビュー ／ バージョン管理のブランチ運用 ／ マルチスレッド処理 ／ Observerパターン ／ オブジェクト指向設計 ／ エラーハンドリング（R7春） ／ モバイルオーダーの画面設計（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>クラス図（属性・操作・関連・多重度・汎化・集約）、シーケンス図、状態遷移図を読める</li>
+<li>カプセル化・継承・ポリモーフィズム、インタフェースの役割を説明できる</li>
+<li>代表的なデザインパターン（Observer、Singleton、Strategy、Adapter）の目的を言える</li>
+<li>テストの種類（単体・結合・システム・回帰）と、同値分割・限界値分析・分岐網羅を使える</li>
+<li>レビューの種類と、欠陥の「検出」と「修正」を分けて考える理由を説明できる</li>
+<li>スクラム（PO・スクラムマスター・スプリント・バックログ）、CI/CD、ブランチ運用を説明できる</li>
+<li>マルチスレッド・排他制御・コンテキストスイッチ、ノンブロッキングI/Oを説明できる</li>
+<li>エラー処理（入力チェック、タイムアウト、リトライ、ログ）、画面設計の原則を言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「クラス図の空欄（多重度・関連）」</td>
+<td>本文の業務ルールの「1つの〜に複数の〜」を探す</td>
+</tr>
+<tr>
+<td>「このテストケースで確認できないこと」</td>
+<td>境界値や分岐の偽側など、網羅されていない条件を具体的に</td>
+</tr>
+<tr>
+<td>「この設計にした理由」</td>
+<td>「〜の変更が〜に影響しないようにするため」（変更容易性）、「〜を共通化するため」</td>
+</tr>
+<tr>
+<td>「レビューで品質が高いと判断できる理由」</td>
+<td>本文の表の数値（欠陥密度・レビュー工数）を基準値と比べて</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>用語の正確さ</strong>：「コンテキストスイッチについて問うたが、スレッドスイッチという解答が散見された」（R3春）。</li>
+<li><strong>表の数値を根拠に</strong>：「品質が高いと判断できる理由を、問題文中や表に示された状況から読み取ってほしい」（R4秋）。</li>
+<li><strong>レビューの目的</strong>：レビューでは修正方法に深入りせず、欠陥をより多く検出するために時間を使う（R4秋）。</li>
+<li><strong>前提の取り違え</strong>：アジャイル開発の事例なのに、ウォーターフォールを前提とした課題を指摘する解答が見られた（R2）。</li>
+</ul>
+<h2>ミニ演習（目安10分）</h2>
+<div class="case">
+<div class="ch">事例：Ｇ社の会員登録画面</div>
+<p>会員登録画面では、年齢を入力させる。仕様は「年齢は整数で、<strong>18以上 120以下</strong> なら登録可、それ以外はエラーメッセージを表示する」である。開発チームは、テストケースとして年齢 30 と 150 の2件を用意した。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>同値分割の考え方で、有効同値クラスと無効同値クラスをすべて挙げよ（整数のみを対象とする）。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>限界値分析によって追加すべきテストデータの値をすべて答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>用意された2件のテストケースだけでは検出できない誤りの例を、30字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：有効＝18以上120以下、無効＝17以下、121以上</p>
+<p><strong>設問2</strong>：17、18、120、121<br />
+→ 境界の両側の値。プログラムの「＜」と「≦」の書き間違いは境界で見つかる。</p>
+<p><strong>設問3</strong>：解答例「18歳を登録不可と判定する、条件の不等号の誤り」（23字）<br />
+→ 30 と 150 は境界から離れているため、「18 ≦ 年齢」を「18 ＜ 年齢」と誤っても検出できない。また、17以下の無効クラスもテストしていない。</p>
+</div></section><section class='chapter' id='10_q9_pm'><span class='mark'>CHMARK10q9pmEND</span><div class='ch-banner'><span class='ch-no'>問9</span><span class='ch-title'>プロジェクトマネジメント</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>品質問題と判断基準の変更 ／ 見積手法・多段階契約 ／ アジャイル開発 ／ 調達とリスク ／ デシジョンツリーによるリスク対応評価 ／ クラウド移行・ステークホルダー ／ チームマネジメント・調達 ／ PoCとスコープクリープ ／ チーム編成とリスク ／ CCPM（R7春） ／ ウォーターフォールとアジャイルの混在（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>クリティカルパス、最早・最遅開始日、余裕日数を計算できる</li>
+<li>クラッシングとファストトラッキングの違い、CCPMのバッファを説明できる</li>
+<li>EVM（PV・EV・AC、SV・CV、SPI・CPI、EAC）を計算できる</li>
+<li>工数（人月）、要員数、生産性の計算ができる</li>
+<li>リスク対応（回避・転嫁・軽減・受容）と、期待金額価値・デシジョンツリーを使える</li>
+<li>コンティンジェンシー予備とマネジメント予備、コストベースラインを区別できる</li>
+<li>スコープ管理（WBS、変更管理、スコープクリープ）、ステークホルダー管理を説明できる</li>
+<li>請負・準委任・多段階契約、RFP、アジャイルでのPOの役割を説明できる</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「PMが〜した目的は何か」</td>
+<td>本文の懸念（「〜に不慣れ」「〜の可能性がある」）と結び付けて「〜を防ぐため」</td>
+</tr>
+<tr>
+<td>「どのような対応策をとるべきか」</td>
+<td>「〜と合意する」「〜を計画に追加する」など、PM が実行できる行動を具体的に</td>
+</tr>
+<tr>
+<td>「誰の承認を得るべきか」</td>
+<td>本文に出てくる体制（ステアリングコミッティ、PO、発注者）から</td>
+</tr>
+<tr>
+<td>「EVM・工数の計算」</td>
+<td>式を書いてから代入。「人月」と「人日」の単位に注意</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>問いの条件</strong>：「“費用面の”対応策についての解答を求めたが、それ以外の対応策を解答した受験者が散見された。設問で何を問われているかを正しく理解してほしい」（R5春）。</li>
+<li><strong>予備の区別</strong>：「コストベースラインの外側の追加予算はマネジメント予備であることを理解してほしい」（R3春）。</li>
+<li><strong>重要な意思決定の手続</strong>：「重要な意思決定について、ステアリングコミッティの承認を得ることは、PMとして実施すべき重要な手続」（R5春）。</li>
+<li><strong>スコープクリープ</strong>：「個々の要求が小さくても、スコープが拡大してスコープクリープが発生するリスクがある。スコープ追加のルールを定めて管理してほしい」（R6春）。</li>
+<li><strong>アジャイルの役割</strong>：スプリント中の認識不一致に対し、プロダクトオーナーなどの役割を理解していない解答が見られた（R3秋）。</li>
+</ul>
+<h2>ミニ演習（目安12分）</h2>
+<div class="case">
+<div class="ch">事例：Ｈ社の販売システム更新プロジェクト</div>
+<p>総予算（BAC）は 3,000万円、期間は10か月。5か月目の終わりの時点で、PV ＝ 1,500万円、EV ＝ 1,200万円、AC ＝ 1,500万円であった。遅れの原因は、新たに参加した外部委託先の要員が <strong>H社の業務に不慣れ</strong> で、仕様の確認に時間がかかっていることであった。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>SPI と CPI を求め、スケジュールとコストの状況を答えよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>現在のコスト効率が続くとした場合の完了時総コスト見積り（EAC）を求めよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問3</div>
+<p>遅れの原因を踏まえ、PMがとるべき対応策を40字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：SPI ＝ 1,200 ÷ 1,500 ＝ <strong>0.8</strong>（遅れている）、CPI ＝ 1,200 ÷ 1,500 ＝ <strong>0.8</strong>（予算超過）</p>
+<p><strong>設問2</strong>：EAC ＝ 3,000 ÷ 0.8 ＝ <strong>3,750万円</strong></p>
+<p><strong>設問3</strong>：解答例「業務に詳しいH社の担当者を仕様確認の窓口に置き、委託先要員への業務説明会を開く」（39字）<br />
+→ 原因（業務に不慣れ）に正対する対策を書く。単に「要員を追加する」は原因を解消せず、教育負荷でさらに遅れるおそれがある。</p>
+</div></section><section class='chapter' id='11_q10_service'><span class='mark'>CHMARK11q10serviceEND</span><div class='ch-banner'><span class='ch-no'>問10</span><span class='ch-title'>サービスマネジメント</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>予算業務・間接費の配賦 ／ SLAの策定と評価 ／ 変更管理 ／ インシデント管理と問題管理 ／ サービス変更と運用工数 ／ 可用性管理 ／ SLAの目標設定と調整 ／ サービスデスクと展開管理 ／ サービスデスクの立上げと要員工数 ／ キャパシティ監視と計画（R7春） ／ 社内FAQの運用改善（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>インシデント管理（迅速な回復）と問題管理（根本原因・再発防止）の違いを説明できる</li>
+<li>変更管理（RFC・CAB・変更の種類）とリリース管理・展開管理の関係を言える</li>
+<li>SLA・OLA・UC の違い、サービスレベル目標の決め方を説明できる</li>
+<li>稼働率と許容停止時間（計画停止を含めるか）の計算ができる</li>
+<li>エスカレーション（機能的・階層的）、既知の誤り、FAQ・ナレッジの役割を言える</li>
+<li>容量・能力管理（監視、しきい値、将来予測）、可用性管理を説明できる</li>
+<li>直接費と間接費、配賦基準、要員数・工数の計算ができる</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「この活動はどのプロセスか」</td>
+<td>目的で判断：早く戻す＝インシデント、原因を除く＝問題、変更を承認＝変更管理</td>
+</tr>
+<tr>
+<td>「SLAの目標値として適切な値」</td>
+<td>本文の顧客の要望とサービス提供者の能力（内部供給者・外部供給者）の両方を満たす値</td>
+</tr>
+<tr>
+<td>「要員数・工数の計算」</td>
+<td>件数 × 1件の時間 ÷ 1人の対応可能時間。<strong>切り上げ</strong>、勤務条件（交代制・休日）を考慮</td>
+</tr>
+<tr>
+<td>「再発を防ぐための施策」</td>
+<td>根本原因の除去、既知の誤りとして記録、FAQの整備など</td>
+</tr>
+</tbody>
+</table>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>本文の定義に従う</strong>：「本文中に示されたD社の管理会計における直接費と間接費の定義を読み取ってほしい」（R2）。</li>
+<li><strong>手段と成果を区別</strong>：「パッケージ導入やデータベース構築を成果とする解答が散見された。これらは成果を達成するための手段である」（R4秋）。</li>
+<li><strong>何の時間を数えるか</strong>：「追加されたジョブの確認作業の実施時間から作業工数を算出すべきところを、システムの処理時間で計算した解答が見られた」（R4秋）。</li>
+<li><strong>回避策と根本解決</strong>：「回避策が策定されていても、根本原因や解決策の特定がされていなければ再発インシデントが発生する」（R4春）。</li>
+<li><strong>主体を間違えない</strong>：サービスデスク以外の部門で実施する内容を答えてしまう解答が見られた（R3春）。</li>
+</ul>
+<h2>ミニ演習（目安10分）</h2>
+<div class="case">
+<div class="ch">事例：Ｉ社の社内システム運用</div>
+<p>Ｉ社の勤怠システムは、平日の 8時〜20時（1日12時間、月20日）をサービス提供時間とし、稼働率 99.5% 以上をSLAで合意している。先月、ログイン画面が表示されない障害が3回発生した。いずれも運用担当者がアプリケーションサーバを <strong>再起動して回復</strong> させたが、原因は分かっていない。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>SLAを満たすために、1か月のサービス提供時間中に許容される停止時間は何分か。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>「再起動して回復させた」対応は、どのプロセスの活動か。また、今後実施すべき別のプロセスの活動を35字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：12時間 × 20日 ＝ 240時間。240 × (1 − 0.995) ＝ 1.2時間 ＝ <strong>72分</strong><br />
+→ サービス提供時間（8時〜20時）だけが稼働率の計算対象。24時間で計算しない。</p>
+<p><strong>設問2</strong>：インシデント管理。解答例「問題管理として障害の根本原因を調査し、恒久対策を変更管理で実施する」（33字）<br />
+→ 再起動は回避策（ワークアラウンド）。原因が不明のままでは再発する。</p>
+</div></section><section class='chapter' id='12_q11_audit'><span class='mark'>CHMARK12q11auditEND</span><div class='ch-banner'><span class='ch-no'>問11</span><span class='ch-title'>システム監査</span></div><h2>出題テーマ（令和2〜7年度）</h2>
+<p>監査人の独立性・リスク評価 ／ アクセス権限・入力のコントロール ／ 基本設計段階の監査 ／ 外部委託先を含む業務プロセス ／ テレワーク環境の監査 ／ 不正リスクとコントロール ／ コンティンジェンシー計画 ／ パッケージと手作業のコントロール ／ AIチャットボットの開発計画 ／ 運用・保守段階の監査（R7春） ／ グループ全体のアクセス管理の点検（R7秋）</p>
+<h2>必須知識チェックリスト</h2>
+<div class="ck">
+<ul>
+<li>監査の流れ（計画→予備調査→本調査→報告→フォローアップ）と監査人の独立性を説明できる</li>
+<li>監査要点・リスク・コントロール・監査証拠・監査手続の関係を説明できる</li>
+<li>予防的コントロール（承認・アクセス制限）と発見的コントロール（照合・ログ点検）を区別できる</li>
+<li>職務分掌（入力者と承認者、開発者と運用者）の目的を言える</li>
+<li>監査技法（閲覧・突合・観察・インタビュー・サンプリング・CAAT）を使い分けられる</li>
+<li>監査人は改善を「実施」も「指示」もしないことを説明できる</li>
+<li>IT全般統制と業務処理統制、手作業のコントロールの位置付けを言える</li>
+</ul>
+</div>
+<h2>頻出設問と答え方</h2>
+<div class="tpl">
+<table>
+<thead>
+<tr>
+<th>設問の例</th>
+<th>答え方の型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「確認すべきコントロール」</td>
+<td>「〜の際に、〜が〜を承認している」「〜の権限が〜に限定されている」</td>
+</tr>
+<tr>
+<td>「監査手続」</td>
+<td>「（証拠）を閲覧／突合し、（コントロール）が行われているかを確かめる」</td>
+</tr>
+<tr>
+<td>「想定されるリスク」</td>
+<td>本文の業務の弱点から「〜により、不正な〜が行われるリスク」</td>
+</tr>
+<tr>
+<td>「追加で確認すべき事項」</td>
+<td>前提条件（他のシステムのデータ、手作業の結果）の信頼性を補う手続</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>採点講評からの注意点</h2>
+<ul>
+<li><strong>具体的に書く</strong>：「具体的なアクセス権限の内容まで記述することを期待したが、単に“アクセス権”としか記述していない解答が多かった」（R2）。</li>
+<li><strong>監査要点との対応</strong>：「監査要点を確かめることができない資料などを挙げている解答が散見された」（R3秋）。「監査要点に対応した不正リスクを特定してほしい」（R4春）。</li>
+<li><strong>本文の設定を根拠に</strong>：「入力者が承認できないという設定があるという本文中の記述に着目して正答を導き出してほしい」（R3春）。</li>
+<li><strong>前提の読み取り</strong>：「“今回の監査の背景を踏まえると”という前提から、経緯が記載されている箇所を読み取ってほしい」（R5秋）。</li>
+<li><strong>実施可能な手続か</strong>：「机上では訓練が実施できない内容を解答しているケースも散見された」（R5秋）。</li>
+</ul>
+<h2>ミニ演習（目安10分）</h2>
+<div class="case">
+<div class="ch">事例：Ｊ社の購買システム</div>
+<p>Ｊ社では、購買担当者が購買システムに発注データを入力し、<strong>購買課長が承認すると</strong> 発注書が取引先に送信される。システムでは、同じ利用者IDに入力と承認の両方の権限を付与できる。人事異動の際は、情報システム部が <strong>異動者の申請に基づいて</strong> 権限を変更しているが、権限の定期的な見直しは行っていない。</p>
+</div>
+<div class="q">
+<div class="qh">設問1</div>
+<p>本文の状況で想定される不正のリスクを40字以内で述べよ。</p>
+</div>
+<div class="q">
+<div class="qh">設問2</div>
+<p>設問1のリスクに対して、監査人が実施すべき監査手続を45字以内で述べよ。</p>
+</div>
+<div class="write"></div>
+
+<div class="ans">
+<div class="ah">解答例と解説</div>
+<p><strong>設問1</strong>：解答例「入力と承認の権限を持つ者が、承認を経ずに不正な発注を行い取引先に送信するリスク」（39字）<br />
+→ 同じIDに両方の権限を付与できる＝職務分掌が機能しないおそれ。異動者の申請任せで見直しがないので、不要な権限が残る点もリスク。</p>
+<p><strong>設問2</strong>：解答例「利用者ID別の権限一覧を閲覧し、入力と承認の両方の権限を持つIDがないかを確かめる」（41字）<br />
+→ 「何の記録（権限一覧）」で「何（入力と承認の兼務がないか）」を確かめるかをセットで書く。異動者の人事記録と権限一覧を突合し、不要な権限が残っていないかを確かめる手続も有効。</p>
+</div></section><section class='chapter' id='13_records'><span class='mark'>CHMARK13recordsEND</span><div class='ch-banner'><span class='ch-no'>記録</span><span class='ch-title'>演習記録・間違いノート・直前チェック</span></div><h2>1. 過去問 演習計画表</h2>
+<p>解く予定の回と問題番号に○、解き終わったら得点（20点満点の自己採点）を書き込みます。新しい年度から順に解くのがおすすめです。問題冊子・解答例・採点講評は IPA の「過去問題」ページから入手できます。</p>
+<table>
+<thead>
+<tr>
+<th>回</th>
+<th>問1</th>
+<th>問2</th>
+<th>問3</th>
+<th>問4</th>
+<th>問5</th>
+<th>問6</th>
+<th>問7</th>
+<th>問8</th>
+<th>問9</th>
+<th>問10</th>
+<th>問11</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R7秋</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R7春</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R6秋</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R6春</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R5秋</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R5春</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R4秋</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R4春</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R3秋</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R3春</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>R2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">自己採点のしかた</span></div>
+<p>IPA の解答例と同じ趣旨が書けていれば正解、要素が一部欠けていれば半分、と決めて採点します。記述は字句が一致しなくても、<strong>解答例の要素（キーワード）が入っているか</strong> で判断しましょう。</p>
+</div>
+<h2>2. 演習記録</h2>
+<table class="long">
+<thead>
+<tr>
+<th>日付</th>
+<th>回・問</th>
+<th>分野</th>
+<th>所要時間</th>
+<th>得点／20</th>
+<th>間違えた設問</th>
+<th>間違えた理由（下の分類）</th>
+<th>復習日</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>間違えた理由の分類</strong>：A＝知識不足（学習ノートで補強） ／ B＝本文の読み落とし ／ C＝問いに正対していない ／ D＝計算・単位のミス ／ E＝時間切れ ／ F＝書き方（字数・具体性）</p>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">分類の使い方</span></div>
+<p>同じ分類の間違いが3回続いたら、それがあなたの弱点です。A が多ければ午前の学習に戻る、B・C が多ければ「設問を先に読む」「条件に下線」を徹底する、D が多ければ式を書いてから計算する、E が多ければ1問の時間を決めて切り上げる練習をしましょう。</p>
+</div>
+<h2>3. 間違いノート</h2>
+<p>間違えた設問を1つずつ書き写さずに、「なぜ間違えたか」と「次はどう考えるか」だけを書きます。</p>
+<table>
+<thead>
+<tr>
+<th>回・問・設問</th>
+<th>自分の解答</th>
+<th>解答例の要点</th>
+<th>次に同じ型が出たら</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2>4. 試験直前チェック</h2>
+<div class="ck">
+<ul>
+<li>選択する本命4分野と予備2分野を決めている</li>
+<li>各分野の過去問を3回分以上解き、採点講評を読んだ</li>
+<li>「理由→〜ため」「問題点→〜おそれがある」など、答え方の型を言える</li>
+<li>問1（セキュリティ）の攻撃と対策の対応、鍵の使い分けを説明できる</li>
+<li>稼働率・EVM・損益分岐点・サブネット・電池駆動時間の計算を最近練習した</li>
+<li>1問25〜30分で解く練習をした（30分を超えたら次へ）</li>
+<li>解答をキーボードで入力する練習をした（CBT方式）</li>
+<li>試験会場・日時・本人確認書類・受験の注意事項を確認した</li>
+<li>問題の選択操作と、時間配分の計画（最初の5分で選択）を決めている</li>
+</ul>
+</div>
+<div class="write l"></div></section></body></html>
