@@ -118,3 +118,8 @@ table.w{ width:100%; }
 table{ width:100%; }
 table.kmap{ width:auto; margin-left:auto; margin-right:auto; }
 table.auto{ width:auto; }
+
+table.long{ page-break-inside:auto; }
+table.long tr{ page-break-inside:avoid; }
+table.long thead{ display:table-header-group; }
+.gl td:first-child{ width:30%; font-weight:700; color:var(--navy); }

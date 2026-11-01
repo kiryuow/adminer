@@ -65,11 +65,19 @@ def convert_boxes(text):
     return "\n".join(out)
 
 
+def mark_long_tables(h):
+    """行数の多い表はページをまたいで分割できるようにする（用語集など）"""
+    def f(m):
+        t = m.group(0)
+        return t.replace("<table>", '<table class="long">', 1) if t.count("<tr>") > 14 else t
+    return re.sub(r"(?s)<table>.*?</table>", f, h)
+
+
 def md_to_html(text):
-    return markdown.markdown(
+    return mark_long_tables(markdown.markdown(
         convert_boxes(text),
         extensions=["tables", "fenced_code", "md_in_html", "attr_list", "sane_lists", "nl2br"],
-    )
+    ))
 
 
 def build_html(page_map=None):

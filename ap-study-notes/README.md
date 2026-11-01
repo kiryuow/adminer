@@ -2,7 +2,7 @@
 
 応用情報技術者試験（AP）の午前・午後の全分野を、予備知識がなくても読めるように基礎から解説した学習ノートです。
 
-- 完成版PDF: [`dist/ap-study-notes.pdf`](dist/ap-study-notes.pdf)（A4・全18章）
+- 完成版PDF: [`dist/ap-study-notes.pdf`](dist/ap-study-notes.pdf)（A4・全18章＋付録A〜E シラバス用語集）
 - 原稿: `src/*.md`（章ごとのMarkdown）
 
 ## 構成
@@ -14,6 +14,7 @@
 | `src/14〜16_*.md` | ストラテジ系（システム戦略・経営戦略・企業活動と法務） |
 | `src/17_pm_exam.md` | 午後試験の全体像と分野別の解き方 |
 | `src/18_summary.md` | 総まとめ（直前チェック） |
+| `src/19〜23_glossary*.md` | 付録A〜E：シラバスVer.7.2の用語集（本文で扱っていない用語を分野別に解説） |
 | `style.css` / `cover.html` | デザイン（表紙・章扉・図解・ボックス） |
 | `build.py` | Markdown → HTML → PDF 変換スクリプト |
 
@@ -36,6 +37,13 @@
 pip install markdown
 python3 build.py      # Node.js + Playwright（Chromium）と pdftotext が必要
 ```
+
+## 参照した資料
+
+- IPA「応用情報技術者試験（レベル3）シラバス Ver.7.2」「試験要綱 Ver.5.6」
+- IPA 過去問題（令和2年度〜令和7年度の午前・午後問題、解答例、採点講評）
+- IPA「CBT方式での実施について」「令和8年度 申込受付期間及び試験実施期間」「試験制度の見直しについて」（2026年11月時点）
+- 応用情報技術者試験ドットコム（用語集の構成の確認に参照）
 
 ## 出典
 
