@@ -1,0 +1,2458 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>応用情報技術者試験 午前（科目A）攻略本</title><style>:root{
+  --navy:#173a63; --navy2:#22508a; --orange:#e8731a; --orange-bg:#fdf3e8;
+  --green:#2e8b57; --green-bg:#e9f5ee; --blue:#2f6db5; --blue-bg:#eef4fb;
+  --purple:#7a4fb0; --purple-bg:#f4effa; --red:#c94040; --red-bg:#fcefef;
+  --ink:#222b38; --sub:#5d6878; --line:#d5dbe5; --pale:#f4f6fa;
+}
+@page{ size:A4; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:"Noto Sans CJK JP","IPAGothic",sans-serif; color:var(--ink); font-size:10pt; line-height:1.78; margin:0; background:#fff; }
+p{ margin:.45em 0 .7em; text-align:justify; }
+strong{ color:var(--navy); }
+em{ font-style:normal; background:linear-gradient(transparent 62%, #ffe08a 62%); }
+code{ font-family:"Noto Sans Mono CJK JP",monospace; background:#eef1f6; padding:0 .25em; border-radius:2px; font-size:.92em; }
+pre{ background:#f5f7fa; border:1px solid var(--line); padding:8px 12px; font-size:8.6pt; line-height:1.55; border-radius:3px; page-break-inside:avoid; white-space:pre-wrap; }
+pre code{ background:none; padding:0; }
+.mark{ font-size:1px; color:#fff; position:absolute; }
+
+/* 表紙 */
+.cover{ page-break-after:always; padding-top:4mm; }
+.cover-hero{ background:linear-gradient(135deg,#173a63 0%,#1f4f86 70%,#24609e 100%); color:#fff; padding:26px 30px 30px; border-radius:2px; position:relative; overflow:hidden; height:330px; }
+.cover-hero:before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.07); left:-60px; top:-70px; }
+.cover-hero:after{ content:""; position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,.06); right:-80px; bottom:-120px; }
+.cover-badge{ display:inline-block; background:var(--orange); color:#fff; font-weight:700; font-size:9pt; padding:3px 14px; border-radius:12px; letter-spacing:.05em; }
+.cover-h1{ font-size:30pt; font-weight:900; line-height:1.25; margin:14px 0 2px; }
+.cover-h1 span{ color:#ffb36b; }
+.cover-h2{ font-size:16pt; font-weight:700; border-top:2px solid rgba(255,255,255,.8); display:inline-block; padding-top:8px; margin-top:8px; }
+.cover-sub{ font-size:9pt; opacity:.9; margin-top:6px; }
+.cover-pills{ margin-top:18px; }
+.cover-pills span{ display:inline-block; font-size:8.5pt; font-weight:700; padding:3px 12px; border-radius:12px; margin-right:6px; }
+.pill-g{ background:#2e9e5b; } .pill-b{ background:#2f78d0; } .pill-o{ background:var(--orange); }
+.cover-art{ position:absolute; right:34px; top:40px; z-index:1; }
+.cover-title2{ text-align:center; margin-top:34px; }
+.cover-title2 .en{ color:var(--navy); font-weight:700; font-size:13pt; }
+.cover-title2 .ja{ color:var(--navy); font-size:24pt; margin:4px 0; }
+.cover-title2 .meta{ color:var(--sub); font-size:10pt; }
+.feature{ background:var(--blue-bg); border:1px solid #d3e0f0; padding:10px 16px; margin-top:26px; }
+.feature h3{ margin:0 0 6px; color:var(--navy); font-size:11pt; }
+.feature h3:before{ content:none; }
+.feature ul{ margin:0; }
+
+/* 目次 */
+.toc{ page-break-after:always; }
+h2.plain{ color:var(--navy); font-size:15pt; border-bottom:2px solid var(--navy); padding-bottom:4px; margin:0 0 6px; }
+h2.plain:before{ content:none; }
+.toc-t{ width:100%; border-collapse:collapse; font-size:9pt; }
+.toc-t td{ padding:7px 10px; border:none; vertical-align:top; }
+.toc-t tr:nth-child(odd){ background:#f1f4f9; }
+.toc-c{ font-weight:700; color:var(--navy); width:38%; }
+.toc-l{ color:var(--sub); font-size:8.3pt; }
+.toc-p{ width:6%; text-align:right; color:var(--navy2); font-weight:700; }
+
+/* 章 */
+.chapter{ page-break-before:always; position:relative; }
+.ch-banner{ display:flex; align-items:stretch; background:var(--navy); color:#fff; margin-bottom:14px; min-height:46px; }
+.ch-no{ background:var(--orange); font-weight:700; font-size:12pt; padding:0 20px; display:flex; align-items:center; }
+.ch-title{ font-size:17pt; font-weight:700; padding:6px 18px; display:flex; align-items:center; }
+h2{ color:var(--navy); font-size:14pt; border-bottom:2px solid var(--navy); padding-bottom:3px; margin:22px 0 10px; page-break-after:avoid; }
+h3{ color:var(--navy); font-size:11pt; margin:16px 0 4px; page-break-after:avoid; }
+h3:before{ content:"■ "; color:var(--blue); }
+h4{ color:var(--navy2); font-size:10pt; margin:10px 0 2px; page-break-after:avoid; }
+h4:before{ content:"▶ "; color:var(--orange); font-size:.85em; }
+ul,ol{ margin:.3em 0 .7em; padding-left:1.6em; }
+li{ margin:.12em 0; }
+ul li::marker{ color:var(--blue); }
+
+/* 表 */
+table{ border-collapse:collapse; margin:8px 0 12px; font-size:9pt; page-break-inside:avoid; }
+th,td{ border:1px solid #c9d2df; padding:4px 8px; vertical-align:top; line-height:1.55; }
+th{ background:#e4ebf5; color:var(--navy); font-weight:700; }
+table.w{ width:100%; }
+.c{ text-align:center; }
+
+/* ボックス */
+.box{ margin:12px 0; padding:8px 14px 6px; border-left:4px solid; page-break-inside:avoid; font-size:9.4pt; }
+.box p{ margin:.25em 0 .45em; }
+.box-h{ margin-bottom:2px; font-weight:700; }
+.box-l{ margin-right:10px; }
+.box-t{ color:var(--ink); }
+.box-point{ background:var(--orange-bg); border-color:var(--orange); } .box-point .box-l{ color:var(--orange); }
+.box-calc{ background:var(--green-bg); border-color:var(--green); } .box-calc .box-l{ color:var(--green); }
+.box-note{ background:var(--blue-bg); border-color:var(--blue); } .box-note .box-l{ color:var(--blue); }
+.box-exam{ background:var(--purple-bg); border-color:var(--purple); } .box-exam .box-l{ color:var(--purple); }
+.box-trap{ background:var(--red-bg); border-color:var(--red); } .box-trap .box-l{ color:var(--red); }
+.box-how{ background:#fff8dc; border-color:#d4a514; } .box-how .box-l{ color:#9a7400; }
+.box table{ background:#fff; }
+
+/* 図解（インフォグラフィック） */
+.fig{ border:1px solid var(--line); background:#fbfcfe; margin:12px 0 16px; page-break-inside:avoid; }
+.fig-t{ background:var(--navy); color:#fff; font-weight:700; padding:6px 14px; font-size:10.5pt; }
+.fig-t small{ display:block; font-weight:400; font-size:7.8pt; opacity:.85; }
+.fig-b{ padding:12px 14px; }
+.flow{ display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:nowrap; }
+.fb{ flex:1; border:2px solid var(--c,#2f6db5); background:#fff; border-radius:7px; padding:6px 6px; text-align:center; font-size:8.6pt; line-height:1.45; min-width:0; }
+.fb b{ display:block; color:var(--c,#2f6db5); font-size:9.5pt; }
+.fb small{ color:var(--sub); font-size:7.6pt; display:block; }
+.arr{ color:var(--orange); font-weight:900; font-size:14pt; flex:0 0 auto; }
+.cards{ display:grid; grid-template-columns:repeat(var(--n,3),1fr); gap:8px; }
+.card{ background:#fff; border:1px solid var(--line); border-top:4px solid var(--c,#2f6db5); padding:6px 9px; font-size:8.5pt; line-height:1.5; border-radius:3px; }
+.card b{ color:var(--c,#2f6db5); display:block; font-size:9.6pt; margin-bottom:2px; }
+.card .big{ font-size:19pt; font-weight:900; color:var(--c,#2f6db5); line-height:1.15; display:block; }
+.c1{ --c:#2f6db5; } .c2{ --c:#2e9e5b; } .c3{ --c:#7a4fb0; } .c4{ --c:#e8731a; } .c5{ --c:#c94040; } .c6{ --c:#178a94; } .c7{ --c:#8a6d1d; }
+.tip{ background:#fff8e1; border:1px solid #f0d27a; border-radius:6px; padding:6px 12px; font-size:8.6pt; margin-top:10px; }
+.tip b{ color:#9a6a00; }
+.fig svg{ display:block; margin:0 auto; max-width:100%; }
+.cap{ text-align:center; font-size:8pt; color:var(--sub); margin-top:4px; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.kmap td,.kmap th{ text-align:center; width:34px; padding:3px; }
+.kmap .on{ background:#ffe1c4; font-weight:700; }
+.kmap .on2{ background:#cfe6ff; font-weight:700; }
+.chips span{ display:inline-block; border:1px solid var(--c,#2f6db5); color:var(--c,#2f6db5); border-radius:10px; padding:0 8px; margin:2px 3px; font-size:8pt; background:#fff; }
+.layer{ display:flex; border:1px solid var(--line); margin-bottom:3px; font-size:8.6pt; }
+.layer .ln{ width:30%; background:var(--c,#2f6db5); color:#fff; font-weight:700; padding:3px 8px; }
+.layer .ld{ padding:3px 8px; background:#fff; flex:1; }
+.summary{ background:#f1f4f9; border:1px solid #cfd8e6; padding:8px 16px; margin-top:16px; page-break-inside:avoid; }
+.summary h3{ margin-top:4px; }
+.summary h3:before{ content:"✔ "; color:var(--green); }
+.box-sum{ background:#f1f4f9; border-color:var(--navy); border-left-width:6px; } .box-sum .box-l{ color:var(--navy); font-size:10.5pt; }
+table{ width:100%; }
+table.kmap{ width:auto; margin-left:auto; margin-right:auto; }
+table.auto{ width:auto; }
+
+table.long{ page-break-inside:auto; }
+table.long tr{ page-break-inside:avoid; }
+table.long thead{ display:table-header-group; }
+.gl td:first-child{ width:30%; font-weight:700; color:var(--navy); }
+/* ===== 午後対策シート用 ===== */
+.ck ul{list-style:none;padding-left:.3em}
+.ck ul li{padding-left:1.6em;position:relative}
+.ck ul li::before{content:"";position:absolute;left:0;top:.38em;width:.95em;height:.95em;border:1.5px solid var(--navy);border-radius:2px;background:#fff}
+.write{border:1px solid #b9c4d4;border-radius:3px;background:repeating-linear-gradient(#fff 0 27px,#d7deea 27px 28px);min-height:84px;margin:4px 0 12px}
+.write.s{min-height:56px} .write.l{min-height:140px}
+table.rec td{height:30px}
+.q{background:#fff;border:1px solid var(--line);border-left:5px solid var(--navy);padding:8px 14px;margin:10px 0;page-break-inside:avoid}
+.q .qh{font-weight:700;color:var(--navy);margin-bottom:2px}
+.case{background:#f6f8fb;border:1px solid #d5dbe5;padding:10px 16px;margin:10px 0;font-size:9.4pt;page-break-inside:avoid}
+.case .ch{font-weight:700;color:var(--navy);border-bottom:1px solid #cfd8e6;margin-bottom:6px;padding-bottom:2px}
+.ans{background:var(--green-bg);border-left:4px solid var(--green);padding:8px 14px;margin:8px 0 14px;font-size:9.3pt;page-break-inside:avoid}
+.ans .ah{font-weight:700;color:var(--green)}
+.tpl td:first-child{width:22%;font-weight:700;color:var(--navy)}
+td:empty{height:26px}
+.ck ul li::marker{content:""}
+</style></head><body><section class="cover">
+  <div class="cover-hero" style="height:310px">
+    <span class="cover-badge">応用情報技術者試験 ／ 科目A（旧 午前）</span>
+    <div class="cover-h1">午前対策<br><span>攻略本</span></div>
+    <div class="cover-h2">過去問19回分の分析で「取れる問題」を確実に取る</div>
+    <div class="cover-sub">再出題率・頻出ランキング・計算24パターン・英略語・一問一答・時間配分</div>
+    <div class="cover-pills"><span class="pill-g">データで見る傾向</span><span class="pill-b">得点戦略</span><span class="pill-o">計算パターン集</span></div>
+  </div>
+  <div class="feature">
+    <h3>この本の特徴</h3>
+    <ul>
+      <li>IPA公開の平成28年度〜令和7年度の午前問題19回分を独自に分析し、<b>再出題率</b>（直近の回で約2割）と<b>頻出テーマ</b>をデータで示します。</li>
+      <li>合格基準48問に対し、余裕を持った目標53問をどの系で取るかという<b>得点戦略</b>と、優先度マトリクスを示します。</li>
+      <li>消去法の5パターン、計算の時短、150分の2周方式など、<b>本番での解き方</b>をまとめています。</li>
+      <li>計算24パターン、英略語、一問一答を収録し、直前の総仕上げに使えます。</li>
+    </ul>
+  </div>
+</section>
+<section class='toc'><h2 class='plain'>目次</h2><table class='toc-t'><tr><td class='toc-c'>はじめに ― 科目Aは「戦略」で取る</td><td class='toc-l'>合格に必要な正解数、この本の使い方、学習ノート・クイズ・模擬試験との関係</td><td class='toc-p'>3</td></tr><tr><td class='toc-c'>第1章　データで見る科目A</td><td class='toc-l'>過去問の再出題率、系ごとの差、繰り返し出たテーマ、19回分の頻出テーマランキング</td><td class='toc-p'>4</td></tr><tr><td class='toc-c'>第2章　得点戦略と学習の優先順位</td><td class='toc-l'>系ごとの目標正解数、優先度マトリクス、捨てる勇気、残り期間別の学習計画</td><td class='toc-p'>7</td></tr><tr><td class='toc-c'>第3章　解き方テクニック</td><td class='toc-l'>消去法の5パターン、問いの形式別の解き方、計算の時短、150分の時間配分、CBT画面の使い方</td><td class='toc-p'>9</td></tr><tr><td class='toc-c'>第4章　計算問題 完全パターン集</td><td class='toc-l'>毎回出る計算24パターンの公式・コツ・例題。ここだけで3〜6問を確実に取る</td><td class='toc-p'>11</td></tr><tr><td class='toc-c'>第5章　頻出の英略語 120</td><td class='toc-l'>略語は「元の英語」に分解すると意味が推測できる。分野別の頻出略語一覧</td><td class='toc-p'>13</td></tr><tr><td class='toc-c'>第6章　一問一答 120</td><td class='toc-l'>右側を隠して答える。過去問で繰り返し問われた「定義」を一言で言えるようにする</td><td class='toc-p'>18</td></tr><tr><td class='toc-c'>第7章　直前チェックと当日の動き</td><td class='toc-l'>前日までの確認リスト、当日の時間配分、終了後にやること</td><td class='toc-p'>24</td></tr></table></section><section class='chapter' id='00_intro'><span class='mark'>CHMARK00introEND</span><div class='ch-banner plain-banner'><span class='ch-title'>はじめに ― 科目Aは「戦略」で取る</span></div><p>科目A（旧 午前）は80問の四肢択一で、<strong>48問（60%）正解すれば合格基準</strong> です。80問のすべてを理解する必要はありません。「よく出る問題」と「確実に取れる問題」を落とさず、苦手分野は割り切る。この <strong>戦略</strong> があるかどうかで、同じ学習時間でも結果が大きく変わります。</p>
+<p>この攻略本は、IPAが公開している <strong>平成28年度〜令和7年度の午前問題19回分</strong> を独自に分析した結果をもとに、何を優先して学び、本番でどう解けば48問に届くかをまとめたものです。</p>
+<div class="fig"><div class="fig-t">科目A 合格への4ステップ</div><div class="fig-b"><div class="flow">
+<div class="fb c1"><b>①傾向を知る</b><small>再出題率・頻出テーマ（第1章）</small></div><div class="arr">▶</div>
+<div class="fb c2"><b>②目標を決める</b><small>系ごとの目標正解数（第2章）</small></div><div class="arr">▶</div>
+<div class="fb c4"><b>③解き方を身に付ける</b><small>消去法・計算・時間配分（第3〜4章）</small></div><div class="arr">▶</div>
+<div class="fb c3"><b>④覚えて仕上げる</b><small>略語・一問一答・直前チェック（第5〜7章）</small></div>
+</div></div></div>
+
+<h2>教材の使い分け</h2>
+<table>
+<thead>
+<tr>
+<th>教材</th>
+<th>役割</th>
+<th>この本との関係</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学習ノート</td>
+<td>用語と仕組みを基礎から理解する</td>
+<td>わからない用語は学習ノートの章に戻る</td>
+</tr>
+<tr>
+<td>午前クイズアプリ（385問）</td>
+<td>分野別に繰り返し演習する</td>
+<td>第2章の「優先度A」の分野から演習する</td>
+</tr>
+<tr>
+<td>模擬試験（80問・150分）</td>
+<td>本番と同じ条件で実力を測る</td>
+<td>第3章の時間配分を試す場として使う</td>
+</tr>
+<tr>
+<td>IPAの過去問題</td>
+<td>本物の問題で仕上げる</td>
+<td>第1章のとおり再出題が多いので、直近5年分は必ず解く</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">この本のデータについて</span></div>
+<p>第1章の数値は、IPAが公開している問題冊子PDFを文字認識（OCR）し、問題文どうしの文字の重なりを機械的に比較して求めたものです。文字認識の誤りや、問題文の分割に失敗した問題があるため、<strong>傾向をつかむための目安</strong> として読んでください。</p>
+</div></section><section class='chapter' id='01_data'><span class='mark'>CHMARK01dataEND</span><div class='ch-banner'><span class='ch-no'>第1章</span><span class='ch-title'>データで見る科目A</span></div><h2>1. 過去問はどれくらい再出題されるか</h2>
+<p>令和4年度〜令和7年度の各回の問題を、それより前の回（平成28年度以降）の問題と比べました。「ほぼ同一」は問題文と選択肢の文字の一致度が高いもの、「よく似た問題」は同じテーマで問い方が少し違うものです。</p>
+<table>
+<thead>
+<tr>
+<th>回</th>
+<th>比較できた問題数</th>
+<th>ほぼ同一</th>
+<th>よく似た問題</th>
+<th>割合</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>令和4年度 春期</td>
+<td>45</td>
+<td>4</td>
+<td>8</td>
+<td>27%</td>
+</tr>
+<tr>
+<td>令和4年度 秋期</td>
+<td>56</td>
+<td>5</td>
+<td>3</td>
+<td>14%</td>
+</tr>
+<tr>
+<td>令和5年度 春期</td>
+<td>49</td>
+<td>5</td>
+<td>1</td>
+<td>12%</td>
+</tr>
+<tr>
+<td>令和5年度 秋期</td>
+<td>52</td>
+<td>11</td>
+<td>5</td>
+<td>31%</td>
+</tr>
+<tr>
+<td>令和6年度 春期</td>
+<td>53</td>
+<td>13</td>
+<td>1</td>
+<td>26%</td>
+</tr>
+<tr>
+<td>令和6年度 秋期</td>
+<td>48</td>
+<td>8</td>
+<td>5</td>
+<td>27%</td>
+</tr>
+<tr>
+<td>令和7年度 春期</td>
+<td>58</td>
+<td>8</td>
+<td>2</td>
+<td>17%</td>
+</tr>
+<tr>
+<td>令和7年度 秋期</td>
+<td>50</td>
+<td>3</td>
+<td>7</td>
+<td>20%</td>
+</tr>
+</tbody>
+</table>
+<div class="fig"><div class="fig-t">分析からわかること</div><div class="fig-b"><div class="cards" style="--n:3">
+<div class="card c1"><b>約2割は過去問の再出題</b>直近8年分との比較だけで平均約22%。それより古い問題との重複や文字認識の誤りを考えると、実際はもう少し多い</div>
+<div class="card c2"><b>ストラテジ系が最も多い</b>令和4〜7年度の再出題・類題の割合は、ストラテジ系 約30%、マネジメント系 約20%、テクノロジ系 約19%</div>
+<div class="card c4"><b>2〜9年前の問題が出る</b>直前の回だけでなく、平成28年度の問題が令和5年度に再び出るなど、幅広い年度から出題される</div>
+</div>
+<div class="tip"><b>結論</b>　過去問を5年分（10回・800問）解けば、本番の約2割は「見たことがある問題」になります。80問の2割は16問。合格に必要な48問の3分の1を、過去問演習だけで確保できる計算です。</div>
+</div></div>
+
+<h3>繰り返し出題されたテーマの例（令和4〜7年度）</h3>
+<table class="long">
+<thead>
+<tr>
+<th>テーマ</th>
+<th>出題された回（再出題の元になった回）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SOAの説明</td>
+<td>R4春・R5秋・R6春（元：R2、H28春）</td>
+</tr>
+<tr>
+<td>スコープの管理の活動</td>
+<td>R4秋・R6秋（元：H30春）</td>
+</tr>
+<tr>
+<td>デジタルフォレンジックスの手順</td>
+<td>R5春・R7秋（元：H31春）</td>
+</tr>
+<tr>
+<td>PPMで資金源となる事業</td>
+<td>R6春（元：H30春）</td>
+</tr>
+<tr>
+<td>要配慮個人情報</td>
+<td>R6春（元：H31春）</td>
+</tr>
+<tr>
+<td>RFIの説明</td>
+<td>R5春（元：H30春）</td>
+</tr>
+<tr>
+<td>リーダーシップ論（PM理論・コンティンジェンシー理論）</td>
+<td>R4春・R5秋</td>
+</tr>
+<tr>
+<td>デッドロックの防止</td>
+<td>R4秋（元：H31春）</td>
+</tr>
+<tr>
+<td>正味現在価値法・回収期間法</td>
+<td>R4秋・R5秋（元：H31春・R4春）</td>
+</tr>
+<tr>
+<td>M/M/1の待ち行列</td>
+<td>R6秋（元：R4春）</td>
+</tr>
+<tr>
+<td>ハッシュ表のキーと格納位置</td>
+<td>R6秋（元：R4秋）</td>
+</tr>
+<tr>
+<td>BCPの説明</td>
+<td>R4秋（元：H30春）</td>
+</tr>
+<tr>
+<td>DX推進指標</td>
+<td>R6秋（元：R4秋）</td>
+</tr>
+<tr>
+<td>下請法で禁止されている行為</td>
+<td>R5春（元：H31春）</td>
+</tr>
+<tr>
+<td>組込み機器の製造委託のコンティンジェンシープラン</td>
+<td>R6春（元：R4秋）</td>
+</tr>
+<tr>
+<td>ファウンドリーサービス</td>
+<td>R5秋（元：R1秋）</td>
+</tr>
+<tr>
+<td>問題管理の活動</td>
+<td>R7秋（元：H29春）</td>
+</tr>
+<tr>
+<td>システム監査のフォローアップ</td>
+<td>R7秋（元：R3春）</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">再出題の問題は「答えを覚える」のではなく「理由ごと覚える」</span></div>
+<p>再出題では、選択肢の順番や数値が変わることがあります。「アが正解だった」ではなく、「なぜその選択肢が正しく、他の選択肢がなぜ誤りか」を説明できるようにしておくと、類題にも対応できます。</p>
+</div>
+<h2>2. 頻出テーマランキング（19回分）</h2>
+<p>19回分の問題文にキーワードがどれだけ現れたかを数えた、おおよその頻出度です（1つの問題が複数のテーマに数えられることがあります）。</p>
+<table class="long">
+<thead>
+<tr>
+<th>順位</th>
+<th>テーマ</th>
+<th>出題数</th>
+<th>出題された回</th>
+<th>学習ノート</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>会計・財務（損益分岐点・財務諸表・原価）</td>
+<td>53</td>
+<td>18/19回</td>
+<td>第16章</td>
+</tr>
+<tr>
+<td>2</td>
+<td>プロジェクトマネジメント全般</td>
+<td>52</td>
+<td>18/19回</td>
+<td>第11章</td>
+</tr>
+<tr>
+<td>3</td>
+<td>暗号</td>
+<td>36</td>
+<td>15/19回</td>
+<td>第9章</td>
+</tr>
+<tr>
+<td>4</td>
+<td>システム監査</td>
+<td>34</td>
+<td>18/19回</td>
+<td>第13章</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TCP/IPのプロトコル（TCP・UDP・ARP・DHCP・DNS）</td>
+<td>34</td>
+<td>17/19回</td>
+<td>第8章</td>
+</tr>
+<tr>
+<td>6</td>
+<td>モジュール設計・オブジェクト指向・UML</td>
+<td>33</td>
+<td>15/19回</td>
+<td>第10章</td>
+</tr>
+<tr>
+<td>7</td>
+<td>組織・リーダーシップ</td>
+<td>33</td>
+<td>15/19回</td>
+<td>第16章</td>
+</tr>
+<tr>
+<td>8</td>
+<td>攻撃手法（マルウェア・各種攻撃）</td>
+<td>31</td>
+<td>17/19回</td>
+<td>第9章</td>
+</tr>
+<tr>
+<td>9</td>
+<td>標準化・JIS/ISO</td>
+<td>30</td>
+<td>17/19回</td>
+<td>第16章</td>
+</tr>
+<tr>
+<td>10</td>
+<td>キャッシュメモリ</td>
+<td>30</td>
+<td>14/19回</td>
+<td>第3章</td>
+</tr>
+<tr>
+<td>11</td>
+<td>認証・デジタル署名・PKI</td>
+<td>27</td>
+<td>15/19回</td>
+<td>第9章</td>
+</tr>
+<tr>
+<td>12</td>
+<td>OR・IE・QC（線形計画・在庫・QC七つ道具）</td>
+<td>27</td>
+<td>15/19回</td>
+<td>第16章</td>
+</tr>
+<tr>
+<td>13</td>
+<td>セキュリティ対策技術（WAF・IDS・DMZ・VPNなど）</td>
+<td>24</td>
+<td>14/19回</td>
+<td>第9章</td>
+</tr>
+<tr>
+<td>14</td>
+<td>投資評価（ROI・NPV・回収期間）</td>
+<td>23</td>
+<td>15/19回</td>
+<td>第14・16章</td>
+</tr>
+<tr>
+<td>15</td>
+<td>調達（RFI/RFP）・契約形態</td>
+<td>23</td>
+<td>15/19回</td>
+<td>第14・16章</td>
+</tr>
+<tr>
+<td>16</td>
+<td>セキュリティ管理・リスク・ISMS</td>
+<td>23</td>
+<td>13/19回</td>
+<td>第9章</td>
+</tr>
+<tr>
+<td>17</td>
+<td>IPアドレス・サブネット</td>
+<td>22</td>
+<td>14/19回</td>
+<td>第8章</td>
+</tr>
+<tr>
+<td>18</td>
+<td>仮想記憶・ページング</td>
+<td>22</td>
+<td>12/19回</td>
+<td>第5章</td>
+</tr>
+<tr>
+<td>19</td>
+<td>テスト技法</td>
+<td>22</td>
+<td>11/19回</td>
+<td>第10章</td>
+</tr>
+<tr>
+<td>20</td>
+<td>サービスマネジメント</td>
+<td>21</td>
+<td>14/19回</td>
+<td>第12章</td>
+</tr>
+<tr>
+<td>21</td>
+<td>AI・機械学習</td>
+<td>19</td>
+<td>12/19回</td>
+<td>第1章</td>
+</tr>
+<tr>
+<td>22</td>
+<td>スケジュール・EVM</td>
+<td>19</td>
+<td>13/19回</td>
+<td>第11章</td>
+</tr>
+<tr>
+<td>23</td>
+<td>トランザクション・障害回復</td>
+<td>17</td>
+<td>12/19回</td>
+<td>第7章</td>
+</tr>
+<tr>
+<td>24</td>
+<td>スタック・キュー・木</td>
+<td>17</td>
+<td>11/19回</td>
+<td>第2章</td>
+</tr>
+<tr>
+<td>25</td>
+<td>SQL・整列・探索・デッドロック</td>
+<td>各12〜13</td>
+<td>10〜12/19回</td>
+<td>第2・5・7章</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-trap">
+<div class="box-h"><span class="box-l">ひっかけ注意</span><span class="box-t">ランキングの読み方</span></div>
+<p>「会計・財務」「プロジェクト」のように範囲が広いテーマは数が多くなりやすく、「稼働率」「待ち行列」「正規化」のように範囲が狭いテーマは数が少なく見えます。後者も <strong>繰り返し出る定番</strong> です（キーワード集計では稼働率 8回、MTBF/MTTR 7回、待ち行列 7回。問題文の冒頭にキーワードがない問題は数えていないため、実際はさらに多くなります）。計算の定番は第4章で確実に取れるようにしましょう。</p>
+</div>
+<h2>3. 問題番号と出題分野の対応</h2>
+<p>科目Aは、問題番号の並びがほぼ固定されています。本番で「今どの分野にいるか」がわかると、時間配分と気持ちの切替えがしやすくなります。</p>
+<table>
+<thead>
+<tr>
+<th>問題番号（目安）</th>
+<th>分野</th>
+<th>本書での扱い</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>問1〜5</td>
+<td>基礎理論（2進数・論理・確率・待ち行列・AI・符号）</td>
+<td>計算の定番。必ず取る</td>
+</tr>
+<tr>
+<td>問6〜8</td>
+<td>アルゴリズムとプログラミング</td>
+<td>データ構造・計算量</td>
+</tr>
+<tr>
+<td>問9〜12</td>
+<td>コンピュータ構成要素</td>
+<td>CPI・キャッシュ・メモリ</td>
+</tr>
+<tr>
+<td>問13〜15</td>
+<td>システム構成要素</td>
+<td>稼働率・クラウド・性能</td>
+</tr>
+<tr>
+<td>問16〜18</td>
+<td>ソフトウェア（OS）</td>
+<td>スケジューリング・ページング</td>
+</tr>
+<tr>
+<td>問19〜22</td>
+<td>ハードウェア</td>
+<td>論理回路・センサー・組込み</td>
+</tr>
+<tr>
+<td>問23〜25</td>
+<td>UI・マルチメディア</td>
+<td>用語問題が中心</td>
+</tr>
+<tr>
+<td>問26〜30</td>
+<td>データベース</td>
+<td>SQL・正規化・トランザクション</td>
+</tr>
+<tr>
+<td>問31〜35</td>
+<td>ネットワーク</td>
+<td>サブネット・プロトコル</td>
+</tr>
+<tr>
+<td>問36〜45</td>
+<td>セキュリティ（10問）</td>
+<td>最大の山場。午後問1にも直結</td>
+</tr>
+<tr>
+<td>問46〜50</td>
+<td>開発技術</td>
+<td>テスト・UML・アジャイル</td>
+</tr>
+<tr>
+<td>問51〜60</td>
+<td>マネジメント系</td>
+<td>PM・サービス・監査</td>
+</tr>
+<tr>
+<td>問61〜80</td>
+<td>ストラテジ系</td>
+<td>再出題が最も多い。過去問で稼ぐ</td>
+</tr>
+</tbody>
+</table></section><section class='chapter' id='02_strategy'><span class='mark'>CHMARK02strategyEND</span><div class='ch-banner'><span class='ch-no'>第2章</span><span class='ch-title'>得点戦略と学習の優先順位</span></div><h2>1. 目標正解数を決める</h2>
+<p>48問をどこで取るかを先に決めておくと、学習の優先順位がはっきりします。</p>
+<table>
+<thead>
+<tr>
+<th>系</th>
+<th>問題数</th>
+<th>目標正解数</th>
+<th>目標正答率</th>
+<th>考え方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>テクノロジ系</td>
+<td>50</td>
+<td>32</td>
+<td>64%</td>
+<td>計算の定番とセキュリティで稼ぐ。ハードウェア・マルチメディアは深追いしない</td>
+</tr>
+<tr>
+<td>マネジメント系</td>
+<td>10</td>
+<td>7</td>
+<td>70%</td>
+<td>範囲が狭く、用語の定義を覚えれば取れる</td>
+</tr>
+<tr>
+<td>ストラテジ系</td>
+<td>20</td>
+<td>14</td>
+<td>70%</td>
+<td>再出題が最も多い。過去問演習の効果が大きい</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>80</strong></td>
+<td><strong>53</strong></td>
+<td><strong>66%</strong></td>
+<td>合格基準48問に、5問の余裕を持たせる</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">「余裕5問」が大切</span></div>
+<p>本番では、知らない新傾向の問題や、ケアレスミスが必ず出ます。目標を48問ちょうどにすると、少しのブレで不合格になります。<strong>目標は53問（66%）</strong> に設定しましょう。</p>
+</div>
+<h2>2. 優先度マトリクス</h2>
+<p>縦に「出題の多さ」、横に「得点のしやすさ（覚えやすさ・解きやすさ）」をとって、学習の優先度を決めます。</p>
+<div class="fig"><div class="fig-t">優先度マトリクス<small>A → B → C の順に時間を使う</small></div><div class="fig-b"><div class="two">
+<div class="card c5"><b>優先度A：よく出る＋取りやすい</b>セキュリティ（攻撃と対策・暗号・認証）／ネットワーク（サブネット・プロトコル）／データベース（SQL・正規化・ロック）／稼働率・待ち行列・キャッシュ・CPIの計算／PM（EVM・クリティカルパス）／サービスマネジメント／監査／ストラテジ系の用語（SOA・BPR・RFI・PPM・BSC）／損益分岐点・財務指標</div>
+<div class="card c4"><b>優先度B：よく出る＋やや難しい</b>アルゴリズム（データ構造・計算量・再帰）／OS（ページング・スケジューリング）／開発技術（テスト網羅・モジュール結合度・UML）／OR・IE（線形計画・在庫）／法務（著作権・契約形態・個人情報）</div>
+<div class="card c2"><b>優先度C：出題が少ない＋取りやすい</b>UI・マルチメディア（用語問題）／標準化団体・規格名／技術戦略の用語（ハイプサイクル・キャズム）</div>
+<div class="card c3"><b>優先度D：出題が少ない＋難しい</b>論理回路の細かい計算／浮動小数点の詳細な表現／統計の検定／新しい用語の深い仕組み → 深追いせず、過去問で出た分だけ覚える</div>
+</div></div></div>
+
+<h2>3. 「捨てる」判断</h2>
+<ul>
+<li>1問に <strong>3分以上</strong> かけない。わからなければ選択肢を2つに絞って選び、見直しの印を付けて次へ進む。</li>
+<li>初見の長い計算問題は、2周目に回す。</li>
+<li>全く知らない用語の問題は、選択肢の消去法（第3章）で確率を上げて選ぶ。<strong>空欄にはしない</strong>（誤答による減点はない）。</li>
+</ul>
+<h2>4. 残り期間別の学習計画</h2>
+<h3>残り3か月</h3>
+<table>
+<thead>
+<tr>
+<th>期間</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1〜4週</td>
+<td>学習ノート第1〜10章（テクノロジ系）を読み、午前クイズの該当分野を1周</td>
+</tr>
+<tr>
+<td>5〜8週</td>
+<td>学習ノート第11〜16章を読み、クイズの残りの分野を1周。IPA過去問を1日20問</td>
+</tr>
+<tr>
+<td>9〜11週</td>
+<td>IPA過去問を直近5年分（10回）解く。間違えた問題を「理由ごと」ノートへ</td>
+</tr>
+<tr>
+<td>12週</td>
+<td>模擬試験（本番形式）を時間を計って解く。本書第5〜7章で総仕上げ</td>
+</tr>
+</tbody>
+</table>
+<h3>残り1か月</h3>
+<ul>
+<li>1日目〜：IPAの直近3年分（6回・480問）を、1日40問ペースで解く。</li>
+<li>解説を読んでもわからない問題は、学習ノートの該当章を読む。</li>
+<li>3週目：模擬試験。目標53問に届かない系を重点的に復習。</li>
+<li>最終週：本書第4章（計算パターン）・第5章（略語）・第6章（一問一答）を繰り返す。</li>
+</ul>
+<h3>残り1週間</h3>
+<ul>
+<li>過去問で一度間違えた問題だけを解き直す（クイズアプリの「間違えた問題の復習」も使う）。</li>
+<li>第4章の計算パターンを毎日1周。</li>
+<li>前日は新しいことをせず、第7章の直前チェックだけ。</li>
+</ul></section><section class='chapter' id='03_technique'><span class='mark'>CHMARK03techniqueEND</span><div class='ch-banner'><span class='ch-no'>第3章</span><span class='ch-title'>解き方テクニック</span></div><h2>1. 消去法の5パターン</h2>
+<p>四肢択一では、正解を知らなくても <strong>誤りの選択肢を消す</strong> ことで正答率を上げられます。</p>
+<table>
+<thead>
+<tr>
+<th>パターン</th>
+<th>見分け方</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①定義の入れ替え</td>
+<td>2つの用語の説明が入れ替わっている</td>
+<td>「フェールセーフ：機能を縮小して運転を継続する」→ それはフェールソフト</td>
+</tr>
+<tr>
+<td>②主語・対象の取り違え</td>
+<td>「誰の」「どちらの」が逆</td>
+<td>「デジタル署名は受信者の秘密鍵で作成する」→ 送信者の秘密鍵</td>
+</tr>
+<tr>
+<td>③範囲・数値のずれ</td>
+<td>数値や範囲が少しずれている</td>
+<td>「プライベートアドレス 172.32.0.0/12」→ 172.16.0.0/12</td>
+</tr>
+<tr>
+<td>④言い過ぎ（断定）</td>
+<td>「必ず」「すべて」「常に」「一切」</td>
+<td>「暗号化すれば改ざんは必ず防げる」→ 暗号化は改ざん検知ではない</td>
+</tr>
+<tr>
+<td>⑤別分野の説明</td>
+<td>問われている概念とは別の分野の説明</td>
+<td>「SLAの説明」に「組織内部の部門間の合意」→ それはOLA</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-how">
+<div class="box-h"><span class="box-l">解き方の型</span><span class="box-t">選択肢の読み方</span></div>
+<p><strong>①問題文の最後（「適切なもの」か「適切でないもの」か）に印を付ける。② 選択肢ごとに〇×△を付ける。③ △が残ったら、①〜⑤のパターンで消す。</strong> 「適切でないもの」を選ぶ問題で、うっかり適切なものを選ぶミスが最も多いので、①は必ず行います。</p>
+</div>
+<h2>2. 問いの形式別の解き方</h2>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>解き方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>「〇〇の説明はどれか」</td>
+<td>〇〇の定義を一言で思い浮かべてから選択肢を見る。選択肢の中に、他の用語の定義が並んでいることが多い</td>
+</tr>
+<tr>
+<td>「〇〇に該当するものはどれか」</td>
+<td>〇〇の具体例を思い出す。抽象的な定義ではなく事例で判断</td>
+</tr>
+<tr>
+<td>「適切な組合せはどれか」</td>
+<td>確実にわかる1つの要素で、選択肢を2つに絞る</td>
+</tr>
+<tr>
+<td>計算問題</td>
+<td>式を書いてから計算。選択肢の桁を見て、概算で絞る</td>
+</tr>
+<tr>
+<td>図・表を読む問題</td>
+<td>先に問題文の最後を読み、何を求めるかを確認してから図表を見る</td>
+</tr>
+<tr>
+<td>擬似言語・流れ図</td>
+<td>小さな値で1〜2回だけトレースする</td>
+</tr>
+</tbody>
+</table>
+<h2>3. 計算問題の時短テクニック</h2>
+<ul>
+<li><strong>2のべき乗は暗記</strong>：2^10＝1,024≒10^3、2^20≒10^6、2^30≒10^9。</li>
+<li><strong>概算で選択肢を絞る</strong>：0.99×0.98 は「1−0.01−0.02＝0.97」で近似できる（小さい値どうしの積は無視）。</li>
+<li><strong>選択肢を代入する</strong>：「n はいくつか」は、選択肢の値を式に入れて成り立つものを選ぶ。</li>
+<li><strong>単位をそろえてから計算</strong>：バイト↔ビット（×8）、ミリ秒↔秒、人月↔人日。</li>
+<li><strong>割合は分数で</strong>：利用率0.8なら ρ/(1−ρ)＝0.8/0.2＝4。小数より分数のほうが速い。</li>
+</ul>
+<h2>4. 150分の時間配分（2周方式）</h2>
+<div class="fig"><div class="fig-t">150分の使い方</div><div class="fig-b"><div class="flow">
+<div class="fb c1"><b>1周目（約100分）</b><small>1問75秒が目安。迷ったら仮の答えを選び、見直しの印を付けて次へ</small></div><div class="arr">▶</div>
+<div class="fb c4"><b>2周目（約35分）</b><small>印を付けた問題、後回しにした計算問題を解く</small></div><div class="arr">▶</div>
+<div class="fb c2"><b>最終確認（約15分）</b><small>未解答がないか、「適切でないもの」の取り違えがないかを確認</small></div>
+</div>
+<div class="tip"><b>ペースの目安</b>　開始50分で問40、100分で問80まで。ストラテジ系（問61〜80）は用語問題が多く速く解けるので、ここで時間を取り戻せます。</div>
+</div></div>
+
+<h2>5. CBT方式（2026年度〜）の画面操作</h2>
+<ul>
+<li>問題の <strong>見直しフラグ</strong> と <strong>問題一覧</strong> を使い、2周目に回す問題をすぐ探せるようにする。</li>
+<li>試験画面の <strong>メモ機能・電卓機能</strong> と、配布される <strong>メモ用紙1枚</strong> が使える（2026年度の案内）。計算はメモ用紙に式を書く。</li>
+<li>科目Aは試験終了後に <strong>得点が画面に表示される</strong>。</li>
+<li>模擬試験（Web版）は、見直しフラグ・問題一覧・タイマーを本番に近い形にしてあるので、操作の練習に使える。</li>
+</ul></section><section class='chapter' id='04_calc'><span class='mark'>CHMARK04calcEND</span><div class='ch-banner'><span class='ch-no'>第4章</span><span class='ch-title'>計算問題 完全パターン集</span></div><p>計算問題は、公式と手順さえ覚えれば <strong>確実に得点できる</strong> 問題です。毎回5〜8問程度出題されます。</p>
+<div class="tpl">
+<table class="long">
+<thead>
+<tr>
+<th>#</th>
+<th>パターン</th>
+<th>公式・手順</th>
+<th>コツ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>基数変換</td>
+<td>2進→10進は重みの和、10進→2進は2で割った余りを下から</td>
+<td>2進⇔16進は4桁区切り</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2の補数・表現範囲</td>
+<td>反転＋1。範囲 −2^(n−1)〜2^(n−1)−1</td>
+<td>負の数が1つ多い</td>
+</tr>
+<tr>
+<td>3</td>
+<td>待ち行列 M/M/1</td>
+<td>ρ＝到着率×サービス時間、待ち時間＝ρ/(1−ρ)×サービス時間</td>
+<td>応答時間は待ち＋サービス</td>
+</tr>
+<tr>
+<td>4</td>
+<td>稼働率</td>
+<td>MTBF/(MTBF＋MTTR)、直列 a×b、並列 1−(1−a)(1−b)</td>
+<td>内側の並列から計算</td>
+</tr>
+<tr>
+<td>5</td>
+<td>MIPS・CPI</td>
+<td>MIPS＝周波数÷CPI÷10^6、平均CPI＝Σ(CPI×出現率)</td>
+<td>1命令の時間＝CPI÷周波数</td>
+</tr>
+<tr>
+<td>6</td>
+<td>キャッシュの実効アクセス時間</td>
+<td>キャッシュ×h＋主記憶×(1−h)</td>
+<td>逆算問題は方程式で</td>
+</tr>
+<tr>
+<td>7</td>
+<td>パイプライン</td>
+<td>ステージ数＋(命令数−1)</td>
+<td>分岐で乱れる分を足す問題もある</td>
+</tr>
+<tr>
+<td>8</td>
+<td>磁気ディスク</td>
+<td>平均アクセス時間＝シーク＋回転待ち（半回転）＋転送</td>
+<td>回転数/分→1回転の時間</td>
+</tr>
+<tr>
+<td>9</td>
+<td>画像・音声のデータ量</td>
+<td>画素数×色深度／周波数×ビット数×チャネル×秒</td>
+<td>ビット→バイトは÷8</td>
+</tr>
+<tr>
+<td>10</td>
+<td>伝送時間</td>
+<td>データ量（ビット）÷（速度×伝送効率）</td>
+<td>バイト×8を忘れない</td>
+</tr>
+<tr>
+<td>11</td>
+<td>サブネット</td>
+<td>ホスト数＝2^(ホスト部ビット)−2</td>
+<td>/24＝254、/26＝62、/28＝14</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ビット誤り</td>
+<td>誤りビット数＝総ビット数×誤り率</td>
+<td>パケット数×ビット数</td>
+</tr>
+<tr>
+<td>13</td>
+<td>鍵の数</td>
+<td>共通鍵 n(n−1)/2、公開鍵 2n</td>
+<td>10人→45と20</td>
+</tr>
+<tr>
+<td>14</td>
+<td>ページ置換え</td>
+<td>FIFO：最古を追い出す、LRU：最も長く未使用を追い出す</td>
+<td>表を書いて追う</td>
+</tr>
+<tr>
+<td>15</td>
+<td>スケジューリング</td>
+<td>到着済みの中から方式に従って選ぶ</td>
+<td>時刻を1つずつ進める</td>
+</tr>
+<tr>
+<td>16</td>
+<td>EVM</td>
+<td>SV＝EV−PV、CV＝EV−AC、SPI＝EV/PV、CPI＝EV/AC、EAC＝BAC/CPI</td>
+<td>EVが主役</td>
+</tr>
+<tr>
+<td>17</td>
+<td>クリティカルパス</td>
+<td>全経路の日数を比べ最長を選ぶ。余裕＝最遅−最早</td>
+<td>合流点は遅い方</td>
+</tr>
+<tr>
+<td>18</td>
+<td>三点見積り・工数</td>
+<td>(楽観＋4×最可能＋悲観)÷6、人数＝人月÷月数</td>
+<td>切り上げに注意</td>
+</tr>
+<tr>
+<td>19</td>
+<td>期待値・意思決定</td>
+<td>Σ(確率×値)、マクシミン＝最悪の中の最良</td>
+<td>損失はマイナスで</td>
+</tr>
+<tr>
+<td>20</td>
+<td>損益分岐点</td>
+<td>固定費÷(1−変動費率)、目標利益は分子に足す</td>
+<td>単価×数量なら個数で</td>
+</tr>
+<tr>
+<td>21</td>
+<td>財務指標</td>
+<td>ROE＝純利益/自己資本、流動比率＝流動資産/流動負債</td>
+<td>分子・分母を取り違えない</td>
+</tr>
+<tr>
+<td>22</td>
+<td>減価償却・回収期間</td>
+<td>定額法＝取得価額÷耐用年数、回収期間＝投資額÷年間効果</td>
+<td>NPVは現在価値に割り引く</td>
+</tr>
+<tr>
+<td>23</td>
+<td>在庫・発注点・MRP</td>
+<td>発注点＝使用量×調達期間＋安全在庫、正味＝総所要量−在庫</td>
+<td>上の階層から順に</td>
+</tr>
+<tr>
+<td>24</td>
+<td>線形計画</td>
+<td>制約の交点（頂点）で目的関数を比べる</td>
+<td>交点は連立方程式で</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>例題で手順を確認</h2>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン3：待ち行列（逆算型）</span></div>
+<p>平均サービス時間が T のM/M/1で、平均待ち時間が 2T 以上になるのは利用率がいくつ以上のときか。<br />
+ρ/(1−ρ) ≧ 2 → ρ ≧ 2 − 2ρ → 3ρ ≧ 2 → <strong>ρ ≧ 0.67（約67%）</strong></p>
+</div>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン6：キャッシュ（ヒット率の逆算）</span></div>
+<p>キャッシュの時間が主記憶の1/10、実効アクセス時間が主記憶の28%のときのヒット率は？<br />
+主記憶を1とすると 0.1h ＋ (1−h) ＝ 0.28 → 1 − 0.9h ＝ 0.28 → <strong>h ＝ 0.8</strong></p>
+</div>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン4：3台中2台以上の稼働</span></div>
+<p>稼働率0.9の装置3台のうち2台以上が動けばよい → 3a² − 2a³ ＝ 3×0.81 − 2×0.729 ＝ 2.43 − 1.458 ＝ <strong>0.972</strong></p>
+</div>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン17：余裕日数</span></div>
+<p>A(3日)→B(4日)→D(2日) と A→C(2日)→D の経路。全体は 3＋4＋2＝9日。C は3日目終了後に始めて5日目に終わるが、D は7日目終了後に始まればよいので、<strong>C の余裕は 7 − 5 ＝ 2日</strong>。</p>
+</div>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン20：損益分岐点（個数）</span></div>
+<p>販売単価 5,000円、1個の変動費 3,000円、固定費 600万円 → 1個の限界利益 2,000円 → 600万 ÷ 2,000 ＝ <strong>3,000個</strong></p>
+</div>
+<div class="box box-calc">
+<div class="box-h"><span class="box-l">計算例</span><span class="box-t">パターン22：正味現在価値（NPV）</span></div>
+<p>割引率10%。初期投資200万円、1年後に110万円、2年後に121万円の効果。<br />
+現在価値＝110÷1.1＋121÷1.21＝100＋100＝200万円 → NPV＝200−200＝<strong>0</strong>（投資の価値はちょうど損益なし）</p>
+</div></section><section class='chapter' id='05_abbr'><span class='mark'>CHMARK05abbrEND</span><div class='ch-banner'><span class='ch-no'>第5章</span><span class='ch-title'>頻出の英略語 120</span></div><p>科目Aの選択肢には英略語が大量に出てきます。略語は <strong>元の英語に分解</strong> すると、意味を推測できることが多いです（例：RPO ＝ Recovery Point Objective ＝ 復旧の「時点」の目標）。</p>
+<h2>テクノロジ系</h2>
+<table class="long">
+<thead>
+<tr>
+<th>略語</th>
+<th>元の英語</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPI</td>
+<td>Cycles Per Instruction</td>
+<td>1命令あたりの平均クロック数</td>
+</tr>
+<tr>
+<td>MIPS</td>
+<td>Million Instructions Per Second</td>
+<td>1秒間に実行できる命令数（百万単位）</td>
+</tr>
+<tr>
+<td>FLOPS</td>
+<td>FLoating-point Operations Per Second</td>
+<td>1秒間の浮動小数点演算の回数</td>
+</tr>
+<tr>
+<td>RISC / CISC</td>
+<td>Reduced / Complex Instruction Set Computer</td>
+<td>単純な固定長命令 ／ 複雑な可変長命令</td>
+</tr>
+<tr>
+<td>VLIW</td>
+<td>Very Long Instruction Word</td>
+<td>コンパイル時に複数の命令を1つの長い命令にまとめる</td>
+</tr>
+<tr>
+<td>SIMD</td>
+<td>Single Instruction Multiple Data</td>
+<td>1つの命令で複数のデータを同時に処理</td>
+</tr>
+<tr>
+<td>DMA</td>
+<td>Direct Memory Access</td>
+<td>CPUを介さないメモリと入出力装置の転送</td>
+</tr>
+<tr>
+<td>DRAM / SRAM</td>
+<td>Dynamic / Static RAM</td>
+<td>リフレッシュが必要な主記憶 ／ 高速なキャッシュ用</td>
+</tr>
+<tr>
+<td>SSD</td>
+<td>Solid State Drive</td>
+<td>フラッシュメモリの補助記憶装置</td>
+</tr>
+<tr>
+<td>RAID</td>
+<td>Redundant Arrays of Inexpensive Disks</td>
+<td>複数ディスクで速度・信頼性を高める</td>
+</tr>
+<tr>
+<td>FPGA</td>
+<td>Field Programmable Gate Array</td>
+<td>利用者が回路を書き換えられるLSI</td>
+</tr>
+<tr>
+<td>ASIC</td>
+<td>Application Specific Integrated Circuit</td>
+<td>特定用途向けの専用LSI</td>
+</tr>
+<tr>
+<td>SoC</td>
+<td>System on a Chip</td>
+<td>システムの機能を1チップに集積</td>
+</tr>
+<tr>
+<td>PWM</td>
+<td>Pulse Width Modulation</td>
+<td>パルス幅でモーター等を制御</td>
+</tr>
+<tr>
+<td>MTBF / MTTR</td>
+<td>Mean Time Between Failures / To Repair</td>
+<td>平均故障間隔 ／ 平均修理時間</td>
+</tr>
+<tr>
+<td>RASIS</td>
+<td>Reliability, Availability, Serviceability, Integrity, Security</td>
+<td>信頼性の評価指標</td>
+</tr>
+<tr>
+<td>IaaS / PaaS / SaaS</td>
+<td>Infrastructure / Platform / Software as a Service</td>
+<td>クラウドのサービスモデル</td>
+</tr>
+<tr>
+<td>IaC</td>
+<td>Infrastructure as Code</td>
+<td>インフラ構成をコードで記述して自動適用</td>
+</tr>
+<tr>
+<td>VDI</td>
+<td>Virtual Desktop Infrastructure</td>
+<td>デスクトップ環境をサーバ上で動かす</td>
+</tr>
+<tr>
+<td>HCI</td>
+<td>Hyper-Converged Infrastructure</td>
+<td>サーバとストレージを統合した基盤</td>
+</tr>
+<tr>
+<td>NAS / SAN</td>
+<td>Network Attached Storage / Storage Area Network</td>
+<td>LAN接続のファイルサーバ ／ ストレージ専用ネットワーク</td>
+</tr>
+<tr>
+<td>OSS</td>
+<td>Open Source Software</td>
+<td>ソースコードが公開されたソフトウェア</td>
+</tr>
+<tr>
+<td>GPL</td>
+<td>GNU General Public License</td>
+<td>改変物もソース公開が必要（コピーレフト）</td>
+</tr>
+<tr>
+<td>LRU / FIFO</td>
+<td>Least Recently Used / First In First Out</td>
+<td>最も長く未使用 ／ 最も古いものを追い出す</td>
+</tr>
+<tr>
+<td>TLB</td>
+<td>Translation Lookaside Buffer</td>
+<td>アドレス変換結果のキャッシュ</td>
+</tr>
+<tr>
+<td>RTOS</td>
+<td>Real-Time Operating System</td>
+<td>リアルタイム性を重視したOS</td>
+</tr>
+<tr>
+<td>GUI / CUI</td>
+<td>Graphical / Character User Interface</td>
+<td>図形による操作 ／ 文字による操作</td>
+</tr>
+<tr>
+<td>UX</td>
+<td>User Experience</td>
+<td>利用者の体験全体</td>
+</tr>
+<tr>
+<td>AR / VR / MR</td>
+<td>Augmented / Virtual / Mixed Reality</td>
+<td>拡張現実 ／ 仮想現実 ／ 複合現実</td>
+</tr>
+<tr>
+<td>JPEG / MPEG</td>
+<td>Joint Photographic / Moving Picture Experts Group</td>
+<td>静止画 ／ 動画の圧縮規格</td>
+</tr>
+<tr>
+<td>PCM</td>
+<td>Pulse Code Modulation</td>
+<td>標本化・量子化・符号化によるデジタル化</td>
+</tr>
+<tr>
+<td>DBMS</td>
+<td>DataBase Management System</td>
+<td>データベース管理システム</td>
+</tr>
+<tr>
+<td>SQL</td>
+<td>Structured Query Language</td>
+<td>関係データベースの操作言語</td>
+</tr>
+<tr>
+<td>ACID</td>
+<td>Atomicity, Consistency, Isolation, Durability</td>
+<td>トランザクションの4特性</td>
+</tr>
+<tr>
+<td>BASE</td>
+<td>Basically Available, Soft state, Eventually consistent</td>
+<td>NoSQLが重視する結果整合性</td>
+</tr>
+<tr>
+<td>ETL</td>
+<td>Extract, Transform, Load</td>
+<td>データの抽出・変換・書込み</td>
+</tr>
+<tr>
+<td>OLAP / OLTP</td>
+<td>Online Analytical / Transaction Processing</td>
+<td>多次元分析 ／ 日々の取引処理</td>
+</tr>
+<tr>
+<td>DWH</td>
+<td>Data WareHouse</td>
+<td>分析用の時系列データの蓄積</td>
+</tr>
+<tr>
+<td>OSI</td>
+<td>Open Systems Interconnection</td>
+<td>通信の7階層モデル</td>
+</tr>
+<tr>
+<td>TCP / UDP</td>
+<td>Transmission Control / User Datagram Protocol</td>
+<td>信頼性重視 ／ 速度重視</td>
+</tr>
+<tr>
+<td>ARP</td>
+<td>Address Resolution Protocol</td>
+<td>IPアドレス→MACアドレス</td>
+</tr>
+<tr>
+<td>DHCP</td>
+<td>Dynamic Host Configuration Protocol</td>
+<td>IPアドレスの自動割当て</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>Domain Name System</td>
+<td>ドメイン名とIPアドレスの対応</td>
+</tr>
+<tr>
+<td>NAT / NAPT</td>
+<td>Network Address (Port) Translation</td>
+<td>アドレス（＋ポート）の変換</td>
+</tr>
+<tr>
+<td>ICMP</td>
+<td>Internet Control Message Protocol</td>
+<td>到達確認・エラー通知（ping）</td>
+</tr>
+<tr>
+<td>CIDR</td>
+<td>Classless Inter-Domain Routing</td>
+<td>/24 のようなプレフィックス長表記</td>
+</tr>
+<tr>
+<td>VLAN</td>
+<td>Virtual LAN</td>
+<td>論理的なネットワーク分割</td>
+</tr>
+<tr>
+<td>VRRP</td>
+<td>Virtual Router Redundancy Protocol</td>
+<td>デフォルトゲートウェイの冗長化</td>
+</tr>
+<tr>
+<td>CSMA/CD・CA</td>
+<td>Carrier Sense Multiple Access with Collision Detection / Avoidance</td>
+<td>衝突検出（有線） ／ 衝突回避（無線）</td>
+</tr>
+<tr>
+<td>SDN</td>
+<td>Software-Defined Networking</td>
+<td>ソフトウェアでネットワークを集中制御</td>
+</tr>
+<tr>
+<td>CDN</td>
+<td>Content Delivery Network</td>
+<td>コンテンツを分散配信</td>
+</tr>
+<tr>
+<td>LPWA</td>
+<td>Low Power Wide Area</td>
+<td>省電力・広域のIoT向け無線</td>
+</tr>
+<tr>
+<td>MQTT</td>
+<td>Message Queuing Telemetry Transport</td>
+<td>IoT向けの軽量なパブリッシュ／サブスクライブ型プロトコル</td>
+</tr>
+<tr>
+<td>PoE</td>
+<td>Power over Ethernet</td>
+<td>LANケーブルで給電</td>
+</tr>
+<tr>
+<td>SNMP</td>
+<td>Simple Network Management Protocol</td>
+<td>ネットワーク機器の監視・管理</td>
+</tr>
+<tr>
+<td>SMTP / POP / IMAP</td>
+<td>Simple Mail Transfer / Post Office / Internet Message Access Protocol</td>
+<td>メールの送信 ／ 受信（DL） ／ 受信（サーバで管理）</td>
+</tr>
+</tbody>
+</table>
+<h2>セキュリティ</h2>
+<table class="long">
+<thead>
+<tr>
+<th>略語</th>
+<th>元の英語</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CIA</td>
+<td>Confidentiality, Integrity, Availability</td>
+<td>機密性・完全性・可用性</td>
+</tr>
+<tr>
+<td>ISMS</td>
+<td>Information Security Management System</td>
+<td>情報セキュリティマネジメントシステム</td>
+</tr>
+<tr>
+<td>CSIRT</td>
+<td>Computer Security Incident Response Team</td>
+<td>インシデント対応チーム</td>
+</tr>
+<tr>
+<td>SOC</td>
+<td>Security Operation Center</td>
+<td>24時間監視・分析の組織</td>
+</tr>
+<tr>
+<td>AES / RSA</td>
+<td>Advanced Encryption Standard / 考案者3名の頭文字</td>
+<td>共通鍵暗号 ／ 公開鍵暗号</td>
+</tr>
+<tr>
+<td>PKI</td>
+<td>Public Key Infrastructure</td>
+<td>公開鍵基盤</td>
+</tr>
+<tr>
+<td>CA / CRL / OCSP</td>
+<td>Certification Authority / Certificate Revocation List / Online Certificate Status Protocol</td>
+<td>認証局 ／ 失効リスト ／ 失効状態の問合せ</td>
+</tr>
+<tr>
+<td>TLS</td>
+<td>Transport Layer Security</td>
+<td>通信の暗号化（HTTPS）</td>
+</tr>
+<tr>
+<td>VPN / IPsec</td>
+<td>Virtual Private Network / IP security</td>
+<td>仮想専用線 ／ ネットワーク層の暗号化</td>
+</tr>
+<tr>
+<td>WAF</td>
+<td>Web Application Firewall</td>
+<td>Webアプリへの攻撃を防御</td>
+</tr>
+<tr>
+<td>IDS / IPS</td>
+<td>Intrusion Detection / Prevention System</td>
+<td>侵入の検知 ／ 防止</td>
+</tr>
+<tr>
+<td>UTM</td>
+<td>Unified Threat Management</td>
+<td>複数のセキュリティ機能を1台に統合</td>
+</tr>
+<tr>
+<td>DMZ</td>
+<td>DeMilitarized Zone</td>
+<td>公開サーバを置く緩衝地帯</td>
+</tr>
+<tr>
+<td>EDR</td>
+<td>Endpoint Detection and Response</td>
+<td>端末の挙動監視と対応</td>
+</tr>
+<tr>
+<td>SIEM</td>
+<td>Security Information and Event Management</td>
+<td>ログの統合と相関分析</td>
+</tr>
+<tr>
+<td>DLP</td>
+<td>Data Loss Prevention</td>
+<td>情報漏えい防止</td>
+</tr>
+<tr>
+<td>CASB</td>
+<td>Cloud Access Security Broker</td>
+<td>クラウド利用の可視化・制御</td>
+</tr>
+<tr>
+<td>SWG</td>
+<td>Secure Web Gateway</td>
+<td>クラウド型のWebプロキシ</td>
+</tr>
+<tr>
+<td>MDM</td>
+<td>Mobile Device Management</td>
+<td>モバイル端末の一元管理</td>
+</tr>
+<tr>
+<td>SPF / DKIM / DMARC</td>
+<td>Sender Policy Framework / DomainKeys Identified Mail / Domain-based Message Authentication, Reporting and Conformance</td>
+<td>送信元の検証（IP） ／ 電子署名 ／ 失敗時の処理方針</td>
+</tr>
+<tr>
+<td>XSS / CSRF</td>
+<td>Cross-Site Scripting / Request Forgery</td>
+<td>スクリプト埋込み ／ 意図しないリクエスト</td>
+</tr>
+<tr>
+<td>DoS / DDoS</td>
+<td>(Distributed) Denial of Service</td>
+<td>サービス妨害（分散型）</td>
+</tr>
+<tr>
+<td>APT</td>
+<td>Advanced Persistent Threat</td>
+<td>持続的な標的型攻撃</td>
+</tr>
+<tr>
+<td>C&amp;C</td>
+<td>Command and Control</td>
+<td>ボットへの指令サーバ</td>
+</tr>
+<tr>
+<td>CVE / CVSS / CWE</td>
+<td>Common Vulnerabilities and Exposures / Vulnerability Scoring System / Weakness Enumeration</td>
+<td>脆弱性の識別番号 ／ 深刻度 ／ 種類</td>
+</tr>
+<tr>
+<td>SBOM</td>
+<td>Software Bill of Materials</td>
+<td>ソフトウェア部品表</td>
+</tr>
+<tr>
+<td>TPM / HSM</td>
+<td>Trusted Platform Module / Hardware Security Module</td>
+<td>PC内蔵のセキュリティチップ ／ 鍵管理の専用装置</td>
+</tr>
+<tr>
+<td>SAML</td>
+<td>Security Assertion Markup Language</td>
+<td>SSOで認証結果を受け渡す</td>
+</tr>
+<tr>
+<td>FIDO</td>
+<td>Fast IDentity Online</td>
+<td>パスワードレス認証</td>
+</tr>
+<tr>
+<td>SSO</td>
+<td>Single Sign-On</td>
+<td>1回の認証で複数サービス</td>
+</tr>
+</tbody>
+</table>
+<h2>マネジメント・ストラテジ系</h2>
+<table class="long">
+<thead>
+<tr>
+<th>略語</th>
+<th>元の英語</th>
+<th>意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WBS</td>
+<td>Work Breakdown Structure</td>
+<td>作業の階層的分解</td>
+</tr>
+<tr>
+<td>EVM</td>
+<td>Earned Value Management</td>
+<td>出来高で進捗とコストを管理</td>
+</tr>
+<tr>
+<td>PV / EV / AC</td>
+<td>Planned Value / Earned Value / Actual Cost</td>
+<td>計画 ／ 出来高 ／ 実コスト</td>
+</tr>
+<tr>
+<td>SPI / CPI</td>
+<td>Schedule / Cost Performance Index</td>
+<td>スケジュール ／ コストの効率</td>
+</tr>
+<tr>
+<td>CCPM</td>
+<td>Critical Chain Project Management</td>
+<td>バッファで管理する日程手法</td>
+</tr>
+<tr>
+<td>PMO</td>
+<td>Project Management Office</td>
+<td>プロジェクト横断の支援部門</td>
+</tr>
+<tr>
+<td>RACI</td>
+<td>Responsible, Accountable, Consulted, Informed</td>
+<td>責任分担の4区分</td>
+</tr>
+<tr>
+<td>SLA / OLA</td>
+<td>Service / Operational Level Agreement</td>
+<td>顧客との合意 ／ 内部部門間の合意</td>
+</tr>
+<tr>
+<td>ITIL</td>
+<td>IT Infrastructure Library</td>
+<td>ITサービスマネジメントのベストプラクティス</td>
+</tr>
+<tr>
+<td>CMDB</td>
+<td>Configuration Management DataBase</td>
+<td>構成管理データベース</td>
+</tr>
+<tr>
+<td>RFC</td>
+<td>Request For Change</td>
+<td>変更要求</td>
+</tr>
+<tr>
+<td>CAB</td>
+<td>Change Advisory Board</td>
+<td>変更諮問委員会</td>
+</tr>
+<tr>
+<td>SPOC</td>
+<td>Single Point Of Contact</td>
+<td>単一窓口（サービスデスク）</td>
+</tr>
+<tr>
+<td>RTO / RPO</td>
+<td>Recovery Time / Point Objective</td>
+<td>目標復旧時間 ／ 目標復旧時点</td>
+</tr>
+<tr>
+<td>BCP / BCM</td>
+<td>Business Continuity Plan / Management</td>
+<td>事業継続計画 ／ その管理</td>
+</tr>
+<tr>
+<td>UPS</td>
+<td>Uninterruptible Power Supply</td>
+<td>無停電電源装置</td>
+</tr>
+<tr>
+<td>PUE</td>
+<td>Power Usage Effectiveness</td>
+<td>データセンタの電力効率</td>
+</tr>
+<tr>
+<td>CAAT</td>
+<td>Computer Assisted Audit Techniques</td>
+<td>コンピュータ支援監査技法</td>
+</tr>
+<tr>
+<td>CIO / CISO</td>
+<td>Chief Information / Information Security Officer</td>
+<td>最高情報責任者 ／ 最高情報セキュリティ責任者</td>
+</tr>
+<tr>
+<td>EA</td>
+<td>Enterprise Architecture</td>
+<td>業務とシステムの全体最適化の手法</td>
+</tr>
+<tr>
+<td>BPR / BPM / BPO</td>
+<td>Business Process Re-engineering / Management / Outsourcing</td>
+<td>抜本的再設計 ／ 継続的改善 ／ 外部委託</td>
+</tr>
+<tr>
+<td>SOA</td>
+<td>Service Oriented Architecture</td>
+<td>サービス部品の組合せでシステム構築</td>
+</tr>
+<tr>
+<td>ERP</td>
+<td>Enterprise Resource Planning</td>
+<td>基幹業務の統合パッケージ</td>
+</tr>
+<tr>
+<td>CRM / SFA / SCM</td>
+<td>Customer Relationship / Sales Force Automation / Supply Chain Management</td>
+<td>顧客関係 ／ 営業支援 ／ 供給連鎖</td>
+</tr>
+<tr>
+<td>RPA</td>
+<td>Robotic Process Automation</td>
+<td>定型操作の自動化</td>
+</tr>
+<tr>
+<td>RFI / RFP / RFQ</td>
+<td>Request For Information / Proposal / Quotation</td>
+<td>情報提供 ／ 提案 ／ 見積りの依頼</td>
+</tr>
+<tr>
+<td>ROI / NPV / IRR</td>
+<td>Return On Investment / Net Present Value / Internal Rate of Return</td>
+<td>投資利益率 ／ 正味現在価値 ／ 内部収益率</td>
+</tr>
+<tr>
+<td>DX</td>
+<td>Digital Transformation</td>
+<td>デジタル技術による変革</td>
+</tr>
+<tr>
+<td>SWOT</td>
+<td>Strengths, Weaknesses, Opportunities, Threats</td>
+<td>内部・外部環境の分析</td>
+</tr>
+<tr>
+<td>PPM</td>
+<td>Product Portfolio Management</td>
+<td>事業の資源配分の分析</td>
+</tr>
+<tr>
+<td>BSC</td>
+<td>Balanced ScoreCard</td>
+<td>4つの視点の業績評価</td>
+</tr>
+<tr>
+<td>KGI / KPI / CSF</td>
+<td>Key Goal / Performance Indicator / Critical Success Factor</td>
+<td>最終目標 ／ 途中指標 ／ 成功要因</td>
+</tr>
+<tr>
+<td>MOT</td>
+<td>Management Of Technology</td>
+<td>技術経営</td>
+</tr>
+<tr>
+<td>PoC / MVP</td>
+<td>Proof of Concept / Minimum Viable Product</td>
+<td>概念実証 ／ 実用最小限の製品</td>
+</tr>
+<tr>
+<td>CPS</td>
+<td>Cyber-Physical System</td>
+<td>現実と仮想の融合</td>
+</tr>
+<tr>
+<td>JIT</td>
+<td>Just In Time</td>
+<td>必要な時に必要な量だけ生産</td>
+</tr>
+<tr>
+<td>MRP</td>
+<td>Material Requirements Planning</td>
+<td>資材所要量計画</td>
+</tr>
+<tr>
+<td>EOQ</td>
+<td>Economic Order Quantity</td>
+<td>経済的発注量</td>
+</tr>
+<tr>
+<td>ROE / ROA</td>
+<td>Return On Equity / Assets</td>
+<td>自己資本 ／ 総資産利益率</td>
+</tr>
+<tr>
+<td>CSR / ESG / SDGs</td>
+<td>Corporate Social Responsibility / Environment, Social, Governance / Sustainable Development Goals</td>
+<td>社会的責任 ／ 投資の観点 ／ 開発目標</td>
+</tr>
+<tr>
+<td>M&amp;A / TOB / MBO</td>
+<td>Mergers and Acquisitions / Take Over Bid / Management Buy-Out</td>
+<td>合併・買収 ／ 公開買付け ／ 経営陣による買収</td>
+</tr>
+<tr>
+<td>PL法</td>
+<td>Product Liability</td>
+<td>製造物責任法</td>
+</tr>
+</tbody>
+</table></section><section class='chapter' id='06_qa'><span class='mark'>CHMARK06qaEND</span><div class='ch-banner'><span class='ch-no'>第6章</span><span class='ch-title'>一問一答 120</span></div><p>右の列を紙で隠し、左の問いに一言で答えられるか確認しましょう。言えなかった問いに印を付け、学習ノートの該当章で確認します。</p>
+<h2>テクノロジ系</h2>
+<table class="long">
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>近い値どうしの引き算で有効数字が減る誤差は？</td>
+<td>桁落ち</td>
+</tr>
+<tr>
+<td>絶対値の差が大きい数の加算で小さい方が反映されない誤差は？</td>
+<td>情報落ち（小さい数から足す）</td>
+</tr>
+<tr>
+<td>含意 P→Q が偽になるのは？</td>
+<td>Pが真でQが偽のときだけ</td>
+</tr>
+<tr>
+<td>カルノー図の並び順は？</td>
+<td>00, 01, 11, 10（隣は1ビット違い）</td>
+</tr>
+<tr>
+<td>M/M/1で ρ＝0.5 のとき待ち時間はサービス時間の何倍？</td>
+<td>1倍</td>
+</tr>
+<tr>
+<td>1ビット訂正・2ビット検出ができる符号は？</td>
+<td>ハミング符号</td>
+</tr>
+<tr>
+<td>生成多項式の余りで誤りを検出する方式は？</td>
+<td>CRC</td>
+</tr>
+<tr>
+<td>偽陽性率の分母は？</td>
+<td>実際の陰性（FP＋TN）</td>
+</tr>
+<tr>
+<td>正解ラベル付きデータで学習するのは？</td>
+<td>教師あり学習</td>
+</tr>
+<tr>
+<td>学習データに適合しすぎて汎化性能が落ちるのは？</td>
+<td>過学習</td>
+</tr>
+<tr>
+<td>LIFOのデータ構造は？</td>
+<td>スタック</td>
+</tr>
+<tr>
+<td>2分探索の前提条件は？</td>
+<td>データが整列済み</td>
+</tr>
+<tr>
+<td>平均O(n log n)で最悪O(n²)の整列は？</td>
+<td>クイックソート</td>
+</tr>
+<tr>
+<td>2分探索木を通りがけ順でなぞると？</td>
+<td>昇順に取り出せる</td>
+</tr>
+<tr>
+<td>配列で完全2分木を表すとA[i]の左の子は？</td>
+<td>A[2i]</td>
+</tr>
+<tr>
+<td>次に実行する命令のアドレスを保持するレジスタは？</td>
+<td>プログラムカウンタ</td>
+</tr>
+<tr>
+<td>コンパイル時に複数の命令を1つにまとめる方式は？</td>
+<td>VLIW</td>
+</tr>
+<tr>
+<td>書込み時にキャッシュと主記憶の両方に書くのは？</td>
+<td>ライトスルー</td>
+</tr>
+<tr>
+<td>リフレッシュが必要なメモリは？</td>
+<td>DRAM</td>
+</tr>
+<tr>
+<td>HDDの平均回転待ち時間は？</td>
+<td>1回転の時間の半分</td>
+</tr>
+<tr>
+<td>CPUを介さず転送する方式は？</td>
+<td>DMA</td>
+</tr>
+<tr>
+<td>ゼロ除算は内部割込み？外部割込み？</td>
+<td>内部割込み</td>
+</tr>
+<tr>
+<td>稼働率の式は？</td>
+<td>MTBF÷(MTBF＋MTTR)</td>
+</tr>
+<tr>
+<td>故障時に安全側に動作させる考え方は？</td>
+<td>フェールセーフ</td>
+</tr>
+<tr>
+<td>故障部分を切り離して縮退運転するのは？</td>
+<td>フェールソフト</td>
+</tr>
+<tr>
+<td>誤操作しても危険にならない設計は？</td>
+<td>フールプルーフ</td>
+</tr>
+<tr>
+<td>台数を増やして性能を上げるのは？</td>
+<td>スケールアウト</td>
+</tr>
+<tr>
+<td>インフラの構成をコードで書き自動適用するのは？</td>
+<td>IaC</td>
+</tr>
+<tr>
+<td>ゲストOS不要で軽量な仮想化は？</td>
+<td>コンテナ型</td>
+</tr>
+<tr>
+<td>待ち状態から実行状態に直接移れる？</td>
+<td>移れない（実行可能状態を経由）</td>
+</tr>
+<tr>
+<td>デッドロックを防ぐ定番の方法は？</td>
+<td>資源の獲得順序をそろえる</td>
+</tr>
+<tr>
+<td>排他制御でP操作・V操作を行う仕組みは？</td>
+<td>セマフォ</td>
+</tr>
+<tr>
+<td>最小の十分な空き領域を割り当てる方式は？</td>
+<td>ベストフィット</td>
+</tr>
+<tr>
+<td>ページ置換えが頻発し処理が進まない状態は？</td>
+<td>スラッシング</td>
+</tr>
+<tr>
+<td>最も長く参照されていないページを追い出す方式は？</td>
+<td>LRU</td>
+</tr>
+<tr>
+<td>前回フル以降の変更分を取るバックアップは？</td>
+<td>差分バックアップ</td>
+</tr>
+<tr>
+<td>改変物のソース公開を義務付けるライセンスは？</td>
+<td>GPL</td>
+</tr>
+<tr>
+<td>NANDだけでNOTを作るには？</td>
+<td>2つの入力に同じ信号を入れる</td>
+</tr>
+<tr>
+<td>製造後に回路を書き換えられるLSIは？</td>
+<td>FPGA</td>
+</tr>
+<tr>
+<td>一定時間クリアされないとリセットする仕組みは？</td>
+<td>ウォッチドッグタイマ</td>
+</tr>
+<tr>
+<td>1つだけ選ばせるGUI部品は？</td>
+<td>ラジオボタン</td>
+</tr>
+<tr>
+<td>標本化定理で必要なサンプリング周波数は？</td>
+<td>最高周波数の2倍以上</td>
+</tr>
+<tr>
+<td>主キーの制約は？</td>
+<td>一意性制約と非NULL制約</td>
+</tr>
+<tr>
+<td>第2正規形の条件は？</td>
+<td>部分関数従属がない</td>
+</tr>
+<tr>
+<td>第3正規形の条件は？</td>
+<td>推移的関数従属がない</td>
+</tr>
+<tr>
+<td>グループを絞り込むSQLの句は？</td>
+<td>HAVING</td>
+</tr>
+<tr>
+<td>NULLの判定の書き方は？</td>
+<td>IS NULL</td>
+</tr>
+<tr>
+<td>左表を全件残す結合は？</td>
+<td>左外部結合</td>
+</tr>
+<tr>
+<td>共有ロック中に他者ができることは？</td>
+<td>読取りのみ</td>
+</tr>
+<tr>
+<td>更新前ログで取り消す回復は？</td>
+<td>ロールバック</td>
+</tr>
+<tr>
+<td>バックアップ＋更新後ログでやり直す回復は？</td>
+<td>ロールフォワード</td>
+</tr>
+<tr>
+<td>チェックポイント後〜障害前にコミットしたトランザクションは？</td>
+<td>ロールフォワード</td>
+</tr>
+<tr>
+<td>未コミットのデータを読んでしまう現象は？</td>
+<td>ダーティリード</td>
+</tr>
+<tr>
+<td>NoSQLが重視する一貫性は？</td>
+<td>結果整合性（BASE）</td>
+</tr>
+<tr>
+<td>IPアドレスからMACアドレスを求めるのは？</td>
+<td>ARP</td>
+</tr>
+<tr>
+<td>/26のホスト数は？</td>
+<td>62</td>
+</tr>
+<tr>
+<td>プライベートアドレスの3範囲は？</td>
+<td>10/8、172.16/12、192.168/16</td>
+</tr>
+<tr>
+<td>ポート番号も変換するNATは？</td>
+<td>NAPT（IPマスカレード）</td>
+</tr>
+<tr>
+<td>メールサーバを示すDNSレコードは？</td>
+<td>MX</td>
+</tr>
+<tr>
+<td>無線LANのアクセス制御方式は？</td>
+<td>CSMA/CA</td>
+</tr>
+<tr>
+<td>デフォルトゲートウェイを冗長化するのは？</td>
+<td>VRRP</td>
+</tr>
+<tr>
+<td>IoT向けのパブリッシュ／サブスクライブ型プロトコルは？</td>
+<td>MQTT</td>
+</tr>
+<tr>
+<td>5Gの3つの特徴は？</td>
+<td>超高速・大容量、超低遅延、多数同時接続</td>
+</tr>
+</tbody>
+</table>
+<h2>セキュリティ</h2>
+<table class="long">
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CIAとは？</td>
+<td>機密性・完全性・可用性</td>
+</tr>
+<tr>
+<td>保険で損失を移すリスク対応は？</td>
+<td>リスク移転（転嫁）</td>
+</tr>
+<tr>
+<td>SQLインジェクションの根本対策は？</td>
+<td>プレースホルダ</td>
+</tr>
+<tr>
+<td>XSSの対策は？</td>
+<td>出力時のエスケープ、Cookie の HttpOnly</td>
+</tr>
+<tr>
+<td>CSRFの対策は？</td>
+<td>トークンの照合、再認証</td>
+</tr>
+<tr>
+<td>他サイトの漏えいID・パスワードを使う攻撃は？</td>
+<td>パスワードリスト攻撃</td>
+</tr>
+<tr>
+<td>パスワードを固定してIDを変えて試す攻撃は？</td>
+<td>リバースブルートフォース攻撃</td>
+</tr>
+<tr>
+<td>レインボーテーブル攻撃の対策は？</td>
+<td>ソルト（＋ストレッチング）</td>
+</tr>
+<tr>
+<td>修正プログラム提供前の攻撃は？</td>
+<td>ゼロデイ攻撃</td>
+</tr>
+<tr>
+<td>よく見るサイトを改ざんして待ち伏せる攻撃は？</td>
+<td>水飲み場型攻撃</td>
+</tr>
+<tr>
+<td>消費電力や処理時間から鍵を推測する攻撃は？</td>
+<td>サイドチャネル攻撃</td>
+</tr>
+<tr>
+<td>他人の資源で暗号資産を採掘させる攻撃は？</td>
+<td>クリプトジャッキング</td>
+</tr>
+<tr>
+<td>使われていないIPアドレス空間を何という？</td>
+<td>ダークネット</td>
+</tr>
+<tr>
+<td>共通鍵で n 人が通信するのに必要な鍵の数は？</td>
+<td>n(n−1)/2</td>
+</tr>
+<tr>
+<td>受信者だけに読ませる暗号化に使う鍵は？</td>
+<td>受信者の公開鍵</td>
+</tr>
+<tr>
+<td>デジタル署名の検証に使う鍵は？</td>
+<td>送信者の公開鍵</td>
+</tr>
+<tr>
+<td>デジタル署名で確認できるのは？</td>
+<td>真正性と完全性（否認防止）</td>
+</tr>
+<tr>
+<td>失効した証明書の一覧は？</td>
+<td>CRL</td>
+</tr>
+<tr>
+<td>短い鍵長でRSAと同等の安全性の暗号は？</td>
+<td>楕円曲線暗号</td>
+</tr>
+<tr>
+<td>多要素認証の3要素は？</td>
+<td>知識・所持・生体</td>
+</tr>
+<tr>
+<td>普段と違う環境のときだけ追加認証するのは？</td>
+<td>リスクベース認証</td>
+</tr>
+<tr>
+<td>Webアプリの通信内容を検査する装置は？</td>
+<td>WAF</td>
+</tr>
+<tr>
+<td>不正通信を検知して遮断するのは？</td>
+<td>IPS（IDSは検知のみ）</td>
+</tr>
+<tr>
+<td>公開サーバを置く領域は？</td>
+<td>DMZ</td>
+</tr>
+<tr>
+<td>送信元IPでドメイン詐称を検出するのは？</td>
+<td>SPF</td>
+</tr>
+<tr>
+<td>メールにデジタル署名を付ける送信ドメイン認証は？</td>
+<td>DKIM</td>
+</tr>
+<tr>
+<td>外部の25番ポートへの直接送信を遮断するのは？</td>
+<td>OP25B</td>
+</tr>
+<tr>
+<td>DNSの応答に署名を付けるのは？</td>
+<td>DNSSEC</td>
+</tr>
+<tr>
+<td>起動時にOSの署名を検証するのは？</td>
+<td>セキュアブート</td>
+</tr>
+<tr>
+<td>PC内蔵のセキュリティチップは？</td>
+<td>TPM</td>
+</tr>
+<tr>
+<td>全アクセスを信頼せず毎回検証する考え方は？</td>
+<td>ゼロトラスト</td>
+</tr>
+<tr>
+<td>端末の挙動を監視し侵入後に対応するのは？</td>
+<td>EDR</td>
+</tr>
+<tr>
+<td>脆弱性の深刻度を数値で評価するのは？</td>
+<td>CVSS</td>
+</tr>
+<tr>
+<td>大量の異常データで脆弱性を探すのは？</td>
+<td>ファジング</td>
+</tr>
+<tr>
+<td>不正のトライアングルは？</td>
+<td>動機・機会・正当化</td>
+</tr>
+<tr>
+<td>ISMSの要求事項の規格は？</td>
+<td>JIS Q 27001</td>
+</tr>
+</tbody>
+</table>
+<h2>マネジメント系</h2>
+<table class="long">
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WBSの最下位の要素は？</td>
+<td>ワークパッケージ</td>
+</tr>
+<tr>
+<td>クリティカルパスとは？</td>
+<td>所要日数が最も長い経路（余裕0）</td>
+</tr>
+<tr>
+<td>資源を追加して期間を短縮するのは？</td>
+<td>クラッシング</td>
+</tr>
+<tr>
+<td>作業を並行させて期間を短縮するのは？</td>
+<td>ファストトラッキング</td>
+</tr>
+<tr>
+<td>SVの式は？</td>
+<td>EV−PV</td>
+</tr>
+<tr>
+<td>CPIの式は？</td>
+<td>EV÷AC</td>
+</tr>
+<tr>
+<td>EACの式（効率が続く場合）は？</td>
+<td>BAC÷CPI</td>
+</tr>
+<tr>
+<td>三点見積り（PERT）の期待値は？</td>
+<td>(楽観＋4×最可能＋悲観)÷6</td>
+</tr>
+<tr>
+<td>コミュニケーション経路の数は？</td>
+<td>n(n−1)/2</td>
+</tr>
+<tr>
+<td>好機への対応戦略は？</td>
+<td>活用・共有・強化・受容</td>
+</tr>
+<tr>
+<td>プロジェクトを正式に認可する文書は？</td>
+<td>プロジェクト憲章</td>
+</tr>
+<tr>
+<td>既知のリスクに備える予備は？</td>
+<td>コンティンジェンシー予備</td>
+</tr>
+<tr>
+<td>迅速な回復を目的とするプロセスは？</td>
+<td>インシデント管理</td>
+</tr>
+<tr>
+<td>根本原因を究明するプロセスは？</td>
+<td>問題管理</td>
+</tr>
+<tr>
+<td>変更を評価する委員会は？</td>
+<td>CAB</td>
+</tr>
+<tr>
+<td>構成情報を管理するDBは？</td>
+<td>CMDB</td>
+</tr>
+<tr>
+<td>提供者と顧客の合意文書は？</td>
+<td>SLA</td>
+</tr>
+<tr>
+<td>どの時点までのデータを戻すかの目標は？</td>
+<td>RPO</td>
+</tr>
+<tr>
+<td>データセンタの電力効率の指標は？</td>
+<td>PUE（1に近いほど良い）</td>
+</tr>
+<tr>
+<td>監査人は改善を実施・指示する？</td>
+<td>しない（提案・フォローアップのみ）</td>
+</tr>
+<tr>
+<td>監査の結論の根拠を記録した文書は？</td>
+<td>監査調書</td>
+</tr>
+<tr>
+<td>本番システムに架空口座を設ける監査技法は？</td>
+<td>ITF法</td>
+</tr>
+<tr>
+<td>内部統制で日本が追加した基本的要素は？</td>
+<td>ITへの対応</td>
+</tr>
+<tr>
+<td>入力者と承認者を分けることを何という？</td>
+<td>職務分掌</td>
+</tr>
+</tbody>
+</table>
+<h2>ストラテジ系</h2>
+<table class="long">
+<thead>
+<tr>
+<th>問い</th>
+<th>答え</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>サービス部品の組合せでシステムを構築する考え方は？</td>
+<td>SOA</td>
+</tr>
+<tr>
+<td>EAの4体系は？</td>
+<td>ビジネス・データ・アプリケーション・テクノロジ</td>
+</tr>
+<tr>
+<td>業務の抜本的な再設計は？</td>
+<td>BPR</td>
+</tr>
+<tr>
+<td>業務の外部委託は？</td>
+<td>BPO</td>
+</tr>
+<tr>
+<td>定型操作を自動化するのは？</td>
+<td>RPA</td>
+</tr>
+<tr>
+<td>情報提供を依頼する文書は？</td>
+<td>RFI</td>
+</tr>
+<tr>
+<td>提案を依頼する文書は？</td>
+<td>RFP</td>
+</tr>
+<tr>
+<td>顧客とのつながりを強化するシステムは？</td>
+<td>SoE</td>
+</tr>
+<tr>
+<td>未来から逆算して計画する方法は？</td>
+<td>バックキャスティング</td>
+</tr>
+<tr>
+<td>成熟市場で高シェアの事業（PPM）は？</td>
+<td>金のなる木</td>
+</tr>
+<tr>
+<td>新製品×新市場（アンゾフ）は？</td>
+<td>多角化</td>
+</tr>
+<tr>
+<td>5フォースの5つは？</td>
+<td>競合・新規参入・代替品・買い手・売り手</td>
+</tr>
+<tr>
+<td>BSCの4つの視点は？</td>
+<td>財務・顧客・業務プロセス・学習と成長</td>
+</tr>
+<tr>
+<td>途中経過を測る指標は？</td>
+<td>KPI</td>
+</tr>
+<tr>
+<td>マーケティングの4Pは？</td>
+<td>製品・価格・流通・販売促進</td>
+</tr>
+<tr>
+<td>高価格で発売し早期回収する価格戦略は？</td>
+<td>スキミングプライシング</td>
+</tr>
+<tr>
+<td>競争のない市場を創造する戦略は？</td>
+<td>ブルーオーシャン戦略</td>
+</tr>
+<tr>
+<td>優良企業が新技術に市場を奪われる現象は？</td>
+<td>イノベーションのジレンマ</td>
+</tr>
+<tr>
+<td>製品開発から事業化までの障壁は？</td>
+<td>死の谷</td>
+</tr>
+<tr>
+<td>技術への期待の推移を表す図は？</td>
+<td>ハイプサイクル</td>
+</tr>
+<tr>
+<td>自分だけ戦略を変えても得しない状態は？</td>
+<td>ナッシュ均衡</td>
+</tr>
+<tr>
+<td>暗黙知→形式知（SECI）は？</td>
+<td>表出化</td>
+</tr>
+<tr>
+<td>部下の成熟度でリーダーシップを変える理論は？</td>
+<td>SL理論</td>
+</tr>
+<tr>
+<td>工場を持たず製造を委託するモデルは？</td>
+<td>ファブレス</td>
+</tr>
+<tr>
+<td>製造だけを受託するモデルは？</td>
+<td>ファウンドリ</td>
+</tr>
+<tr>
+<td>損益分岐点売上高の式は？</td>
+<td>固定費÷(1−変動費率)</td>
+</tr>
+<tr>
+<td>本業の儲けを表す利益は？</td>
+<td>営業利益</td>
+</tr>
+<tr>
+<td>短期の支払能力を示す指標は？</td>
+<td>流動比率</td>
+</tr>
+<tr>
+<td>重点項目を見つける図は？</td>
+<td>パレート図</td>
+</tr>
+<tr>
+<td>結果と原因を魚の骨で整理する図は？</td>
+<td>特性要因図</td>
+</tr>
+<tr>
+<td>工程の異常を判断する図は？</td>
+<td>管理図</td>
+</tr>
+<tr>
+<td>発注点の式は？</td>
+<td>1日の使用量×調達期間＋安全在庫</td>
+</tr>
+<tr>
+<td>線形計画の最適解はどこに現れる？</td>
+<td>制約が作る領域の頂点</td>
+</tr>
+<tr>
+<td>プログラムは著作権で保護される？アルゴリズムは？</td>
+<td>プログラムは保護、アルゴリズムは保護されない</td>
+</tr>
+<tr>
+<td>委託開発で取決めがない場合の著作権は？</td>
+<td>実際に作成した受託者</td>
+</tr>
+<tr>
+<td>営業秘密の3要件は？</td>
+<td>秘密管理性・有用性・非公知性</td>
+</tr>
+<tr>
+<td>請負と準委任の違いは？</td>
+<td>請負は完成責任あり、準委任はなし</td>
+</tr>
+<tr>
+<td>派遣で指揮命令するのは？</td>
+<td>派遣先</td>
+</tr>
+<tr>
+<td>要配慮個人情報の取得に必要なのは？</td>
+<td>原則として本人の同意</td>
+</tr>
+<tr>
+<td>著作者人格権の3つは？</td>
+<td>公表権・氏名表示権・同一性保持権</td>
+</tr>
+</tbody>
+</table></section><section class='chapter' id='07_final'><span class='mark'>CHMARK07finalEND</span><div class='ch-banner'><span class='ch-no'>第7章</span><span class='ch-title'>直前チェックと当日の動き</span></div><h2>1. 前日までのチェック</h2>
+<div class="ck">
+<ul>
+<li>IPAの直近5年分（10回）の過去問を解き、間違えた問題を解き直した</li>
+<li>本番形式の模擬試験で、目標53問（66%）に届いた</li>
+<li>第4章の計算24パターンを、例題なしでも解ける</li>
+<li>第5章の略語のうち、意味が言えないものが10個以下になった</li>
+<li>第6章の一問一答で、答えられない問いが1割以下になった</li>
+<li>「適切でないもの」を選ぶ問題で、必ず問題文の末尾に印を付ける習慣がある</li>
+<li>2周方式の時間配分（50分で問40、100分で問80）を模擬試験で試した</li>
+<li>受験する会場・日時・本人確認書類・持ち物（会場の案内）を確認した</li>
+</ul>
+</div>
+<h2>2. 当日の動き（科目A・150分）</h2>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>やること</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>開始前</td>
+<td>深呼吸。メモ用紙に「2^10＝1024」「ρ/(1−ρ)」「1−(1−a)²」など、すぐ使う式を書いておく（試験開始後に）</td>
+</tr>
+<tr>
+<td>0〜50分</td>
+<td>問1〜問40。計算問題で詰まったら印を付けて先へ</td>
+</tr>
+<tr>
+<td>50〜100分</td>
+<td>問41〜問80。ストラテジ系は用語問題が多いのでテンポよく</td>
+</tr>
+<tr>
+<td>100〜135分</td>
+<td>印を付けた問題を見直す。計算問題は式を書いて丁寧に</td>
+</tr>
+<tr>
+<td>135〜150分</td>
+<td>未解答がないか確認。「適切でないもの」の取り違えを確認</td>
+</tr>
+</tbody>
+</table>
+<div class="box box-trap">
+<div class="box-h"><span class="box-l">ひっかけ注意</span><span class="box-t">本番で起きやすいミス</span></div>
+<ul>
+<li>「適切なもの」と「適切でないもの」の取り違え</li>
+<li>単位の換算忘れ（バイト↔ビット、ミリ秒↔秒）</li>
+<li>稼働率の直列と並列の取り違え</li>
+<li>選択肢を最後まで読まずに選ぶ（「すべて正しそうに見える」問題ほど、細部の誤りがある）</li>
+</ul>
+</div>
+<h2>3. 終了後にやること</h2>
+<ul>
+<li>科目Aの得点は試験終了後に画面に表示されます（2026年度の案内）。</li>
+<li>科目Bは別の期間に実施されます。科目Aが終わったら、すぐに <strong>午後攻略本</strong> と <strong>午後対策シート</strong> に切り替えましょう。</li>
+</ul></section></body></html>
