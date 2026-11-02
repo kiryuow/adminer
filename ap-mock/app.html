@@ -1,0 +1,343 @@
+<title>応用情報 本番模試</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=Zen+Kaku+Gothic+New:wght@700;900&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: 試験会場のCBT画面を模した構成。紺の上部バー（タイマー）＋1カラム本文。科目Bは本文と解答欄を縦に並べる。 */
+:root{
+  --bg:#eef1f6; --paper:#ffffff; --ink:#1d2533; --sub:#5a6577; --line:#d3dae6; --soft:#e8edf5;
+  --navy:#173a63; --navy-ink:#ffffff; --accent:#e8731a; --accent-soft:#fdeedf;
+  --ok:#1f8a4c; --ok-soft:#e3f4ea; --ng:#c43d3d; --ng-soft:#fbe6e6;
+  --t:#2f6db5; --m:#7a4fb0; --s:#2e8b57;
+  --f-display:"Zen Kaku Gothic New","BIZ UDPGothic","Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-body:"BIZ UDPGothic","Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;
+  --f-num:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f1622; --paper:#172131; --ink:#e6ebf3; --sub:#9aa7ba; --line:#2b3a50; --soft:#1e2b3f;
+  --navy:#0b1f38; --navy-ink:#eef3fa; --accent:#f08c3c; --accent-soft:#3a2614;
+  --ok:#4cc17e; --ok-soft:#173a27; --ng:#ef6b6b; --ng-soft:#3e1d1d; --t:#6fa3e6; --m:#b08ee6; --s:#5fc28d; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0f1622; --paper:#172131; --ink:#e6ebf3; --sub:#9aa7ba; --line:#2b3a50; --soft:#1e2b3f;
+  --navy:#0b1f38; --navy-ink:#eef3fa; --accent:#f08c3c; --accent-soft:#3a2614;
+  --ok:#4cc17e; --ok-soft:#173a27; --ng:#ef6b6b; --ng-soft:#3e1d1d; --t:#6fa3e6; --m:#b08ee6; --s:#5fc28d; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.8;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+button,textarea,input{font:inherit;color:inherit}
+button{cursor:pointer}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.bar{background:var(--navy);color:var(--navy-ink);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.bar-in{max-width:880px;margin:0 auto;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;align-items:center;gap:12px}
+.brand{white-space:nowrap;font-family:var(--f-display);font-weight:900;font-size:17px;display:flex;gap:8px;align-items:center;background:none;border:0;color:inherit;padding:0}
+.brand .tag{background:var(--accent);color:#fff;font-size:11px;padding:1px 8px;border-radius:3px;letter-spacing:.08em}
+.sp{flex:1}
+.timer{font-family:var(--f-num);font-weight:700;font-variant-numeric:tabular-nums;background:rgba(255,255,255,.12);padding:2px 10px;border-radius:4px}
+.timer.low{background:var(--ng);color:#fff}
+.subj{font-size:12px;opacity:.85}
+main{max-width:880px;margin:0 auto;padding-block:18px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:16px}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance}
+h2{font-size:17px;display:flex;align-items:center;gap:8px}
+h2::before{content:"";width:4px;height:1em;background:var(--accent);border-radius:2px}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;gap:12px;min-width:0}
+.muted{color:var(--sub);font-size:13px}
+.small{font-size:13.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.start{display:grid;gap:8px;align-content:start;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px;min-width:0}
+.start.a{border-top:5px solid var(--t)} .start.b{border-top:5px solid var(--m)}
+.start b{font-family:var(--f-display);font-size:19px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13.5px}
+.facts dt{color:var(--sub)} .facts dd{margin:0}
+.btn{border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:8px 16px;font-weight:700}
+.btn.go{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.navy{background:var(--navy);border-color:var(--navy);color:var(--navy-ink)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stats{width:100%;border-collapse:collapse;font-size:13.5px}
+.stats td,.stats th{padding:6px;border-bottom:1px solid var(--line);text-align:left}
+.stats th{font-size:11.5px;color:var(--sub)}
+.n{font-family:var(--f-num);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.scroll{overflow-x:auto}
+.pass{font-family:var(--f-display);font-weight:900;padding:1px 10px;border-radius:4px;color:#fff;font-size:13px}
+.pass.y{background:var(--ok)} .pass.n{background:var(--ng)}
+/* 科目A */
+.qno{font-family:var(--f-num);font-weight:700;color:var(--sub);font-size:13px}
+.cat{font-size:12px;font-weight:700;color:#fff;padding:1px 9px;border-radius:3px}
+.k-T{background:var(--t)} .k-M{background:var(--m)} .k-S{background:var(--s)}
+.qtext{font-weight:700;font-size:16px;line-height:1.85}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:30px 1fr;gap:10px;text-align:left;background:var(--paper);border:1.5px solid var(--line);border-radius:7px;padding:10px 12px;align-items:start;min-width:0}
+.opt:hover{border-color:var(--accent)}
+.opt .k{font-family:var(--f-display);font-weight:900;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--soft)}
+.opt.sel{border-color:var(--navy);background:var(--soft)} .opt.sel .k{background:var(--navy);color:var(--navy-ink)}
+.flag{border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:2px 10px;font-size:12.5px}
+.flag[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);font-weight:700}
+.map{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:5px}
+.map button{font-family:var(--f-num);font-size:12px;padding:4px 0;border:1px solid var(--line);background:var(--paper);border-radius:4px}
+.map button.done{background:var(--soft);font-weight:700}
+.map button.fl{border-color:var(--accent);box-shadow:inset 0 -3px 0 var(--accent)}
+.map button.cur{outline:2px solid var(--navy)}
+.map button.ok{background:var(--ok-soft);border-color:var(--ok)} .map button.ng{background:var(--ng-soft);border-color:var(--ng)}
+.nav{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+.confirm{background:var(--accent-soft);border:1px solid var(--accent);border-radius:7px;padding:10px 12px;display:grid;gap:8px}
+.big{font-family:var(--f-num);font-size:42px;font-weight:700;line-height:1}
+.ritem{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;padding:8px 12px;background:var(--paper)}
+.ritem.ok{border-left-color:var(--ok)} .ritem.ng{border-left-color:var(--ng)}
+.ritem summary{cursor:pointer;font-size:13.5px}
+.expl{background:var(--soft);border-radius:6px;padding:10px 12px;font-size:14px;margin-top:6px}
+/* 科目B */
+.pick{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.pk{display:flex;gap:10px;align-items:center;border:1.5px solid var(--line);border-radius:7px;padding:8px 12px;background:var(--paper);text-align:left}
+.pk[aria-pressed="true"]{border-color:var(--m);background:var(--soft)}
+.pk .no{font-family:var(--f-display);font-weight:900;min-width:2.6em}
+.pk.req{opacity:.85;cursor:default}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:var(--paper);border-radius:6px 6px 0 0;padding:6px 12px;font-weight:700;font-size:13.5px}
+.tab[aria-current="true"]{background:var(--navy);color:var(--navy-ink);border-color:var(--navy)}
+.case{font-size:14.5px;display:grid;gap:8px;min-width:0}
+.case h4{margin:6px 0 0;font-family:var(--f-display);color:var(--navy);font-size:14.5px}
+:root[data-theme="dark"] .case h4{color:var(--t)}
+.case p{margin:0}
+.case table{border-collapse:collapse;font-size:13px;min-width:100%}
+.case th,.case td{border:1px solid var(--line);padding:4px 8px;text-align:left;vertical-align:top}
+.case th{background:var(--soft)}
+.case caption{caption-side:top;text-align:left;font-weight:700;font-size:13px;padding-bottom:3px}
+.case pre{background:var(--soft);padding:10px 12px;border-radius:6px;overflow-x:auto;font-size:13px;line-height:1.6;margin:0}
+.bq{border-left:4px solid var(--m);padding:8px 12px;background:var(--soft);border-radius:0 6px 6px 0;display:grid;gap:6px}
+.bq textarea{width:100%;min-height:64px;resize:vertical;border:1px solid var(--line);border-radius:6px;padding:8px;background:var(--paper)}
+.cnt{font-family:var(--f-num);font-size:12px;color:var(--sub);text-align:right}
+.model{background:var(--ok-soft);border-radius:6px;padding:8px 12px;font-size:14px}
+.selfscore{display:flex;align-items:center;gap:8px;font-size:13px}
+.selfscore input{width:64px;padding:4px 6px;border:1px solid var(--line);border-radius:5px;background:var(--paper)}
+@media (max-width:620px){ .two,.pick{grid-template-columns:1fr} .qtext{font-size:15px} .subj{display:none} }
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="bar"><div class="bar-in">
+  <button class="brand" id="homeBtn" type="button"><span class="tag">AP</span>本番模試</button>
+  <span class="subj" id="subj"></span><span class="sp"></span>
+  <span class="timer" id="timer" hidden></span>
+</div></header>
+<main id="app" aria-live="polite"></main>
+
+<script>
+const MOCK = /*__MOCK__*/null;
+</script>
+<script>
+"use strict";
+const {A, B} = MOCK;
+const KANA = ["ア","イ","ウ","エ"], SEC = 150*60;
+const kei = n => n<=50 ? "T" : n<=60 ? "M" : "S";
+const KEI = {T:"テクノロジ系",M:"マネジメント系",S:"ストラテジ系"};
+const esc = s => String(s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+const inl = s => esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/\n/g,"<br>");
+
+// ---- 記録（この端末＋サインイン時はアカウント） ----
+const LS = "ap-mock-v1";
+let R = {u:0, a:[], b:[]};       // a:[{d,sc,sec}] b:[{d,sc,sel:[...],sec}]
+try{ const t = localStorage.getItem(LS); if (t) R = Object.assign(R, JSON.parse(t)); }catch(e){}
+let dbRef = null, busy = false, pending = false;
+function persist(){
+  R.u = Date.now(); try{ localStorage.setItem(LS, JSON.stringify(R)); }catch(e){}
+  if (dbRef) save();
+}
+async function save(){
+  if (busy){ pending = true; return; }
+  busy = true; try{ await dbRef.set(R); }catch(e){} busy = false;
+  if (pending){ pending = false; save(); }
+}
+(async ()=>{
+  try{
+    if (!window.claude || !window.claude.use) return;
+    const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+    if (!db || !user) return;
+    const id = await user.id(); if (!id) return;
+    dbRef = db.doc("data/users/" + id + "/mock");
+    const s = await dbRef.get();
+    if (s.exists && (s.data().u||0) >= (R.u||0)){ R = Object.assign({u:0,a:[],b:[]}, s.data()); try{ localStorage.setItem(LS, JSON.stringify(R)); }catch(e){} if (view==="home") render(); }
+    else if (R.a.length || R.b.length) save();
+  }catch(e){}
+})();
+
+// ---- 状態 ----
+let view = "home", S = null, timerId = null;
+function startTimer(onEnd){
+  const el = document.getElementById("timer"); el.hidden = false;
+  const tick = ()=>{
+    const left = Math.max(0, SEC - Math.floor((Date.now()-S.t0)/1000));
+    el.textContent = `残り ${Math.floor(left/3600)}:${String(Math.floor(left%3600/60)).padStart(2,"0")}:${String(left%60).padStart(2,"0")}`;
+    el.classList.toggle("low", left<=600);
+    if (!left) onEnd();
+  };
+  tick(); timerId = setInterval(tick, 1000);
+}
+function stopTimer(){ clearInterval(timerId); timerId = null; document.getElementById("timer").hidden = true; }
+function setSubj(t){ document.getElementById("subj").textContent = t; }
+
+function startA(){ S = {k:"A", t0:Date.now(), i:0, pick:Array(80).fill(null), flag:Array(80).fill(false)}; view="A"; setSubj("科目A（80問・150分）"); render(); startTimer(finishA); }
+function finishA(){
+  stopTimer(); S.sec = Math.floor((Date.now()-S.t0)/1000);
+  S.sc = A.filter((q,i)=>S.pick[i]===q.a).length;
+  R.a = [{d:Date.now(), sc:S.sc, sec:S.sec}].concat(R.a).slice(0,20); persist();
+  view = "Ares"; setSubj("科目A 結果"); render(); scrollTo(0,0);
+}
+function selectB(){ S = {k:"B", sel:new Set()}; view="Bsel"; setSubj("科目B 問題の選択"); render(); }
+function startB(){
+  const ids = [1].concat([...S.sel].sort((a,b)=>a-b));
+  S = {k:"B", t0:Date.now(), ids, cur:0, ans:{}, self:{}}; view="B"; setSubj("科目B（5問・150分）"); render(); startTimer(finishB);
+}
+function finishB(){ stopTimer(); S.sec = Math.floor((Date.now()-S.t0)/1000); view="Bres"; setSubj("科目B 自己採点"); render(); scrollTo(0,0); }
+function bTotal(){ let t=0; for (const n of S.ids){ const p=B[n-1]; p.qs.forEach((x,j)=>{ const v=+S.self[n+"-"+j]||0; t+=Math.max(0,Math.min(x.s,v)); }); } return t; }
+
+// ---- 描画 ----
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML = view==="home"?home() : view==="A"?viewA() : view==="Ares"?resA() : view==="Bsel"?viewBsel() : view==="B"?viewB() : resB();
+}
+function fmtD(d){ return new Date(d).toLocaleString("ja-JP",{month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"}); }
+function home(){
+  const ha = R.a.map(r=>`<tr><td>${fmtD(r.d)}</td><td class="n">${Math.round(r.sc*1.25)}点（${r.sc}/80）</td><td class="n">${Math.floor(r.sec/60)}分</td><td>${r.sc>=48?'<span class="pass y">合格基準</span>':'<span class="pass n">あと'+(48-r.sc)+'問</span>'}</td></tr>`).join("");
+  const hb = R.b.map(r=>`<tr><td>${fmtD(r.d)}</td><td class="n">${r.sc}点</td><td class="small">問${r.sel.join("・問")}</td><td>${r.sc>=60?'<span class="pass y">合格基準</span>':'<span class="pass n">あと'+(60-r.sc)+'点</span>'}</td></tr>`).join("");
+  return `
+  <section class="panel">
+    <h2>本番を想定した模擬試験</h2>
+    <p class="small" style="margin:0">応用情報技術者試験の出題形式・配分・時間に合わせたオリジナル問題です。本番（2026年度CBT方式）と同じく、科目Aと科目Bは別々に、時間を計って受験してください。</p>
+  </section>
+  <section class="two">
+    <div class="start a"><b>科目A（旧 午前）</b>
+      <dl class="facts"><dt>時間</dt><dd>150分</dd><dt>出題</dt><dd>80問（四肢択一）すべて解答</dd><dt>配分</dt><dd>テクノロジ50・マネジメント10・ストラテジ20</dd><dt>合格</dt><dd>60点以上（48問以上正解）</dd></dl>
+      <button type="button" class="btn go" data-act="startA">科目Aを開始する</button></div>
+    <div class="start b"><b>科目B（旧 午後）</b>
+      <dl class="facts"><dt>時間</dt><dd>150分</dd><dt>出題</dt><dd>問1（必須）＋問2〜問11から4問選択</dd><dt>形式</dt><dd>記述式（キーボード入力）</dd><dt>合格</dt><dd>60点以上（1問20点・自己採点）</dd></dl>
+      <button type="button" class="btn go" data-act="selB">問題を選んで開始する</button></div>
+  </section>
+  ${ha||hb?`<section class="panel"><h2>受験の記録</h2>
+    ${ha?`<div class="scroll"><table class="stats"><thead><tr><th>科目A 日時</th><th class="n">得点</th><th class="n">時間</th><th>判定</th></tr></thead><tbody>${ha}</tbody></table></div>`:""}
+    ${hb?`<div class="scroll"><table class="stats"><thead><tr><th>科目B 日時</th><th class="n">得点</th><th>選択</th><th>判定</th></tr></thead><tbody>${hb}</tbody></table></div>`:""}
+  </section>`:""}
+  <section class="panel"><p class="muted" style="margin:0">記録はこの端末に保存され、claude.aiにサインインしていればアカウントにも保存されます。問題冊子・解答解説のPDF版もあります。</p></section>`;
+}
+function viewA(){
+  const q = A[S.i], done = S.pick.filter(x=>x!==null).length;
+  return `
+  <section class="panel">
+    <div class="row"><span class="qno">問${q.n} / 80</span><span class="cat k-${kei(q.n)}">${KEI[kei(q.n)]}</span><span class="sp"></span>
+      <button type="button" class="flag" data-act="flag" aria-pressed="${S.flag[S.i]}">${S.flag[S.i]?"★ 見直す":"☆ 見直す"}</button></div>
+    <div class="qtext">${inl(q.q)}</div>
+    <div class="opts">${q.o.map((o,j)=>`<button type="button" class="opt ${S.pick[S.i]===j?"sel":""}" data-pick="${j}"><span class="k">${KANA[j]}</span><span>${inl(o)}</span></button>`).join("")}</div>
+    <div class="nav"><button type="button" class="btn" data-act="prev" ${S.i?"":"disabled"}>前の問題</button>
+      <button type="button" class="btn navy" data-act="askEnd">解答を終了する</button>
+      <button type="button" class="btn go" data-act="next" ${S.i<79?"":"disabled"}>次の問題</button></div>
+    <div id="endArea"></div>
+  </section>
+  <section class="panel"><div class="small">解答済み ${done} / 80　見直し ${S.flag.filter(Boolean).length}</div>
+    <div class="map">${A.map((x,i)=>`<button type="button" data-jump="${i}" class="${S.pick[i]!==null?"done":""} ${S.flag[i]?"fl":""} ${i===S.i?"cur":""}">${i+1}</button>`).join("")}</div></section>`;
+}
+function resA(){
+  const by = {T:[0,0],M:[0,0],S:[0,0]};
+  A.forEach((q,i)=>{ const k=kei(q.n); by[k][1]++; if(S.pick[i]===q.a) by[k][0]++; });
+  return `
+  <section class="panel"><h2>科目A の結果</h2>
+    <div class="row"><span class="big">${Math.round(S.sc*1.25)}<small style="font-size:18px"> 点</small></span><span class="small">${S.sc} / 80 問正解・所要 ${Math.floor(S.sec/60)}分</span>
+      ${S.sc>=48?'<span class="pass y">合格基準に到達</span>':`<span class="pass n">合格基準まであと ${48-S.sc} 問</span>`}</div>
+    <div class="scroll"><table class="stats"><thead><tr><th>系</th><th class="n">正解</th><th class="n">正答率</th></tr></thead><tbody>${["T","M","S"].map(k=>`<tr><td>${KEI[k]}</td><td class="n">${by[k][0]}/${by[k][1]}</td><td class="n">${Math.round(by[k][0]*100/by[k][1])}%</td></tr>`).join("")}</tbody></table></div>
+    <div class="row"><button type="button" class="btn" data-act="home">ホームへ</button></div></section>
+  <section class="panel"><h2>解答と解説</h2>
+    <div class="map">${A.map((q,i)=>`<button type="button" data-goto="${i}" class="${S.pick[i]===q.a?"ok":"ng"}">${i+1}</button>`).join("")}</div>
+    ${A.map((q,i)=>{ const ok=S.pick[i]===q.a; return `<details class="ritem ${ok?"ok":"ng"}" id="r${i}"><summary>${ok?"○":"×"} 問${q.n}　${esc(q.q.slice(0,46))}${q.q.length>46?"…":""}</summary>
+      <div class="small">あなたの解答：${S.pick[i]===null?"未解答":KANA[S.pick[i]]+"　"+esc(q.o[S.pick[i]])}<br>正解：<b>${KANA[q.a]}　${esc(q.o[q.a])}</b></div>
+      <div class="expl">${inl(q.e)}<div class="muted">${esc(q.c)} ／ 学習ノート 第${q.r}章</div></div></details>`; }).join("")}
+  </section>`;
+}
+function viewBsel(){
+  const n = S.sel.size;
+  return `<section class="panel"><h2>科目B 解答する問題を選ぶ</h2>
+    <p class="small" style="margin:0">問1は必須です。問2〜問11から <b>4問</b> を選んでください（選択中 ${n}/4）。試験時間は選択後に始まります。本番では、選択の時間も試験時間に含まれます。</p>
+    <div class="pick">${B.map(p=>p.n===1?`<div class="pk req" aria-pressed="true"><span class="no">問1</span><span class="small">${esc(p.f)}（必須）<br><span class="muted">${esc(p.title)}</span></span></div>`:
+      `<button type="button" class="pk" data-sel="${p.n}" aria-pressed="${S.sel.has(p.n)}"><span class="no">問${p.n}</span><span class="small">${esc(p.f)}<br><span class="muted">${esc(p.title)}</span></span></button>`).join("")}</div>
+    <div class="row"><button type="button" class="btn go" data-act="startB" ${n===4?"":"disabled"}>この5問で開始する</button><button type="button" class="btn" data-act="home">戻る</button></div></section>`;
+}
+function caseHTML(p){
+  return p.body.map(b=> b.h!==undefined?`<h4>${inl(b.h)}</h4>` : b.p!==undefined?`<p>${inl(b.p)}</p>` :
+    b.tb?`<div style="overflow-x:auto"><table>${b.cap?`<caption>${esc(b.cap)}</caption>`:""}<tr>${b.tb[0].map(c=>`<th>${inl(c)}</th>`).join("")}</tr>${b.tb.slice(1).map(r=>`<tr>${r.map(c=>`<td>${inl(c)}</td>`).join("")}</tr>`).join("")}</table></div>` :
+    b.pre?`<pre>${esc(b.pre)}</pre>`:"").join("");
+}
+function viewB(){
+  const n = S.ids[S.cur], p = B[n-1];
+  return `
+  <div class="tabs" role="tablist">${S.ids.map((x,i)=>`<button type="button" class="tab" data-tab="${i}" aria-current="${i===S.cur}">問${x}</button>`).join("")}</div>
+  <section class="panel">
+    <div class="row"><span class="cat k-M" style="background:${n===1?"var(--ng)":"var(--m)"}">${esc(p.f)}${n===1?"（必須）":""}</span><span class="small"><b>${esc(p.title)}</b></span></div>
+    <div class="case">${caseHTML(p)}</div>
+  </section>
+  <section class="panel"><h2>問${n} 解答欄</h2>
+    ${p.qs.map((x,j)=>{ const key=n+"-"+j, v=S.ans[key]||""; return `<div class="bq"><div class="small"><b>${esc(x.l)}</b>　${inl(x.q)}</div>
+      <textarea id="ta-${key}" data-ans="${key}" aria-label="${esc(x.l)}の解答">${esc(v)}</textarea><div class="cnt" id="c-${key}">${[...v].length} 字</div></div>`; }).join("")}
+    <div class="nav"><button type="button" class="btn" data-act="bprev" ${S.cur?"":"disabled"}>前の問題</button>
+      <button type="button" class="btn navy" data-act="askEnd">解答を終了する</button>
+      <button type="button" class="btn go" data-act="bnext" ${S.cur<S.ids.length-1?"":"disabled"}>次の問題</button></div>
+    <div id="endArea"></div>
+  </section>`;
+}
+function resB(){
+  const total = bTotal();
+  return `
+  <section class="panel"><h2>科目B 自己採点</h2>
+    <p class="small" style="margin:0">各設問の解答例と採点のポイントを見ながら、自分の解答に点数を付けてください（配点の範囲で入力）。要素が一部だけ書けている場合は部分点を付けます。</p>
+    <div class="row"><span class="big" id="btotal">${total}<small style="font-size:18px"> 点</small></span><span class="small">／100点・所要 ${Math.floor(S.sec/60)}分</span>
+      <button type="button" class="btn go" data-act="saveB">この得点を記録する</button><button type="button" class="btn" data-act="home">ホームへ</button></div>
+    <div id="savedMsg" class="muted"></div>
+  </section>
+  ${S.ids.map(n=>{ const p=B[n-1]; return `<section class="panel"><h2>問${n} ${esc(p.f)}</h2>
+    ${p.qs.map((x,j)=>{ const key=n+"-"+j; return `<div class="bq"><div class="small"><b>${esc(x.l)}</b>（${x.s}点）　${inl(x.q)}</div>
+      <div class="small">あなたの解答：${S.ans[key]?inl(S.ans[key]):'<span class="muted">（未記入）</span>'}</div>
+      <div class="model"><b>解答例</b>　${inl(x.a)}${x.k.length?`<div class="muted">採点のポイント：${x.k.map(esc).join(" ／ ")}</div>`:""}</div>
+      <label class="selfscore" for="ss-${key}">自己採点 <input type="number" id="ss-${key}" min="0" max="${x.s}" step="1" data-self="${key}" value="${S.self[key]??""}"> / ${x.s}点</label></div>`; }).join("")}
+    ${p.note?`<div class="expl">${inl(p.note)}</div>`:""}</section>`; }).join("")}`;
+}
+
+// ---- 操作 ----
+document.getElementById("homeBtn").addEventListener("click", ()=>{ if (view==="A"||view==="B") return askEnd(); stopTimer(); view="home"; setSubj(""); render(); });
+function askEnd(){
+  const a = document.getElementById("endArea"); if (!a) return;
+  const left = view==="A" ? S.pick.filter(x=>x===null).length : null;
+  a.innerHTML = `<div class="confirm"><span class="small">${left?`未解答が ${left} 問あります。`:""}解答を終了して${view==="A"?"採点":"自己採点"}に進みますか？</span><div class="row"><button type="button" class="btn" data-act="cancelEnd">続ける</button><button type="button" class="btn go" data-act="doEnd">終了する</button></div></div>`;
+  a.scrollIntoView({block:"nearest"});
+}
+document.getElementById("app").addEventListener("click", e=>{
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.pick!==undefined){ S.pick[S.i]=+b.dataset.pick; render(); return; }
+  if (b.dataset.jump!==undefined){ S.i=+b.dataset.jump; render(); scrollTo(0,0); return; }
+  if (b.dataset.goto!==undefined){ const d=document.getElementById("r"+b.dataset.goto); d.open=true; d.scrollIntoView({block:"start"}); return; }
+  if (b.dataset.sel!==undefined){ const n=+b.dataset.sel; if (S.sel.has(n)) S.sel.delete(n); else if (S.sel.size<4) S.sel.add(n); render(); return; }
+  if (b.dataset.tab!==undefined){ S.cur=+b.dataset.tab; render(); scrollTo(0,0); return; }
+  const a = b.dataset.act;
+  if (a==="startA") startA();
+  else if (a==="selB") selectB();
+  else if (a==="startB") startB();
+  else if (a==="next"){ S.i=Math.min(79,S.i+1); render(); scrollTo(0,0); }
+  else if (a==="prev"){ S.i=Math.max(0,S.i-1); render(); scrollTo(0,0); }
+  else if (a==="flag"){ S.flag[S.i]=!S.flag[S.i]; render(); }
+  else if (a==="bnext"){ S.cur++; render(); scrollTo(0,0); }
+  else if (a==="bprev"){ S.cur--; render(); scrollTo(0,0); }
+  else if (a==="askEnd") askEnd();
+  else if (a==="cancelEnd") document.getElementById("endArea").innerHTML="";
+  else if (a==="doEnd"){ view==="A" ? finishA() : finishB(); }
+  else if (a==="saveB"){ R.b=[{d:Date.now(), sc:bTotal(), sel:S.ids, sec:S.sec}].concat(R.b).slice(0,20); persist(); document.getElementById("savedMsg").textContent="記録しました。"; }
+  else if (a==="home"){ stopTimer(); view="home"; setSubj(""); render(); scrollTo(0,0); }
+});
+document.getElementById("app").addEventListener("input", e=>{
+  const t = e.target;
+  if (t.dataset.ans){ S.ans[t.dataset.ans]=t.value; document.getElementById("c-"+t.dataset.ans).textContent=[...t.value].length+" 字"; }
+  if (t.dataset.self){ S.self[t.dataset.self]=t.value; document.getElementById("btotal").innerHTML=bTotal()+'<small style="font-size:18px"> 点</small>'; }
+});
+document.addEventListener("keydown", e=>{
+  if (view!=="A") return;
+  const m = {"1":0,"2":1,"3":2,"4":3}[e.key];
+  if (m!==undefined){ S.pick[S.i]=m; render(); }
+  else if (e.key==="ArrowRight"&&S.i<79){ S.i++; render(); }
+  else if (e.key==="ArrowLeft"&&S.i>0){ S.i--; render(); }
+});
+render();
+</script>

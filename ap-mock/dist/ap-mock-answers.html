@@ -1,0 +1,371 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>応用情報技術者試験 模擬試験 解答・解説</title><style>:root{
+  --navy:#173a63; --navy2:#22508a; --orange:#e8731a; --orange-bg:#fdf3e8;
+  --green:#2e8b57; --green-bg:#e9f5ee; --blue:#2f6db5; --blue-bg:#eef4fb;
+  --purple:#7a4fb0; --purple-bg:#f4effa; --red:#c94040; --red-bg:#fcefef;
+  --ink:#222b38; --sub:#5d6878; --line:#d5dbe5; --pale:#f4f6fa;
+}
+@page{ size:A4; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:"Noto Sans CJK JP","IPAGothic",sans-serif; color:var(--ink); font-size:10pt; line-height:1.78; margin:0; background:#fff; }
+p{ margin:.45em 0 .7em; text-align:justify; }
+strong{ color:var(--navy); }
+em{ font-style:normal; background:linear-gradient(transparent 62%, #ffe08a 62%); }
+code{ font-family:"Noto Sans Mono CJK JP",monospace; background:#eef1f6; padding:0 .25em; border-radius:2px; font-size:.92em; }
+pre{ background:#f5f7fa; border:1px solid var(--line); padding:8px 12px; font-size:8.6pt; line-height:1.55; border-radius:3px; page-break-inside:avoid; white-space:pre-wrap; }
+pre code{ background:none; padding:0; }
+.mark{ font-size:1px; color:#fff; position:absolute; }
+
+/* 表紙 */
+.cover{ page-break-after:always; padding-top:4mm; }
+.cover-hero{ background:linear-gradient(135deg,#173a63 0%,#1f4f86 70%,#24609e 100%); color:#fff; padding:26px 30px 30px; border-radius:2px; position:relative; overflow:hidden; height:330px; }
+.cover-hero:before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.07); left:-60px; top:-70px; }
+.cover-hero:after{ content:""; position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,.06); right:-80px; bottom:-120px; }
+.cover-badge{ display:inline-block; background:var(--orange); color:#fff; font-weight:700; font-size:9pt; padding:3px 14px; border-radius:12px; letter-spacing:.05em; }
+.cover-h1{ font-size:30pt; font-weight:900; line-height:1.25; margin:14px 0 2px; }
+.cover-h1 span{ color:#ffb36b; }
+.cover-h2{ font-size:16pt; font-weight:700; border-top:2px solid rgba(255,255,255,.8); display:inline-block; padding-top:8px; margin-top:8px; }
+.cover-sub{ font-size:9pt; opacity:.9; margin-top:6px; }
+.cover-pills{ margin-top:18px; }
+.cover-pills span{ display:inline-block; font-size:8.5pt; font-weight:700; padding:3px 12px; border-radius:12px; margin-right:6px; }
+.pill-g{ background:#2e9e5b; } .pill-b{ background:#2f78d0; } .pill-o{ background:var(--orange); }
+.cover-art{ position:absolute; right:34px; top:40px; z-index:1; }
+.cover-title2{ text-align:center; margin-top:34px; }
+.cover-title2 .en{ color:var(--navy); font-weight:700; font-size:13pt; }
+.cover-title2 .ja{ color:var(--navy); font-size:24pt; margin:4px 0; }
+.cover-title2 .meta{ color:var(--sub); font-size:10pt; }
+.feature{ background:var(--blue-bg); border:1px solid #d3e0f0; padding:10px 16px; margin-top:26px; }
+.feature h3{ margin:0 0 6px; color:var(--navy); font-size:11pt; }
+.feature h3:before{ content:none; }
+.feature ul{ margin:0; }
+
+/* 目次 */
+.toc{ page-break-after:always; }
+h2.plain{ color:var(--navy); font-size:15pt; border-bottom:2px solid var(--navy); padding-bottom:4px; margin:0 0 6px; }
+h2.plain:before{ content:none; }
+.toc-t{ width:100%; border-collapse:collapse; font-size:9pt; }
+.toc-t td{ padding:7px 10px; border:none; vertical-align:top; }
+.toc-t tr:nth-child(odd){ background:#f1f4f9; }
+.toc-c{ font-weight:700; color:var(--navy); width:38%; }
+.toc-l{ color:var(--sub); font-size:8.3pt; }
+.toc-p{ width:6%; text-align:right; color:var(--navy2); font-weight:700; }
+
+/* 章 */
+.chapter{ page-break-before:always; position:relative; }
+.ch-banner{ display:flex; align-items:stretch; background:var(--navy); color:#fff; margin-bottom:14px; min-height:46px; }
+.ch-no{ background:var(--orange); font-weight:700; font-size:12pt; padding:0 20px; display:flex; align-items:center; }
+.ch-title{ font-size:17pt; font-weight:700; padding:6px 18px; display:flex; align-items:center; }
+h2{ color:var(--navy); font-size:14pt; border-bottom:2px solid var(--navy); padding-bottom:3px; margin:22px 0 10px; page-break-after:avoid; }
+h3{ color:var(--navy); font-size:11pt; margin:16px 0 4px; page-break-after:avoid; }
+h3:before{ content:"■ "; color:var(--blue); }
+h4{ color:var(--navy2); font-size:10pt; margin:10px 0 2px; page-break-after:avoid; }
+h4:before{ content:"▶ "; color:var(--orange); font-size:.85em; }
+ul,ol{ margin:.3em 0 .7em; padding-left:1.6em; }
+li{ margin:.12em 0; }
+ul li::marker{ color:var(--blue); }
+
+/* 表 */
+table{ border-collapse:collapse; margin:8px 0 12px; font-size:9pt; page-break-inside:avoid; }
+th,td{ border:1px solid #c9d2df; padding:4px 8px; vertical-align:top; line-height:1.55; }
+th{ background:#e4ebf5; color:var(--navy); font-weight:700; }
+table.w{ width:100%; }
+.c{ text-align:center; }
+
+/* ボックス */
+.box{ margin:12px 0; padding:8px 14px 6px; border-left:4px solid; page-break-inside:avoid; font-size:9.4pt; }
+.box p{ margin:.25em 0 .45em; }
+.box-h{ margin-bottom:2px; font-weight:700; }
+.box-l{ margin-right:10px; }
+.box-t{ color:var(--ink); }
+.box-point{ background:var(--orange-bg); border-color:var(--orange); } .box-point .box-l{ color:var(--orange); }
+.box-calc{ background:var(--green-bg); border-color:var(--green); } .box-calc .box-l{ color:var(--green); }
+.box-note{ background:var(--blue-bg); border-color:var(--blue); } .box-note .box-l{ color:var(--blue); }
+.box-exam{ background:var(--purple-bg); border-color:var(--purple); } .box-exam .box-l{ color:var(--purple); }
+.box-trap{ background:var(--red-bg); border-color:var(--red); } .box-trap .box-l{ color:var(--red); }
+.box-how{ background:#fff8dc; border-color:#d4a514; } .box-how .box-l{ color:#9a7400; }
+.box table{ background:#fff; }
+
+/* 図解（インフォグラフィック） */
+.fig{ border:1px solid var(--line); background:#fbfcfe; margin:12px 0 16px; page-break-inside:avoid; }
+.fig-t{ background:var(--navy); color:#fff; font-weight:700; padding:6px 14px; font-size:10.5pt; }
+.fig-t small{ display:block; font-weight:400; font-size:7.8pt; opacity:.85; }
+.fig-b{ padding:12px 14px; }
+.flow{ display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:nowrap; }
+.fb{ flex:1; border:2px solid var(--c,#2f6db5); background:#fff; border-radius:7px; padding:6px 6px; text-align:center; font-size:8.6pt; line-height:1.45; min-width:0; }
+.fb b{ display:block; color:var(--c,#2f6db5); font-size:9.5pt; }
+.fb small{ color:var(--sub); font-size:7.6pt; display:block; }
+.arr{ color:var(--orange); font-weight:900; font-size:14pt; flex:0 0 auto; }
+.cards{ display:grid; grid-template-columns:repeat(var(--n,3),1fr); gap:8px; }
+.card{ background:#fff; border:1px solid var(--line); border-top:4px solid var(--c,#2f6db5); padding:6px 9px; font-size:8.5pt; line-height:1.5; border-radius:3px; }
+.card b{ color:var(--c,#2f6db5); display:block; font-size:9.6pt; margin-bottom:2px; }
+.card .big{ font-size:19pt; font-weight:900; color:var(--c,#2f6db5); line-height:1.15; display:block; }
+.c1{ --c:#2f6db5; } .c2{ --c:#2e9e5b; } .c3{ --c:#7a4fb0; } .c4{ --c:#e8731a; } .c5{ --c:#c94040; } .c6{ --c:#178a94; } .c7{ --c:#8a6d1d; }
+.tip{ background:#fff8e1; border:1px solid #f0d27a; border-radius:6px; padding:6px 12px; font-size:8.6pt; margin-top:10px; }
+.tip b{ color:#9a6a00; }
+.fig svg{ display:block; margin:0 auto; max-width:100%; }
+.cap{ text-align:center; font-size:8pt; color:var(--sub); margin-top:4px; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.kmap td,.kmap th{ text-align:center; width:34px; padding:3px; }
+.kmap .on{ background:#ffe1c4; font-weight:700; }
+.kmap .on2{ background:#cfe6ff; font-weight:700; }
+.chips span{ display:inline-block; border:1px solid var(--c,#2f6db5); color:var(--c,#2f6db5); border-radius:10px; padding:0 8px; margin:2px 3px; font-size:8pt; background:#fff; }
+.layer{ display:flex; border:1px solid var(--line); margin-bottom:3px; font-size:8.6pt; }
+.layer .ln{ width:30%; background:var(--c,#2f6db5); color:#fff; font-weight:700; padding:3px 8px; }
+.layer .ld{ padding:3px 8px; background:#fff; flex:1; }
+.summary{ background:#f1f4f9; border:1px solid #cfd8e6; padding:8px 16px; margin-top:16px; page-break-inside:avoid; }
+.summary h3{ margin-top:4px; }
+.summary h3:before{ content:"✔ "; color:var(--green); }
+.box-sum{ background:#f1f4f9; border-color:var(--navy); border-left-width:6px; } .box-sum .box-l{ color:var(--navy); font-size:10.5pt; }
+table{ width:100%; }
+table.kmap{ width:auto; margin-left:auto; margin-right:auto; }
+table.auto{ width:auto; }
+
+table.long{ page-break-inside:auto; }
+table.long tr{ page-break-inside:avoid; }
+table.long thead{ display:table-header-group; }
+.gl td:first-child{ width:30%; font-weight:700; color:var(--navy); }
+/* ===== 模擬試験用 ===== */
+.mq{page-break-inside:avoid;margin:0 0 14px}
+.mq .qn{font-weight:700;color:var(--navy)}
+.mq ol{list-style:none;padding-left:1.4em;margin:.3em 0}
+.mq ol li{text-indent:-1.4em;padding-left:0}
+.ansgrid td,.ansgrid th{text-align:center;padding:3px 4px}
+.pb{page-break-before:always}
+.bcase{font-size:9.6pt}
+.bcase h4:before{content:none}
+.bq{border-left:4px solid var(--navy);background:#f6f8fb;padding:6px 12px;margin:8px 0;page-break-inside:avoid}
+.score td:empty{height:24px}
+</style></head><body><section class="cover">
+  <div class="cover-hero" style="height:300px">
+    <span class="cover-badge">応用情報技術者試験 ／ 本番想定 模擬試験</span>
+    <div class="cover-h1">模擬試験<br><span>解答・解説</span></div>
+    <div class="cover-h2">科目A 正解一覧・解説 ／ 科目B 解答例・採点基準</div>
+    <div class="cover-sub">オリジナル問題 ／ 2026年度 CBT方式（科目A・科目B）の出題形式に準拠</div>
+    <div class="cover-pills"><span class="pill-g">自己採点と振り返り</span></div>
+  </div>
+  <div class="feature">
+    <h3>この冊子について</h3>
+    <ul>
+      <li>本番と同じく、科目Aは問1〜50がテクノロジ系、問51〜60がマネジメント系、問61〜80がストラテジ系の順に並んでいます。</li>
+      <li>科目Bは問1（情報セキュリティ）が必須、問2〜問11の10問から4問を選択します。</li>
+      <li>すべてこの模擬試験のために作成したオリジナル問題です。IPAが公開している過去問題の出題範囲・傾向（令和2〜7年度、シラバスVer.7.2）に合わせています。</li>
+      <li>解いた後は「解答・解説」で採点し、学習ノート・午前クイズアプリ・午後対策シートで弱点を補強してください。</li>
+    </ul>
+  </div>
+</section>
+<section class='toc'><h2 class='plain'>目次</h2><table class='toc-t'><tr><td class='toc-c'>科目A　科目A 正解一覧と採点</td><td class='toc-l'>正解数×1.25点。48問以上で60点（合格基準）</td><td class='toc-p'>3</td></tr><tr><td class='toc-c'>科目A　科目A 解説</td><td class='toc-l'>各問の正解と考え方。学習ノートの対応章を示す</td><td class='toc-p'>4</td></tr><tr><td class='toc-c'>問1　情報セキュリティ 解答例・採点基準</td><td class='toc-l'>ランサムウェア被害を受けた製造業の再発防止策</td><td class='toc-p'>10</td></tr><tr><td class='toc-c'>問2　経営戦略 解答例・採点基準</td><td class='toc-l'>地方スーパーマーケットの事業戦略</td><td class='toc-p'>11</td></tr><tr><td class='toc-c'>問3　プログラミング 解答例・採点基準</td><td class='toc-l'>在庫データの区間集計（累積和）</td><td class='toc-p'>12</td></tr><tr><td class='toc-c'>問4　システムアーキテクチャ 解答例・採点基準</td><td class='toc-l'>Webサービスのクラウド移行と性能設計</td><td class='toc-p'>13</td></tr><tr><td class='toc-c'>問5　ネットワーク 解答例・採点基準</td><td class='toc-l'>本社と営業所を結ぶネットワークの再構築</td><td class='toc-p'>14</td></tr><tr><td class='toc-c'>問6　データベース 解答例・採点基準</td><td class='toc-l'>図書館の貸出管理システム</td><td class='toc-p'>15</td></tr><tr><td class='toc-c'>問7　組込みシステム開発 解答例・採点基準</td><td class='toc-l'>自動給水装置の設計</td><td class='toc-p'>16</td></tr><tr><td class='toc-c'>問8　情報システム開発 解答例・採点基準</td><td class='toc-l'>オンライン予約システムのテスト設計</td><td class='toc-p'>17</td></tr><tr><td class='toc-c'>問9　プロジェクトマネジメント 解答例・採点基準</td><td class='toc-l'>基幹システム刷新プロジェクトの進捗管理</td><td class='toc-p'>18</td></tr><tr><td class='toc-c'>問10　サービスマネジメント 解答例・採点基準</td><td class='toc-l'>社内ヘルプデスクの改善</td><td class='toc-p'>19</td></tr><tr><td class='toc-c'>問11　システム監査 解答例・採点基準</td><td class='toc-l'>経費精算システムの監査</td><td class='toc-p'>20</td></tr><tr><td class='toc-c'>採点　得点の集計と振り返り</td><td class='toc-l'>科目A・科目Bの得点と、次にやること</td><td class='toc-p'>21</td></tr></table></section><section class='chapter' id='00_a_key'><span class='mark'>CHMARK00akeyEND</span><div class='ch-banner'><span class='ch-no'>科目A</span><span class='ch-title'>科目A 正解一覧と採点</span></div><table class='ansgrid'><tr><th>問</th><th>正解</th><th>問</th><th>正解</th><th>問</th><th>正解</th><th>問</th><th>正解</th></tr><tr><td>1</td><td><b>イ</b></td><td>21</td><td><b>ウ</b></td><td>41</td><td><b>ア</b></td><td>61</td><td><b>ア</b></td></tr><tr><td>2</td><td><b>イ</b></td><td>22</td><td><b>エ</b></td><td>42</td><td><b>イ</b></td><td>62</td><td><b>ウ</b></td></tr><tr><td>3</td><td><b>ア</b></td><td>23</td><td><b>ア</b></td><td>43</td><td><b>ウ</b></td><td>63</td><td><b>イ</b></td></tr><tr><td>4</td><td><b>エ</b></td><td>24</td><td><b>イ</b></td><td>44</td><td><b>エ</b></td><td>64</td><td><b>ウ</b></td></tr><tr><td>5</td><td><b>ア</b></td><td>25</td><td><b>エ</b></td><td>45</td><td><b>イ</b></td><td>65</td><td><b>ア</b></td></tr><tr><td>6</td><td><b>エ</b></td><td>26</td><td><b>イ</b></td><td>46</td><td><b>エ</b></td><td>66</td><td><b>イ</b></td></tr><tr><td>7</td><td><b>ウ</b></td><td>27</td><td><b>イ</b></td><td>47</td><td><b>イ</b></td><td>67</td><td><b>ウ</b></td></tr><tr><td>8</td><td><b>イ</b></td><td>28</td><td><b>イ</b></td><td>48</td><td><b>イ</b></td><td>68</td><td><b>ア</b></td></tr><tr><td>9</td><td><b>エ</b></td><td>29</td><td><b>イ</b></td><td>49</td><td><b>エ</b></td><td>69</td><td><b>ア</b></td></tr><tr><td>10</td><td><b>イ</b></td><td>30</td><td><b>ウ</b></td><td>50</td><td><b>イ</b></td><td>70</td><td><b>エ</b></td></tr><tr><td>11</td><td><b>ア</b></td><td>31</td><td><b>ウ</b></td><td>51</td><td><b>ア</b></td><td>71</td><td><b>イ</b></td></tr><tr><td>12</td><td><b>エ</b></td><td>32</td><td><b>イ</b></td><td>52</td><td><b>ア</b></td><td>72</td><td><b>ウ</b></td></tr><tr><td>13</td><td><b>エ</b></td><td>33</td><td><b>エ</b></td><td>53</td><td><b>ウ</b></td><td>73</td><td><b>イ</b></td></tr><tr><td>14</td><td><b>ア</b></td><td>34</td><td><b>イ</b></td><td>54</td><td><b>ウ</b></td><td>74</td><td><b>イ</b></td></tr><tr><td>15</td><td><b>エ</b></td><td>35</td><td><b>イ</b></td><td>55</td><td><b>エ</b></td><td>75</td><td><b>ア</b></td></tr><tr><td>16</td><td><b>ウ</b></td><td>36</td><td><b>エ</b></td><td>56</td><td><b>エ</b></td><td>76</td><td><b>ア</b></td></tr><tr><td>17</td><td><b>イ</b></td><td>37</td><td><b>イ</b></td><td>57</td><td><b>ア</b></td><td>77</td><td><b>イ</b></td></tr><tr><td>18</td><td><b>イ</b></td><td>38</td><td><b>ウ</b></td><td>58</td><td><b>エ</b></td><td>78</td><td><b>エ</b></td></tr><tr><td>19</td><td><b>ア</b></td><td>39</td><td><b>エ</b></td><td>59</td><td><b>ウ</b></td><td>79</td><td><b>ア</b></td></tr><tr><td>20</td><td><b>エ</b></td><td>40</td><td><b>ア</b></td><td>60</td><td><b>エ</b></td><td>80</td><td><b>ア</b></td></tr></table>
+
+<table>
+<thead>
+<tr>
+<th>系</th>
+<th>問題番号</th>
+<th>問題数</th>
+<th>正解数</th>
+<th>目標</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>テクノロジ系</td>
+<td>問1〜問50</td>
+<td>50</td>
+<td></td>
+<td>32問以上</td>
+</tr>
+<tr>
+<td>マネジメント系</td>
+<td>問51〜問60</td>
+<td>10</td>
+<td></td>
+<td>7問以上</td>
+</tr>
+<tr>
+<td>ストラテジ系</td>
+<td>問61〜問80</td>
+<td>20</td>
+<td></td>
+<td>13問以上</td>
+</tr>
+<tr>
+<td>合計</td>
+<td></td>
+<td>80</td>
+<td></td>
+<td>48問以上で合格基準</td>
+</tr>
+</tbody>
+</table></section><section class='chapter' id='01_a_expl'><span class='mark'>CHMARK01aexplEND</span><div class='ch-banner'><span class='ch-no'>科目A</span><span class='ch-title'>科目A 解説</span></div><div class='mq'><span class='qn'>問1　正解 イ</span>　<span class='muted'>（基礎理論／学習ノート 第1章）</span><br>nビットの2の補数の範囲は −2^(n−1)〜2^(n−1)−1。16ビットなら −32,768〜32,767。</div>
+<div class='mq'><span class='qn'>問2　正解 イ</span>　<span class='muted'>（基礎理論／学習ノート 第1章）</span><br>分配法則で A・(B＋B̄) ＝ A・1 ＝ A。カルノー図で見ると、Bの値にかかわらずA＝1の2マスがまとまる。</div>
+<div class='mq'><span class='qn'>問3　正解 ア</span>　<span class='muted'>（基礎理論／学習ノート 第1章）</span><br>利用率ρ＝8/10＝0.8。平均待ち時間＝0.8/0.2×8＝32秒。応答時間＝32＋8＝40秒（＝サービス時間÷(1−ρ)）。</div>
+<div class='mq'><span class='qn'>問4　正解 エ</span>　<span class='muted'>（基礎理論／学習ノート 第1章）</span><br>適合率＝TP/(TP＋FP)。再現率は実際の陽性のうち陽性と予測できた割合、偽陽性率は実際の陰性のうち誤って陽性と予測した割合。</div>
+<div class='mq'><span class='qn'>問5　正解 ア</span>　<span class='muted'>（基礎理論／学習ノート 第1章）</span><br>情報量＝−log₂P＝−log₂(1/8)＝3ビット。起こりにくい事象ほど情報量は大きい。</div>
+<div class='mq'><span class='qn'>問6　正解 エ</span>　<span class='muted'>（アルゴリズム／学習ノート 第2章）</span><br>3を最初に取り出すには1,2,3をすべて積む必要があり、その後は2→1の順にしか取り出せない。よって3,1,2は不可能。</div>
+<div class='mq'><span class='qn'>問7　正解 ウ</span>　<span class='muted'>（アルゴリズム／学習ノート 第2章）</span><br>バブルソートは二重ループでO(n²)。2分探索はO(log n)、ハッシュ探索はO(1)、マージソートはO(n log n)。</div>
+<div class='mq'><span class='qn'>問8　正解 イ</span>　<span class='muted'>（アルゴリズム／学習ノート 第2章）</span><br>f(0)=f(1)=1、f(2)=2、f(3)=3、f(4)=5、f(5)=8（フィボナッチ数）。再帰で同じ計算を繰り返すので、動的計画法で表に記録すると効率的。</div>
+<div class='mq'><span class='qn'>問9　正解 エ</span>　<span class='muted'>（コンピュータ構成／学習ノート 第3章）</span><br>1秒のクロック数16億÷命令数4億＝4クロック/命令。</div>
+<div class='mq'><span class='qn'>問10　正解 イ</span>　<span class='muted'>（コンピュータ構成／学習ノート 第3章）</span><br>主記憶の時間を1とすると 0.05h＋1×(1−h)＝0.24 → 1−0.95h＝0.24 → h＝0.8。</div>
+<div class='mq'><span class='qn'>問11　正解 ア</span>　<span class='muted'>（コンピュータ構成／学習ノート 第3章）</span><br>メモリインタリーブは連続アドレスへのアクセスを並行化する。</div>
+<div class='mq'><span class='qn'>問12　正解 エ</span>　<span class='muted'>（コンピュータ構成／学習ノート 第3章）</span><br>SSDはフラッシュメモリを使う不揮発性の記憶装置。シークや回転待ちはHDDの特徴。</div>
+<div class='mq'><span class='qn'>問13　正解 エ</span>　<span class='muted'>（システム構成／学習ノート 第4章）</span><br>1−(1−0.9)³＝1−0.001＝0.999。0.729は3台直列。0.972は3台中2台以上稼働の場合。</div>
+<div class='mq'><span class='qn'>問14　正解 ア</span>　<span class='muted'>（システム構成／学習ノート 第4章）</span><br>PaaSは実行環境（プラットフォーム）まで提供。IaaSはインフラのみ、SaaSはアプリケーションまで提供。</div>
+<div class='mq'><span class='qn'>問15　正解 エ</span>　<span class='muted'>（システム構成／学習ノート 第4章）</span><br>コールドスタンバイは安価だが切替えに時間がかかる。ホットスタンバイは待機系を起動状態で待たせる。</div>
+<div class='mq'><span class='qn'>問16　正解 ウ</span>　<span class='muted'>（ソフトウェア／学習ノート 第5章）</span><br>1,2,3でフォールト3回。4で最古の1を追い出し4回目[2,3,4]、1で2を追い出し5回目[3,4,1]、2で3を追い出し6回目。</div>
+<div class='mq'><span class='qn'>問17　正解 イ</span>　<span class='muted'>（ソフトウェア／学習ノート 第5章）</span><br>プリエンプション（横取り）。ディスパッチは実行可能タスクにCPUを割り当てること。</div>
+<div class='mq'><span class='qn'>問18　正解 イ</span>　<span class='muted'>（ソフトウェア／学習ノート 第5章）</span><br>増分は前回のバックアップ以降の変更分なので、フルに加えてすべての増分を順に適用する。差分方式なら日曜のフル＋木曜の差分で済む。</div>
+<div class='mq'><span class='qn'>問19　正解 ア</span>　<span class='muted'>（ハードウェア／学習ノート 第3章）</span><br>A NAND A ＝ NOT(A・A) ＝ Ā。NANDだけで任意の論理回路を構成できる。</div>
+<div class='mq'><span class='qn'>問20　正解 エ</span>　<span class='muted'>（ハードウェア／学習ノート 第3章）</span><br>8ビットで256段階。5.12÷256＝0.02V。</div>
+<div class='mq'><span class='qn'>問21　正解 ウ</span>　<span class='muted'>（ハードウェア／学習ノート 第3章）</span><br>ブラシレスDCモーターは長寿命・低騒音。ステッピングモーターはパルス数で回転角を制御する。</div>
+<div class='mq'><span class='qn'>問22　正解 エ</span>　<span class='muted'>（ハードウェア／学習ノート 第3章）</span><br>ウォッチドッグタイマはプログラムの暴走や停止を検出する。</div>
+<div class='mq'><span class='qn'>問23　正解 ア</span>　<span class='muted'>（UI・メディア／学習ノート 第6章）</span><br>CSSで色・配置などのスタイルを指定する。構造（HTML）と見た目（CSS）を分離できる。</div>
+<div class='mq'><span class='qn'>問24　正解 イ</span>　<span class='muted'>（UI・メディア／学習ノート 第6章）</span><br>認知的ウォークスルーは専門家が初心者になったつもりで検証する。思考発話法は利用者に考えを話しながら操作してもらう。</div>
+<div class='mq'><span class='qn'>問25　正解 エ</span>　<span class='muted'>（UI・メディア／学習ノート 第6章）</span><br>MPEG（H.264、H.265など）はフレーム間の差分を利用する。JPEG・PNG・GIFは静止画の形式。</div>
+<div class='mq'><span class='qn'>問26　正解 イ</span>　<span class='muted'>（データベース／学習ノート 第7章）</span><br>主キーは単一の列なので部分関数従属はなく第2正規形。注文番号→顧客番号→顧客名の推移的関数従属があるため第3正規形ではない。</div>
+<div class='mq'><span class='qn'>問27　正解 イ</span>　<span class='muted'>（データベース／学習ノート 第7章）</span><br>集約関数の条件はGROUP BYの後のHAVINGに書く。WHEREはグループ化前の行の条件で、集約関数は使えない。</div>
+<div class='mq'><span class='qn'>問28　正解 イ</span>　<span class='muted'>（データベース／学習ノート 第7章）</span><br>専有（排他）ロック中は他のトランザクションは読取りも更新もできない。共有ロックなら読取りは可能。</div>
+<div class='mq'><span class='qn'>問29　正解 イ</span>　<span class='muted'>（データベース／学習ノート 第7章）</span><br>ロールバックは更新前ログで取り消す。ロールフォワードはバックアップと更新後ログでやり直す。</div>
+<div class='mq'><span class='qn'>問30　正解 ウ</span>　<span class='muted'>（データベース／学習ノート 第7章）</span><br>ETL＝Extract（抽出）・Transform（変換）・Load（書込み）。OLTPは日々の取引処理。</div>
+<div class='mq'><span class='qn'>問31　正解 ウ</span>　<span class='muted'>（ネットワーク／学習ノート 第8章）</span><br>/25は最終オクテットの最上位1ビットまでがネットワーク部。130＝10000010なのでネットワークは10.1.2.128、ホスト部をすべて1にすると10.1.2.255。</div>
+<div class='mq'><span class='qn'>問32　正解 イ</span>　<span class='muted'>（ネットワーク／学習ノート 第8章）</span><br>TCPはコネクション型で確認応答・再送・順序制御を行う。UDPはコネクションレスで高速だが信頼性の制御はしない。</div>
+<div class='mq'><span class='qn'>問33　正解 エ</span>　<span class='muted'>（ネットワーク／学習ノート 第8章）</span><br>AAAAはIPv6、AはIPv4。MXはメールサーバ、PTRは逆引き。</div>
+<div class='mq'><span class='qn'>問34　正解 イ</span>　<span class='muted'>（ネットワーク／学習ノート 第8章）</span><br>500Mバイト＝4,000Mビット。4,000÷50＝80秒。バイトとビットの換算（×8）を忘れない。</div>
+<div class='mq'><span class='qn'>問35　正解 イ</span>　<span class='muted'>（ネットワーク／学習ノート 第8章）</span><br>802.1QはタグVLAN。802.11acは無線LAN、802.3afはPoE、802.1Xはポートベースの認証。</div>
+<div class='mq'><span class='qn'>問36　正解 エ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>SQLインジェクションにはプレースホルダ（バインド機構）が根本的な対策。HTMLエスケープはXSS対策。</div>
+<div class='mq'><span class='qn'>問37　正解 イ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>n(n−1)/2＝20×19÷2＝190。公開鍵暗号方式なら1人1ペアで40個。</div>
+<div class='mq'><span class='qn'>問38　正解 ウ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>衝突発見困難性。一方向性はハッシュ値から元のメッセージを求めることが困難な性質。</div>
+<div class='mq'><span class='qn'>問39　正解 エ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>DMARCはSPF・DKIMの結果に基づく処理方針をDNSで公開する。S/MIMEはメールの暗号化と署名。</div>
+<div class='mq'><span class='qn'>問40　正解 ア</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>DNSリフレクション（アンプ）攻撃はDDoSの一種。オープンリゾルバを放置しないことが対策。</div>
+<div class='mq'><span class='qn'>問41　正解 ア</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>FIDO2はサーバに公開鍵だけを登録するため、サーバから漏えいしてもなりすましに使えない。</div>
+<div class='mq'><span class='qn'>問42　正解 イ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>EDRは端末（エンドポイント）の挙動を監視・対応する。WAFはWebアプリの防御、DLPは情報漏えい防止。</div>
+<div class='mq'><span class='qn'>問43　正解 ウ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>否認防止は「やっていない」と言わせない性質。「アクセス及び使用が可能」は可用性、「正確さ及び完全さ」は完全性、「主張するとおりのもの」は真正性の定義。</div>
+<div class='mq'><span class='qn'>問44　正解 エ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>SBOM（ソフトウェア部品表）。CVSSは脆弱性の深刻度評価、CRLは証明書失効リスト。</div>
+<div class='mq'><span class='qn'>問45　正解 イ</span>　<span class='muted'>（セキュリティ／学習ノート 第9章）</span><br>ランサムウェアは接続中のバックアップも暗号化するため、オフライン・イミュータブル（書換え不可）な複数世代のバックアップが重要（3-2-1ルール）。</div>
+<div class='mq'><span class='qn'>問46　正解 エ</span>　<span class='muted'>（開発技術／学習ノート 第10章）</span><br>弱い順：データ結合＜スタンプ結合＜制御結合＜外部結合＜共通結合＜内容結合。</div>
+<div class='mq'><span class='qn'>問47　正解 イ</span>　<span class='muted'>（開発技術／学習ノート 第10章）</span><br>コンポジション（黒いひし形）。集約（白いひし形）は部分が単独でも存在できる。汎化はis-aの関係。</div>
+<div class='mq'><span class='qn'>問48　正解 イ</span>　<span class='muted'>（開発技術／学習ノート 第10章）</span><br>判定全体の真と偽が1回ずつあればよい。(真,真)で真、(偽,真)で偽。4つすべては複数条件網羅。</div>
+<div class='mq'><span class='qn'>問49　正解 エ</span>　<span class='muted'>（開発技術／学習ノート 第10章）</span><br>レトロスペクティブはプロセスの振り返り。スプリントレビューは成果物を関係者に見せてフィードバックを得る。</div>
+<div class='mq'><span class='qn'>問50　正解 イ</span>　<span class='muted'>（開発技術／学習ノート 第10章）</span><br>リファクタリングは保守性を高める。変更後は回帰テストで振る舞いが変わっていないことを確認する。</div>
+<div class='mq'><span class='qn'>問51　正解 ア</span>　<span class='muted'>（プロジェクトマネジメント／学習ノート 第11章）</span><br>CPI＝EV/AC＝600/750＝0.8、SPI＝EV/PV＝600/800＝0.75。どちらも1未満で、予算超過かつ遅れ。</div>
+<div class='mq'><span class='qn'>問52　正解 ア</span>　<span class='muted'>（プロジェクトマネジメント／学習ノート 第11章）</span><br>全体は4＋5＋2＝11日（A→C→Dがクリティカルパス）。Bは最も早くて4日目終了後に始めて7日目に終わるが、Dの開始（9日目終了時点）までに終わればよいので、余裕は9−7＝2日。</div>
+<div class='mq'><span class='qn'>問53　正解 ウ</span>　<span class='muted'>（プロジェクトマネジメント／学習ノート 第11章）</span><br>WBSの最下位がワークパッケージ。RACIは責任分担、ガントチャートは日程の横棒グラフ。</div>
+<div class='mq'><span class='qn'>問54　正解 ウ</span>　<span class='muted'>（プロジェクトマネジメント／学習ノート 第11章）</span><br>転嫁は保険や契約（定額契約など）で影響を他者に移す。</div>
+<div class='mq'><span class='qn'>問55　正解 エ</span>　<span class='muted'>（サービスマネジメント／学習ノート 第12章）</span><br>問題管理は根本原因の究明と再発防止。回避策で迅速に回復させるのはインシデント管理、変更要求の評価・承認は変更管理、問合せの受付はサービスデスクの活動。</div>
+<div class='mq'><span class='qn'>問56　正解 エ</span>　<span class='muted'>（サービスマネジメント／学習ノート 第12章）</span><br>30日×24時間×60分＝43,200分。×0.001＝43.2分。</div>
+<div class='mq'><span class='qn'>問57　正解 ア</span>　<span class='muted'>（サービスマネジメント／学習ノート 第12章）</span><br>吸気側をコールドアイル、排気側をホットアイルとして分離すると、冷気と暖気が混ざらず効率がよい。</div>
+<div class='mq'><span class='qn'>問58　正解 エ</span>　<span class='muted'>（システム監査／学習ノート 第13章）</span><br>フォローアップで改善状況を確認する。監査人は改善の実施も命令も行わない。</div>
+<div class='mq'><span class='qn'>問59　正解 ウ</span>　<span class='muted'>（システム監査／学習ノート 第13章）</span><br>ITF（Integrated Test Facility）法。テストデータ法は監査人のデータを処理させる、並行シミュレーションは監査人のプログラムと結果を比較する。</div>
+<div class='mq'><span class='qn'>問60　正解 エ</span>　<span class='muted'>（システム監査／学習ノート 第13章）</span><br>職務分掌によって相互けん制を働かせ、不正や誤りを防ぐ。</div>
+<div class='mq'><span class='qn'>問61　正解 ア</span>　<span class='muted'>（システム戦略／学習ノート 第14章）</span><br>As-Isが現状、To-Beが理想像。両者の差（ギャップ）を埋める計画を立てる。</div>
+<div class='mq'><span class='qn'>問62　正解 ウ</span>　<span class='muted'>（システム戦略／学習ノート 第14章）</span><br>APIエコノミーの例：銀行のAPIを使った家計簿アプリ。</div>
+<div class='mq'><span class='qn'>問63　正解 イ</span>　<span class='muted'>（システム企画／学習ノート 第14章）</span><br>共通フレームの企画プロセスでは、経営上のニーズ・課題の確認からシステム化構想を立案する。</div>
+<div class='mq'><span class='qn'>問64　正解 ウ</span>　<span class='muted'>（システム企画／学習ノート 第14章）</span><br>3年で900万円、4年で1,200万円。4年目の途中で回収できる。</div>
+<div class='mq'><span class='qn'>問65　正解 ア</span>　<span class='muted'>（システム企画／学習ノート 第14章）</span><br>評価基準は事前に決め、価格だけでなく技術・実績・体制なども総合的に評価する。</div>
+<div class='mq'><span class='qn'>問66　正解 イ</span>　<span class='muted'>（システム企画／学習ノート 第14章）</span><br>トレーサビリティで要件の漏れや変更の影響範囲がわかる。</div>
+<div class='mq'><span class='qn'>問67　正解 ウ</span>　<span class='muted'>（経営戦略／学習ノート 第15章）</span><br>学習と成長→業務プロセス→顧客→財務という因果関係を戦略マップで表す。</div>
+<div class='mq'><span class='qn'>問68　正解 ア</span>　<span class='muted'>（経営戦略／学習ノート 第15章）</span><br>成熟期は市場が飽和し、差別化やコスト削減が重要。成長期は売上が急拡大し競合が参入する段階。</div>
+<div class='mq'><span class='qn'>問69　正解 ア</span>　<span class='muted'>（経営戦略／学習ノート 第15章）</span><br>ERRCグリッド（取り除く・減らす・増やす・付け加える）で新しい価値を作る。</div>
+<div class='mq'><span class='qn'>問70　正解 エ</span>　<span class='muted'>（技術戦略／学習ノート 第15章）</span><br>ハイプサイクルはガートナー社が示した、技術への期待の推移。</div>
+<div class='mq'><span class='qn'>問71　正解 イ</span>　<span class='muted'>（ビジネスインダストリ／学習ノート 第15章）</span><br>デジタルツインは現実の双子を仮想空間に作り、シミュレーションや予測に使う。</div>
+<div class='mq'><span class='qn'>問72　正解 ウ</span>　<span class='muted'>（ビジネスインダストリ／学習ノート 第15章）</span><br>フリマアプリやネットオークションがCtoC。</div>
+<div class='mq'><span class='qn'>問73　正解 イ</span>　<span class='muted'>（企業活動／学習ノート 第16章）</span><br>1個あたりの限界利益＝2,000−1,200＝800円。400万÷800＝5,000個。</div>
+<div class='mq'><span class='qn'>問74　正解 イ</span>　<span class='muted'>（企業活動／学習ノート 第16章）</span><br>流動比率。高いほど短期の支払能力が高く安全。</div>
+<div class='mq'><span class='qn'>問75　正解 ア</span>　<span class='muted'>（企業活動／学習ノート 第16章）</span><br>特性要因図（フィッシュボーン図）。パレート図は重点項目の把握、散布図は相関、管理図は工程の異常の判断。</div>
+<div class='mq'><span class='qn'>問76　正解 ア</span>　<span class='muted'>（企業活動／学習ノート 第16章）</span><br>制約：2X＋Y≦100、Y≦60。頂点で比較：(50,0)→200万、(20,60)→80＋180＝260万、(0,60)→180万、(40,20)→160＋60＝220万。最大は(20,60)。</div>
+<div class='mq'><span class='qn'>問77　正解 イ</span>　<span class='muted'>（企業活動／学習ノート 第16章）</span><br>コンピテンシーは高業績者の行動特性、メンタリングは先輩による助言・支援。</div>
+<div class='mq'><span class='qn'>問78　正解 エ</span>　<span class='muted'>（法務／学習ノート 第16章）</span><br>準委任は事務処理の遂行が目的で完成責任はない。完成責任があるのは請負契約。指揮命令は受託者が行う。</div>
+<div class='mq'><span class='qn'>問79　正解 ア</span>　<span class='muted'>（法務／学習ノート 第16章）</span><br>不正アクセス禁止法は、なりすましによるログインやセキュリティホールを突いた侵入、他人のID・パスワードの不正な提供などを禁止する。</div>
+<div class='mq'><span class='qn'>問80　正解 ア</span>　<span class='muted'>（法務／学習ノート 第16章）</span><br>著作者人格権は公表権・氏名表示権・同一性保持権で、譲渡できない。複製権は著作財産権。</div></section><section class='chapter' id='101_b_ans'><span class='mark'>CHMARK101bansEND</span><div class='ch-banner'><span class='ch-no'>問1</span><span class='ch-title'>情報セキュリティ 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>他の機器への感染の拡大を防ぐため</td><td>・感染（暗号化）の拡大防止<br>・他の機器・ネットワーク内への広がり</td><td style='text-align:center'>4</td></tr><tr><td>設問2</td><td>多要素認証</td><td>・多要素認証（二要素認証）<br>・ワンタイムパスワード等の所持要素も可</td><td style='text-align:center'>3</td></tr><tr><td>設問3</td><td>利用者IDを速やかに削除</td><td>・退職者の利用者ID（アカウント）の削除・無効化<br>・速やかに</td><td style='text-align:center'>4</td></tr><tr><td>設問4</td><td>LANに接続したNAS上のバックアップも暗号化されてしまったため</td><td>・ネットワークに接続したバックアップも暗号化された<br>・本文(3)の事実を根拠にしている</td><td style='text-align:center'>5</td></tr><tr><td>設問5</td><td>①VPN装置の修正ファームウェアを適用していなかった　②退職者の利用者IDを削除していなかった</td><td>・脆弱性修正（パッチ）の未適用<br>・退職者IDの放置</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>問1は「攻撃の手口→原因→技術的対策→運用的対策」の流れで本文を整理する。設問4のように「本文中の事実を踏まえて」とある場合は、(3)の事実（同じLANのNASも暗号化された）をそのまま根拠にする。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='102_b_ans'><span class='mark'>CHMARK102bansEND</span><div class='ch-banner'><span class='ch-no'>問2</span><span class='ch-title'>経営戦略 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>大手ディスカウントストアの出店：脅威　共働き世帯の増加：機会</td><td>・ディスカウントストア＝脅威<br>・共働き世帯の増加＝機会</td><td style='text-align:center'>4</td></tr><tr><td>設問2</td><td>3,600百万円</td><td>・変動費率0.75<br>・900÷0.25＝3,600</td><td style='text-align:center'>4</td></tr><tr><td>設問3</td><td>4,240百万円</td><td>・(900＋60＋100)÷0.25＝4,240</td><td style='text-align:center'>4</td></tr><tr><td>設問4</td><td>集中戦略（差別化集中）。理由：地元農家との直接取引による新鮮な野菜と総菜という強みを生かせるため</td><td>・集中戦略（差別化集中）<br>・強み（地元産の生鮮・総菜）を生かす<br>・価格競争を避ける</td><td style='text-align:center'>8</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>変動費率＝3,000÷4,000＝0.75、限界利益率0.25。損益分岐点＝固定費÷限界利益率。目標利益があるときは（固定費＋目標利益）÷限界利益率。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='103_b_ans'><span class='mark'>CHMARK103bansEND</span><div class='ch-banner'><span class='ch-no'>問3</span><span class='ch-title'>プログラミング 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>acc[i − 1] ＋ ship[i]</td><td>・直前の累積和に当日の出荷数を足す</td><td style='text-align:center'>5</td></tr><tr><td>設問2</td><td>acc[t] − acc[s − 1]</td><td>・acc[t]からacc[s−1]を引く<br>・s−1 の境界を正しく扱っている</td><td style='text-align:center'>5</td></tr><tr><td>設問3</td><td>13</td><td>・acc[4]−acc[1]＝18−5＝13</td><td style='text-align:center'>4</td></tr><tr><td>設問4</td><td>単純な方法：O(nq)　累積和の方法：O(n＋q)</td><td>・単純な方法 O(nq)<br>・累積和 O(n＋q)（作成O(n)＋問合せO(1)×q）</td><td style='text-align:center'>6</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>設問2の境界：s 日目を含めるために acc[s−1] を引く。acc[s] を引くと s 日目が抜ける（採点講評で頻出の「境界値の誤り」）。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='104_b_ans'><span class='mark'>CHMARK104bansEND</span><div class='ch-banner'><span class='ch-no'>問4</span><span class='ch-title'>システムアーキテクチャ 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>Webサーバ 60%、DBサーバ 48%</td><td>・120×5ms＝600ms→60%<br>・120×4ms＝480ms→48%</td><td style='text-align:center'>4</td></tr><tr><td>設問2</td><td>2台</td><td>・240×5ms＝1,200ms＝120%<br>・120÷60＝2台</td><td style='text-align:center'>4</td></tr><tr><td>設問3</td><td>オートスケール（スケールアウト／スケールインの自動化）</td><td>・オートスケール</td><td style='text-align:center'>3</td></tr><tr><td>設問4</td><td>0.989</td><td>・Web部分 1−0.01²＝0.9999<br>・0.999×0.9999×0.99≒0.9889</td><td style='text-align:center'>5</td></tr><tr><td>設問5</td><td>DBサーバを冗長化して2台構成にする</td><td>・DBサーバ（単一障害点）の冗長化</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>CPU使用率＝処理件数×1件のCPU時間。設問4は 0.999×0.9999×0.99＝0.98891… 単一障害点（DB）を冗長化すると最も効果が大きい。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='105_b_ans'><span class='mark'>CHMARK105bansEND</span><div class='ch-banner'><span class='ch-no'>問5</span><span class='ch-title'>ネットワーク 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>192.168.2.1</td><td>・営業所ルータのLAN側アドレス</td><td style='text-align:center'>3</td></tr><tr><td>設問2</td><td>PC1から営業所ルータまでの通信は正常であること</td><td>・PC1〜営業所ルータ間（営業所LAN内）が正常</td><td style='text-align:center'>4</td></tr><tr><td>設問3</td><td>暗号化されたトンネルで転送されず、本社に届かない</td><td>・トンネル（IPsec）で転送されない<br>・プライベートアドレス宛てでインターネットに出られず届かない</td><td style='text-align:center'>5</td></tr><tr><td>設問4</td><td>198.51.100.20</td><td>・営業所ルータのインターネット側アドレス</td><td style='text-align:center'>4</td></tr><tr><td>設問5</td><td>ブロードキャストアドレス 192.168.3.255、ホスト数 510</td><td>・192.168.3.255<br>・2^9−2＝510</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>pingは「どこまで届くか」で切り分ける。IPsecトンネルでは、内側のパケット（192.168.2.x→192.168.1.10）を暗号化し、外側にルータのグローバルアドレスのヘッダを付ける。/23は第3オクテットの最下位ビットまでホスト部に含むので、192.168.2.0〜192.168.3.255。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='106_b_ans'><span class='mark'>CHMARK106bansEND</span><div class='ch-banner'><span class='ch-no'>問6</span><span class='ch-title'>データベース 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>書誌：資料＝1対多（業務ルール(2)）</td><td>・1対多<br>・根拠(2)</td><td style='text-align:center'>4</td></tr><tr><td>設問2</td><td>a：返却日 IS NULL　b：HAVING　c：資料.ISBN = 書誌.ISBN</td><td>・a 返却日 IS NULL（＝ NULL は誤り）<br>・b HAVING<br>・c ISBNで結合</td><td style='text-align:center'>9</td></tr><tr><td>設問3</td><td>書名を変更する際に複数行を更新する必要があり、不整合が生じるおそれがある</td><td>・冗長なデータによる更新時異状<br>・不整合</td><td style='text-align:center'>4</td></tr><tr><td>設問4</td><td>前者</td><td>・貸出中冊数を利用者ごとに数えるSQL</td><td style='text-align:center'>3</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>NULL の判定は IS NULL。集約関数の条件は HAVING。結合条件は外部キーと参照先の主キーを等号で結ぶ。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='107_b_ans'><span class='mark'>CHMARK107bansEND</span><div class='ch-banner'><span class='ch-no'>問7</span><span class='ch-title'>組込みシステム開発 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>a：給水　b：休止　c：異常</td><td>・a 測定値＜しきい値→給水<br>・b 給水完了→休止<br>・c 水位空→異常</td><td style='text-align:center'>6</td></tr><tr><td>設問2</td><td>計測 240秒、給水 20秒</td><td>・48回×5秒＝240秒<br>・2回×10秒＝20秒</td><td style='text-align:center'>4</td></tr><tr><td>設問3</td><td>0.11mA</td><td>・(15×240＋200×20＋0.02×86,140)÷86,400≒0.108</td><td style='text-align:center'>6</td></tr><tr><td>設問4</td><td>水がない状態でポンプを空運転させないため</td><td>・空運転（故障）の防止</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>消費電流量（mA・秒）を状態ごとに足して、1日の秒数で割る。15×240＝3,600、200×20＝4,000、0.02×86,140≒1,723、合計9,323÷86,400≒0.108。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='108_b_ans'><span class='mark'>CHMARK108bansEND</span><div class='ch-banner'><span class='ch-no'>問8</span><span class='ch-title'>情報システム開発 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>0、1、9、10、20、21</td><td>・範囲の境界0・1・20・21<br>・割引の境界9・10</td><td style='text-align:center'>6</td></tr><tr><td>設問2</td><td>7,200円</td><td>・3,000×3×0.8＝7,200</td><td style='text-align:center'>3</td></tr><tr><td>設問3</td><td>ドライバ</td><td>・ドライバ（上位の代役）</td><td style='text-align:center'>3</td></tr><tr><td>設問4</td><td>回帰テスト（リグレッションテスト）</td><td>・回帰テスト</td><td style='text-align:center'>3</td></tr><tr><td>設問5</td><td>7と8。理由：割引の境界が8人に変わったため</td><td>・7・8<br>・割引条件の境界の変更</td><td style='text-align:center'>5</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>限界値分析は境界の両側。上位モジュールの代役はドライバ、下位の代役はスタブ。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='109_b_ans'><span class='mark'>CHMARK109bansEND</span><div class='ch-banner'><span class='ch-no'>問9</span><span class='ch-title'>プロジェクトマネジメント 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>SV＝−600万円、CPI＝0.8</td><td>・SV＝EV−PV＝−600<br>・CPI＝EV/AC＝0.8</td><td style='text-align:center'>4</td></tr><tr><td>設問2</td><td>7,500万円</td><td>・6,000÷0.8＝7,500</td><td style='text-align:center'>3</td></tr><tr><td>設問3</td><td>ファストトラッキング。リスク：前工程の変更による手戻りが増える</td><td>・ファストトラッキング<br>・手戻りのリスク</td><td style='text-align:center'>5</td></tr><tr><td>設問4</td><td>要件の追加・変更の受付期限と、承認する手続</td><td>・受付期限（締切）<br>・承認手続・優先順位の決め方</td><td style='text-align:center'>4</td></tr><tr><td>設問5</td><td>予算の超過はPMの権限を超える判断だから</td><td>・PMの権限を超える<br>・承認権限を持つ組織の判断が必要</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>SV＝EV−PV、CPI＝EV/AC、EAC＝BAC/CPI。重要な意思決定（予算・スコープ・期限の変更）は、承認権限を持つ組織（ステアリングコミッティ）に諮るのがPMの基本。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='110_b_ans'><span class='mark'>CHMARK110bansEND</span><div class='ch-banner'><span class='ch-no'>問10</span><span class='ch-title'>サービスマネジメント 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>3人</td><td>・1,800×12分＝21,600分＝360時間/月<br>・1人 6時間×20日＝120時間<br>・360÷120＝3人</td><td style='text-align:center'>5</td></tr><tr><td>設問2</td><td>2人</td><td>・1,080件×12分＝216時間<br>・216÷120＝1.8→2人</td><td style='text-align:center'>4</td></tr><tr><td>設問3</td><td>根本原因が除去されず、障害が再発し続ける</td><td>・根本原因が不明<br>・再発</td><td style='text-align:center'>4</td></tr><tr><td>設問4</td><td>ア、ウ</td><td>・ア 根本原因の調査<br>・ウ 既知の誤りの記録</td><td style='text-align:center'>4</td></tr><tr><td>設問5</td><td>SLA（サービスレベル合意書）</td><td>・SLA</td><td style='text-align:center'>3</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>要員数は「総対応時間÷1人の対応可能時間」を切り上げ。再起動はインシデント管理の回避策で、問題管理は根本原因の特定と再発防止。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='111_b_ans'><span class='mark'>CHMARK111bansEND</span><div class='ch-banner'><span class='ch-no'>問11</span><span class='ch-title'>システム監査 解答例・採点基準</span></div><table><tr><th style='width:11%'>設問</th><th style='width:38%'>解答例</th><th>採点のポイント</th><th style='width:7%'>配点</th></tr><tr><td>設問1</td><td>申請者が自分を代理承認者に指定し、自分の申請を承認して不正に経費を受け取るリスク</td><td>・自己承認<br>・不正な経費の支払</td><td style='text-align:center'>5</td></tr><tr><td>設問2</td><td>承認記録を閲覧し、申請者と承認者が同一の申請がないかを確かめる</td><td>・承認記録（ログ）の閲覧・抽出<br>・申請者＝承認者の申請の有無</td><td style='text-align:center'>5</td></tr><tr><td>設問3</td><td>確認済みの記録をサンプリングで閲覧し、全件の照合が実施されているかを確かめる</td><td>・確認の実施記録（チェック記録）<br>・サンプリング・閲覧<br>・説明だけでなく記録で裏付ける</td><td style='text-align:center'>6</td></tr><tr><td>設問4</td><td>イ</td><td>・イ（監査人は改善を提案する立場）</td><td style='text-align:center'>4</td></tr><tr><td colspan='3' style='text-align:right'>合計</td><td style='text-align:center'>20</td></tr></table>
+
+<div class="box box-note">
+<div class="box-h"><span class="box-l">用語メモ</span><span class="box-t">解説</span></div>
+<p>監査手続は「何の記録で（証拠）」「何を確かめるか（監査要点）」をセットで書く。ヒアリングの説明は、記録で裏付ける。監査人は改善の実施・命令はしない。</p>
+</div>
+<p>自己採点：　　　　点 ／ 20点</p></section><section class='chapter' id='199_score'><span class='mark'>CHMARK199scoreEND</span><div class='ch-banner'><span class='ch-no'>採点</span><span class='ch-title'>得点の集計と振り返り</span></div><table>
+<thead>
+<tr>
+<th>科目</th>
+<th>得点</th>
+<th>合格基準</th>
+<th>判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科目A</td>
+<td>　　点（正解数　　×1.25）</td>
+<td>60点</td>
+<td></td>
+</tr>
+<tr>
+<td>科目B</td>
+<td>　　点（問1：　　＋選択4問：　　）</td>
+<td>60点</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="box box-how">
+<div class="box-h"><span class="box-l">解き方の型</span><span class="box-t">得点別の次の一手</span></div>
+<p><strong>科目Aが60点未満</strong>：正解数が少なかった系の章を学習ノートで読み直し、午前クイズアプリの「分野別演習」で弱点分野を繰り返す。<br />
+<strong>科目Bが60点未満</strong>：間違えた設問を午後対策シートの「間違えた理由の分類（A〜F）」で分類し、最も多い分類の対策から取り組む。<br />
+<strong>両方60点以上</strong>：IPAの最新の過去問題で、同じ条件で解いて得点が安定するか確認する。</p>
+</div></section></body></html>

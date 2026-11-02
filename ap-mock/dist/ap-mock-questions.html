@@ -1,0 +1,457 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>応用情報技術者試験 模擬試験 問題冊子</title><style>:root{
+  --navy:#173a63; --navy2:#22508a; --orange:#e8731a; --orange-bg:#fdf3e8;
+  --green:#2e8b57; --green-bg:#e9f5ee; --blue:#2f6db5; --blue-bg:#eef4fb;
+  --purple:#7a4fb0; --purple-bg:#f4effa; --red:#c94040; --red-bg:#fcefef;
+  --ink:#222b38; --sub:#5d6878; --line:#d5dbe5; --pale:#f4f6fa;
+}
+@page{ size:A4; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ font-family:"Noto Sans CJK JP","IPAGothic",sans-serif; color:var(--ink); font-size:10pt; line-height:1.78; margin:0; background:#fff; }
+p{ margin:.45em 0 .7em; text-align:justify; }
+strong{ color:var(--navy); }
+em{ font-style:normal; background:linear-gradient(transparent 62%, #ffe08a 62%); }
+code{ font-family:"Noto Sans Mono CJK JP",monospace; background:#eef1f6; padding:0 .25em; border-radius:2px; font-size:.92em; }
+pre{ background:#f5f7fa; border:1px solid var(--line); padding:8px 12px; font-size:8.6pt; line-height:1.55; border-radius:3px; page-break-inside:avoid; white-space:pre-wrap; }
+pre code{ background:none; padding:0; }
+.mark{ font-size:1px; color:#fff; position:absolute; }
+
+/* 表紙 */
+.cover{ page-break-after:always; padding-top:4mm; }
+.cover-hero{ background:linear-gradient(135deg,#173a63 0%,#1f4f86 70%,#24609e 100%); color:#fff; padding:26px 30px 30px; border-radius:2px; position:relative; overflow:hidden; height:330px; }
+.cover-hero:before{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,.07); left:-60px; top:-70px; }
+.cover-hero:after{ content:""; position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(255,255,255,.06); right:-80px; bottom:-120px; }
+.cover-badge{ display:inline-block; background:var(--orange); color:#fff; font-weight:700; font-size:9pt; padding:3px 14px; border-radius:12px; letter-spacing:.05em; }
+.cover-h1{ font-size:30pt; font-weight:900; line-height:1.25; margin:14px 0 2px; }
+.cover-h1 span{ color:#ffb36b; }
+.cover-h2{ font-size:16pt; font-weight:700; border-top:2px solid rgba(255,255,255,.8); display:inline-block; padding-top:8px; margin-top:8px; }
+.cover-sub{ font-size:9pt; opacity:.9; margin-top:6px; }
+.cover-pills{ margin-top:18px; }
+.cover-pills span{ display:inline-block; font-size:8.5pt; font-weight:700; padding:3px 12px; border-radius:12px; margin-right:6px; }
+.pill-g{ background:#2e9e5b; } .pill-b{ background:#2f78d0; } .pill-o{ background:var(--orange); }
+.cover-art{ position:absolute; right:34px; top:40px; z-index:1; }
+.cover-title2{ text-align:center; margin-top:34px; }
+.cover-title2 .en{ color:var(--navy); font-weight:700; font-size:13pt; }
+.cover-title2 .ja{ color:var(--navy); font-size:24pt; margin:4px 0; }
+.cover-title2 .meta{ color:var(--sub); font-size:10pt; }
+.feature{ background:var(--blue-bg); border:1px solid #d3e0f0; padding:10px 16px; margin-top:26px; }
+.feature h3{ margin:0 0 6px; color:var(--navy); font-size:11pt; }
+.feature h3:before{ content:none; }
+.feature ul{ margin:0; }
+
+/* 目次 */
+.toc{ page-break-after:always; }
+h2.plain{ color:var(--navy); font-size:15pt; border-bottom:2px solid var(--navy); padding-bottom:4px; margin:0 0 6px; }
+h2.plain:before{ content:none; }
+.toc-t{ width:100%; border-collapse:collapse; font-size:9pt; }
+.toc-t td{ padding:7px 10px; border:none; vertical-align:top; }
+.toc-t tr:nth-child(odd){ background:#f1f4f9; }
+.toc-c{ font-weight:700; color:var(--navy); width:38%; }
+.toc-l{ color:var(--sub); font-size:8.3pt; }
+.toc-p{ width:6%; text-align:right; color:var(--navy2); font-weight:700; }
+
+/* 章 */
+.chapter{ page-break-before:always; position:relative; }
+.ch-banner{ display:flex; align-items:stretch; background:var(--navy); color:#fff; margin-bottom:14px; min-height:46px; }
+.ch-no{ background:var(--orange); font-weight:700; font-size:12pt; padding:0 20px; display:flex; align-items:center; }
+.ch-title{ font-size:17pt; font-weight:700; padding:6px 18px; display:flex; align-items:center; }
+h2{ color:var(--navy); font-size:14pt; border-bottom:2px solid var(--navy); padding-bottom:3px; margin:22px 0 10px; page-break-after:avoid; }
+h3{ color:var(--navy); font-size:11pt; margin:16px 0 4px; page-break-after:avoid; }
+h3:before{ content:"■ "; color:var(--blue); }
+h4{ color:var(--navy2); font-size:10pt; margin:10px 0 2px; page-break-after:avoid; }
+h4:before{ content:"▶ "; color:var(--orange); font-size:.85em; }
+ul,ol{ margin:.3em 0 .7em; padding-left:1.6em; }
+li{ margin:.12em 0; }
+ul li::marker{ color:var(--blue); }
+
+/* 表 */
+table{ border-collapse:collapse; margin:8px 0 12px; font-size:9pt; page-break-inside:avoid; }
+th,td{ border:1px solid #c9d2df; padding:4px 8px; vertical-align:top; line-height:1.55; }
+th{ background:#e4ebf5; color:var(--navy); font-weight:700; }
+table.w{ width:100%; }
+.c{ text-align:center; }
+
+/* ボックス */
+.box{ margin:12px 0; padding:8px 14px 6px; border-left:4px solid; page-break-inside:avoid; font-size:9.4pt; }
+.box p{ margin:.25em 0 .45em; }
+.box-h{ margin-bottom:2px; font-weight:700; }
+.box-l{ margin-right:10px; }
+.box-t{ color:var(--ink); }
+.box-point{ background:var(--orange-bg); border-color:var(--orange); } .box-point .box-l{ color:var(--orange); }
+.box-calc{ background:var(--green-bg); border-color:var(--green); } .box-calc .box-l{ color:var(--green); }
+.box-note{ background:var(--blue-bg); border-color:var(--blue); } .box-note .box-l{ color:var(--blue); }
+.box-exam{ background:var(--purple-bg); border-color:var(--purple); } .box-exam .box-l{ color:var(--purple); }
+.box-trap{ background:var(--red-bg); border-color:var(--red); } .box-trap .box-l{ color:var(--red); }
+.box-how{ background:#fff8dc; border-color:#d4a514; } .box-how .box-l{ color:#9a7400; }
+.box table{ background:#fff; }
+
+/* 図解（インフォグラフィック） */
+.fig{ border:1px solid var(--line); background:#fbfcfe; margin:12px 0 16px; page-break-inside:avoid; }
+.fig-t{ background:var(--navy); color:#fff; font-weight:700; padding:6px 14px; font-size:10.5pt; }
+.fig-t small{ display:block; font-weight:400; font-size:7.8pt; opacity:.85; }
+.fig-b{ padding:12px 14px; }
+.flow{ display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:nowrap; }
+.fb{ flex:1; border:2px solid var(--c,#2f6db5); background:#fff; border-radius:7px; padding:6px 6px; text-align:center; font-size:8.6pt; line-height:1.45; min-width:0; }
+.fb b{ display:block; color:var(--c,#2f6db5); font-size:9.5pt; }
+.fb small{ color:var(--sub); font-size:7.6pt; display:block; }
+.arr{ color:var(--orange); font-weight:900; font-size:14pt; flex:0 0 auto; }
+.cards{ display:grid; grid-template-columns:repeat(var(--n,3),1fr); gap:8px; }
+.card{ background:#fff; border:1px solid var(--line); border-top:4px solid var(--c,#2f6db5); padding:6px 9px; font-size:8.5pt; line-height:1.5; border-radius:3px; }
+.card b{ color:var(--c,#2f6db5); display:block; font-size:9.6pt; margin-bottom:2px; }
+.card .big{ font-size:19pt; font-weight:900; color:var(--c,#2f6db5); line-height:1.15; display:block; }
+.c1{ --c:#2f6db5; } .c2{ --c:#2e9e5b; } .c3{ --c:#7a4fb0; } .c4{ --c:#e8731a; } .c5{ --c:#c94040; } .c6{ --c:#178a94; } .c7{ --c:#8a6d1d; }
+.tip{ background:#fff8e1; border:1px solid #f0d27a; border-radius:6px; padding:6px 12px; font-size:8.6pt; margin-top:10px; }
+.tip b{ color:#9a6a00; }
+.fig svg{ display:block; margin:0 auto; max-width:100%; }
+.cap{ text-align:center; font-size:8pt; color:var(--sub); margin-top:4px; }
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.kmap td,.kmap th{ text-align:center; width:34px; padding:3px; }
+.kmap .on{ background:#ffe1c4; font-weight:700; }
+.kmap .on2{ background:#cfe6ff; font-weight:700; }
+.chips span{ display:inline-block; border:1px solid var(--c,#2f6db5); color:var(--c,#2f6db5); border-radius:10px; padding:0 8px; margin:2px 3px; font-size:8pt; background:#fff; }
+.layer{ display:flex; border:1px solid var(--line); margin-bottom:3px; font-size:8.6pt; }
+.layer .ln{ width:30%; background:var(--c,#2f6db5); color:#fff; font-weight:700; padding:3px 8px; }
+.layer .ld{ padding:3px 8px; background:#fff; flex:1; }
+.summary{ background:#f1f4f9; border:1px solid #cfd8e6; padding:8px 16px; margin-top:16px; page-break-inside:avoid; }
+.summary h3{ margin-top:4px; }
+.summary h3:before{ content:"✔ "; color:var(--green); }
+.box-sum{ background:#f1f4f9; border-color:var(--navy); border-left-width:6px; } .box-sum .box-l{ color:var(--navy); font-size:10.5pt; }
+table{ width:100%; }
+table.kmap{ width:auto; margin-left:auto; margin-right:auto; }
+table.auto{ width:auto; }
+
+table.long{ page-break-inside:auto; }
+table.long tr{ page-break-inside:avoid; }
+table.long thead{ display:table-header-group; }
+.gl td:first-child{ width:30%; font-weight:700; color:var(--navy); }
+/* ===== 模擬試験用 ===== */
+.mq{page-break-inside:avoid;margin:0 0 14px}
+.mq .qn{font-weight:700;color:var(--navy)}
+.mq ol{list-style:none;padding-left:1.4em;margin:.3em 0}
+.mq ol li{text-indent:-1.4em;padding-left:0}
+.ansgrid td,.ansgrid th{text-align:center;padding:3px 4px}
+.pb{page-break-before:always}
+.bcase{font-size:9.6pt}
+.bcase h4:before{content:none}
+.bq{border-left:4px solid var(--navy);background:#f6f8fb;padding:6px 12px;margin:8px 0;page-break-inside:avoid}
+.score td:empty{height:24px}
+</style></head><body><section class="cover">
+  <div class="cover-hero" style="height:300px">
+    <span class="cover-badge">応用情報技術者試験 ／ 本番想定 模擬試験</span>
+    <div class="cover-h1">模擬試験<br><span>問題冊子</span></div>
+    <div class="cover-h2">科目A（80問・150分）／ 科目B（11問中5問・150分）</div>
+    <div class="cover-sub">オリジナル問題 ／ 2026年度 CBT方式（科目A・科目B）の出題形式に準拠</div>
+    <div class="cover-pills"><span class="pill-g">本番と同じ形式・配分・時間</span></div>
+  </div>
+  <div class="feature">
+    <h3>この冊子について</h3>
+    <ul>
+      <li>本番と同じく、科目Aは問1〜50がテクノロジ系、問51〜60がマネジメント系、問61〜80がストラテジ系の順に並んでいます。</li>
+      <li>科目Bは問1（情報セキュリティ）が必須、問2〜問11の10問から4問を選択します。</li>
+      <li>すべてこの模擬試験のために作成したオリジナル問題です。IPAが公開している過去問題の出題範囲・傾向（令和2〜7年度、シラバスVer.7.2）に合わせています。</li>
+      <li>解いた後は「解答・解説」で採点し、学習ノート・午前クイズアプリ・午後対策シートで弱点を補強してください。</li>
+    </ul>
+  </div>
+</section>
+<section class='toc'><h2 class='plain'>目次</h2><table class='toc-t'><tr><td class='toc-c'>受験上の注意</td><td class='toc-l'>試験時間・出題数・解答方法・合格基準</td><td class='toc-p'>3</td></tr><tr><td class='toc-c'>科目A　科目A 問題（問1〜問80）</td><td class='toc-l'>試験時間150分・80問すべて解答・四肢択一</td><td class='toc-p'>4</td></tr><tr><td class='toc-c'>科目A　科目A 解答用紙</td><td class='toc-l'>ア〜エを記入する</td><td class='toc-p'>18</td></tr><tr><td class='toc-c'>問1　情報セキュリティ（必須）</td><td class='toc-l'>ランサムウェア被害を受けた製造業の再発防止策</td><td class='toc-p'>19</td></tr><tr><td class='toc-c'>問2　経営戦略（選択）</td><td class='toc-l'>地方スーパーマーケットの事業戦略</td><td class='toc-p'>20</td></tr><tr><td class='toc-c'>問3　プログラミング（選択）</td><td class='toc-l'>在庫データの区間集計（累積和）</td><td class='toc-p'>21</td></tr><tr><td class='toc-c'>問4　システムアーキテクチャ（選択）</td><td class='toc-l'>Webサービスのクラウド移行と性能設計</td><td class='toc-p'>22</td></tr><tr><td class='toc-c'>問5　ネットワーク（選択）</td><td class='toc-l'>本社と営業所を結ぶネットワークの再構築</td><td class='toc-p'>23</td></tr><tr><td class='toc-c'>問6　データベース（選択）</td><td class='toc-l'>図書館の貸出管理システム</td><td class='toc-p'>24</td></tr><tr><td class='toc-c'>問7　組込みシステム開発（選択）</td><td class='toc-l'>自動給水装置の設計</td><td class='toc-p'>25</td></tr><tr><td class='toc-c'>問8　情報システム開発（選択）</td><td class='toc-l'>オンライン予約システムのテスト設計</td><td class='toc-p'>26</td></tr><tr><td class='toc-c'>問9　プロジェクトマネジメント（選択）</td><td class='toc-l'>基幹システム刷新プロジェクトの進捗管理</td><td class='toc-p'>27</td></tr><tr><td class='toc-c'>問10　サービスマネジメント（選択）</td><td class='toc-l'>社内ヘルプデスクの改善</td><td class='toc-p'>28</td></tr><tr><td class='toc-c'>問11　システム監査（選択）</td><td class='toc-l'>経費精算システムの監査</td><td class='toc-p'>29</td></tr><tr><td class='toc-c'>科目B　科目B 解答用紙</td><td class='toc-l'>選択した問題の番号を記入し、設問ごとに解答を書く</td><td class='toc-p'>30</td></tr></table></section><section class='chapter' id='00_guide'><span class='mark'>CHMARK00guideEND</span><div class='ch-banner plain-banner'><span class='ch-title'>受験上の注意</span></div><p>この模擬試験は、応用情報技術者試験の出題形式・配分・時間に合わせて作成した <strong>オリジナル問題</strong> です（IPAの過去問題の問題文ではありません）。本番と同じ条件で解き、別冊の「解答・解説」で採点してください。</p>
+<table>
+<thead>
+<tr>
+<th>科目</th>
+<th>試験時間</th>
+<th>出題数・解答数</th>
+<th>出題形式</th>
+<th>合格基準</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科目A（旧 午前）</td>
+<td>150分</td>
+<td>80問すべて解答</td>
+<td>多肢選択式（四肢択一）</td>
+<td>100点満点中60点以上</td>
+</tr>
+<tr>
+<td>科目B（旧 午後）</td>
+<td>150分</td>
+<td>11問中、問1（必須）＋問2〜問11から4問を選択</td>
+<td>記述式</td>
+<td>100点満点中60点以上</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>科目Aは1問1.25点です。巻末の解答用紙に、ア〜エのいずれかを記入してください。</li>
+<li>科目Bは1問20点です。選択した問題の番号を解答用紙の選択欄に記入してください（5問以上選択した場合は、はじめの4問を採点の対象とします）。</li>
+<li>字数の指定がある設問は、句読点も1字に数えます。</li>
+<li>本番（2026年度CBT方式）では、科目Aと科目Bは別の日に実施されます。この模擬試験でも、できれば別の日に、時間を計って解いてください。</li>
+</ul>
+<div class="box box-point">
+<div class="box-h"><span class="box-l">ポイント</span><span class="box-t">おすすめの使い方</span></div>
+<p>科目A：時計を150分にセットし、1周目は迷った問題に印を付けて先へ進む → 2周目で印の問題を見直す。科目B：最初の5分で選択する4問を決めてから解き始める。</p>
+</div></section><section class='chapter' id='01_a'><span class='mark'>CHMARK01aEND</span><div class='ch-banner'><span class='ch-no'>科目A</span><span class='ch-title'>科目A 問題（問1〜問80）</span></div><p class='muted'>次の各問に対する解答を、解答群の中から一つ選べ。</p>
+<div class='mq'><span class='qn'>問1</span>　16ビットの2の補数表現で表せる整数の最小値はどれか。<ol><li>ア　−65,535</li><li>イ　−32,768</li><li>ウ　−32,767</li><li>エ　−65,536</li></ol></div>
+<div class='mq'><span class='qn'>問2</span>　論理式 A・B ＋ A・B̄ を簡単にしたものはどれか。<ol><li>ア　A・B</li><li>イ　A</li><li>ウ　B</li><li>エ　A＋B</li></ol></div>
+<div class='mq'><span class='qn'>問3</span>　M/M/1の待ち行列モデルで、平均到着間隔が10秒、平均サービス時間が8秒のとき、平均応答時間（待ち時間＋サービス時間）は何秒か。<ol><li>ア　40</li><li>イ　32</li><li>ウ　8</li><li>エ　50</li></ol></div>
+<div class='mq'><span class='qn'>問4</span>　2クラス分類で、陽性と予測したもののうち実際に陽性だったものの割合を表す指標はどれか。<ol><li>ア　特異度</li><li>イ　再現率</li><li>ウ　偽陽性率</li><li>エ　適合率</li></ol></div>
+<div class='mq'><span class='qn'>問5</span>　出現確率が1/8の事象が起きたことを知ったときに得られる情報量は何ビットか。<ol><li>ア　3</li><li>イ　8</li><li>ウ　0.125</li><li>エ　1/8</li></ol></div>
+<div class='mq'><span class='qn'>問6</span>　空のスタックに 1, 2, 3 の順でデータを入れる。各データについてPUSHとPOPを1回ずつ任意のタイミングで行うとき、取り出す順序として得られないものはどれか。<ol><li>ア　2, 1, 3</li><li>イ　1, 2, 3</li><li>ウ　3, 2, 1</li><li>エ　3, 1, 2</li></ol></div>
+<div class='mq'><span class='qn'>問7</span>　要素数nの配列に対する処理のうち、計算量がO(n²)になるものはどれか。<ol><li>ア　マージソート</li><li>イ　ハッシュ表による探索</li><li>ウ　バブルソート（平均）</li><li>エ　2分探索</li></ol></div>
+<div class='mq'><span class='qn'>問8</span>　関数 f(n) を「n ≦ 1 なら1を返し、それ以外は f(n−1) ＋ f(n−2) を返す」と定義する。f(5) の値はどれか。<ol><li>ア　15</li><li>イ　8</li><li>ウ　5</li><li>エ　13</li></ol></div>
+<div class='mq'><span class='qn'>問9</span>　動作周波数1.6GHzのCPUが、1秒間に4億回の命令を実行するとき、平均CPIはどれか。<ol><li>ア　0.25</li><li>イ　2.5</li><li>ウ　6.4</li><li>エ　4</li></ol></div>
+<div class='mq'><span class='qn'>問10</span>　キャッシュメモリのアクセス時間が主記憶の1/20で、実効アクセス時間が主記憶のアクセス時間の24%になるとき、ヒット率は何%か。<ol><li>ア　90</li><li>イ　80</li><li>ウ　95</li><li>エ　76</li></ol></div>
+<div class='mq'><span class='qn'>問11</span>　主記憶を複数のバンクに分け、連続したアドレスを異なるバンクに割り当てて、並行してアクセスすることで高速化する方式はどれか。<ol><li>ア　メモリインタリーブ</li><li>イ　ライトバック</li><li>ウ　仮想記憶</li><li>エ　キャッシュメモリ</li></ol></div>
+<div class='mq'><span class='qn'>問12</span>　SSDに関する記述として、適切なものはどれか。<ol><li>ア　回転待ち時間がアクセス時間の大部分を占める</li><li>イ　磁気ヘッドのシーク動作が必要である</li><li>ウ　揮発性のため電源を切るとデータが消える</li><li>エ　書換え回数に上限があるため、ウェアレベリングで書込みを分散させる</li></ol></div>
+<div class='mq'><span class='qn'>問13</span>　稼働率0.9の装置を3台並列に接続し、少なくとも1台が稼働していればよいシステムの稼働率はどれか。<ol><li>ア　0.972</li><li>イ　0.729</li><li>ウ　0.99</li><li>エ　0.999</li></ol></div>
+<div class='mq'><span class='qn'>問14</span>　クラウドサービスのうち、利用者がOSやミドルウェアを管理せず、アプリケーションの開発・実行環境だけを利用するサービスモデルはどれか。<ol><li>ア　PaaS</li><li>イ　DaaS</li><li>ウ　SaaS</li><li>エ　IaaS</li></ol></div>
+<div class='mq'><span class='qn'>問15</span>　現用系と待機系から成るシステムで、待機系を停止させておき、障害発生時に起動してから処理を引き継ぐ方式はどれか。<ol><li>ア　デュアルシステム</li><li>イ　ロードバランシング</li><li>ウ　ホットスタンバイ</li><li>エ　コールドスタンバイ</li></ol></div>
+<div class='mq'><span class='qn'>問16</span>　仮想記憶のページング方式で、ページ置換えにFIFOを用い、ページ枠が3つのとき、参照列「1,2,3,4,1,2」のページフォールトの回数はどれか（最初はすべて空）。<ol><li>ア　5</li><li>イ　4</li><li>ウ　6</li><li>エ　3</li></ol></div>
+<div class='mq'><span class='qn'>問17</span>　リアルタイムOSで、優先度の高いタスクが実行可能になったとき、実行中の低優先度タスクからCPUを取り上げて切り替えることを何というか。<ol><li>ア　ディスパッチ</li><li>イ　プリエンプション</li><li>ウ　スワッピング</li><li>エ　ポーリング</li></ol></div>
+<div class='mq'><span class='qn'>問18</span>　ファイルのバックアップで、毎週日曜日にフルバックアップ、月〜土曜日に増分バックアップを取得している。木曜日の夜に障害が発生したとき、復元に必要なものはどれか。<ol><li>ア　日曜日のフルだけ</li><li>イ　日曜日のフル、月・火・水・木曜日の増分</li><li>ウ　木曜日の増分だけ</li><li>エ　日曜日のフル、木曜日の増分</li></ol></div>
+<div class='mq'><span class='qn'>問19</span>　NAND素子だけを使ってNOT回路を作る方法として、適切なものはどれか。<ol><li>ア　NAND素子の2つの入力に同じ信号を入れる</li><li>イ　NAND素子を2つ直列につなぐ</li><li>ウ　NAND素子の出力を入力に戻す</li><li>エ　NOT回路はNAND素子では作れない</li></ol></div>
+<div class='mq'><span class='qn'>問20</span>　8ビットのA/D変換器で0〜5.12Vの電圧を変換するとき、1ビットあたりの電圧（分解能）は何Vか。<ol><li>ア　0.64</li><li>イ　0.04</li><li>ウ　0.01</li><li>エ　0.02</li></ol></div>
+<div class='mq'><span class='qn'>問21</span>　ブラシのないDCモーターで、回転子の位置をセンサーで検出して電子回路で電流を切り替えるものはどれか。<ol><li>ア　ソレノイド</li><li>イ　誘導モーター</li><li>ウ　ブラシレスDCモーター</li><li>エ　ステッピングモーター</li></ol></div>
+<div class='mq'><span class='qn'>問22</span>　組込み機器で、プログラムが一定時間内にカウンタをクリアしないと異常とみなしてシステムをリセットする仕組みはどれか。<ol><li>ア　割込みコントローラ</li><li>イ　DMAコントローラ</li><li>ウ　インターバルタイマ</li><li>エ　ウォッチドッグタイマ</li></ol></div>
+<div class='mq'><span class='qn'>問23</span>　Webページの見出しや本文などの見た目を、HTMLとは別に記述するための言語はどれか。<ol><li>ア　CSS</li><li>イ　SQL</li><li>ウ　XML</li><li>エ　JSON</li></ol></div>
+<div class='mq'><span class='qn'>問24</span>　利用者が初めて使う場面を想定して、専門家が操作手順を1つずつたどり、問題点を見つけるユーザビリティ評価手法はどれか。<ol><li>ア　思考発話法</li><li>イ　認知的ウォークスルー</li><li>ウ　アンケート法</li><li>エ　A/Bテスト</li></ol></div>
+<div class='mq'><span class='qn'>問25</span>　動画の圧縮で、前後のフレームとの差分を利用して圧縮率を高める方式の代表例はどれか。<ol><li>ア　JPEG</li><li>イ　GIF</li><li>ウ　PNG</li><li>エ　MPEG</li></ol></div>
+<div class='mq'><span class='qn'>問26</span>　関係データベースの表「注文（注文番号, 顧客番号, 顧客名, 注文日）」で、注文番号が主キー、顧客番号→顧客名の関数従属がある。この表が満たしている最も高い正規形はどれか。<ol><li>ア　非正規形</li><li>イ　第2正規形</li><li>ウ　第1正規形</li><li>エ　第3正規形</li></ol></div>
+<div class='mq'><span class='qn'>問27</span>　「社員」表から、部署ごとの平均給与が30万円を超える部署の部署コードを求めるSQL文として、適切なものはどれか。<ol><li>ア　SELECT 部署コード FROM 社員 GROUP BY 部署コード WHERE AVG(給与) &gt; 300000</li><li>イ　SELECT 部署コード FROM 社員 GROUP BY 部署コード HAVING AVG(給与) &gt; 300000</li><li>ウ　SELECT 部署コード FROM 社員 HAVING 給与 &gt; 300000</li><li>エ　SELECT 部署コード FROM 社員 WHERE AVG(給与) &gt; 300000 GROUP BY 部署コード</li></ol></div>
+<div class='mq'><span class='qn'>問28</span>　トランザクションT1がデータXに専有ロックをかけている。トランザクションT2がXに対してできることはどれか。<ol><li>ア　更新はできるが、読取りはできない</li><li>イ　T1がロックを解除するまで、読取りも更新もできない</li><li>ウ　読取りも更新もできる</li><li>エ　読取りはできるが、更新はできない</li></ol></div>
+<div class='mq'><span class='qn'>問29</span>　データベースの障害回復で、更新前ログを用いてトランザクションの処理を取り消し、開始前の状態に戻す処理はどれか。<ol><li>ア　ロールフォワード</li><li>イ　ロールバック</li><li>ウ　コミット</li><li>エ　チェックポイント</li></ol></div>
+<div class='mq'><span class='qn'>問30</span>　複数のデータソースからデータを抽出し、形式を変換して、データウェアハウスに書き込む処理を表す用語はどれか。<ol><li>ア　OLTP</li><li>イ　CRUD</li><li>ウ　ETL</li><li>エ　NoSQL</li></ol></div>
+<div class='mq'><span class='qn'>問31</span>　IPv4アドレス 10.1.2.130/25 が属するネットワークのブロードキャストアドレスはどれか。<ol><li>ア　10.1.2.127</li><li>イ　10.1.2.128</li><li>ウ　10.1.2.255</li><li>エ　10.1.255.255</li></ol></div>
+<div class='mq'><span class='qn'>問32</span>　TCP/IPで、データの到達確認や再送、順序制御を行い、信頼性の高い通信を提供するプロトコルはどれか。<ol><li>ア　IP</li><li>イ　TCP</li><li>ウ　ICMP</li><li>エ　UDP</li></ol></div>
+<div class='mq'><span class='qn'>問33</span>　ホスト名からIPv6アドレスを求めるために使うDNSのレコードはどれか。<ol><li>ア　MXレコード</li><li>イ　PTRレコード</li><li>ウ　Aレコード</li><li>エ　AAAAレコード</li></ol></div>
+<div class='mq'><span class='qn'>問34</span>　500Mバイトのファイルを、実効速度50Mビット/秒の回線で転送するのに必要な時間は何秒か。<ol><li>ア　10</li><li>イ　80</li><li>ウ　40</li><li>エ　100</li></ol></div>
+<div class='mq'><span class='qn'>問35</span>　1つの物理的なスイッチで、論理的に複数のネットワークに分割し、フレームにタグを付けて識別する規格はどれか。<ol><li>ア　IEEE 802.1X</li><li>イ　IEEE 802.1Q</li><li>ウ　IEEE 802.11ac</li><li>エ　IEEE 802.3af</li></ol></div>
+<div class='mq'><span class='qn'>問36</span>　Webサイトの入力欄にSQL文の一部を入力し、データベースを不正に操作する攻撃への対策として、最も効果的なものはどれか。<ol><li>ア　Cookieに有効期限を設定する</li><li>イ　入力された文字列をHTMLエスケープして出力する</li><li>ウ　通信をTLSで暗号化する</li><li>エ　プレースホルダを用いてSQL文を組み立てる</li></ol></div>
+<div class='mq'><span class='qn'>問37</span>　共通鍵暗号方式で、20人が互いに個別の鍵で暗号通信を行うために必要な鍵の総数はどれか。<ol><li>ア　380</li><li>イ　190</li><li>ウ　40</li><li>エ　20</li></ol></div>
+<div class='mq'><span class='qn'>問38</span>　ハッシュ関数に求められる性質のうち、同じハッシュ値を持つ異なる2つのメッセージを見つけることが困難である性質はどれか。<ol><li>ア　可用性</li><li>イ　可逆性</li><li>ウ　衝突発見困難性</li><li>エ　一方向性</li></ol></div>
+<div class='mq'><span class='qn'>問39</span>　メールの送信元ドメインの管理者が、SPFやDKIMの認証に失敗したメールの扱い（受信拒否など）を宣言する仕組みはどれか。<ol><li>ア　S/MIME</li><li>イ　STARTTLS</li><li>ウ　OP25B</li><li>エ　DMARC</li></ol></div>
+<div class='mq'><span class='qn'>問40</span>　攻撃者が、送信元IPアドレスを攻撃対象に偽装してDNSサーバに問合せを送り、大きな応答を攻撃対象に送りつけさせる攻撃はどれか。<ol><li>ア　DNSリフレクション攻撃</li><li>イ　ゾーン転送攻撃</li><li>ウ　DNSキャッシュポイズニング</li><li>エ　ドメイン名ハイジャック</li></ol></div>
+<div class='mq'><span class='qn'>問41</span>　利用者の端末に秘密鍵を保管し、生体認証などで鍵の利用を許可して、パスワードを使わずにWebサービスにログインする仕組みはどれか。<ol><li>ア　FIDO2（パスキー）</li><li>イ　SAML</li><li>ウ　RADIUS</li><li>エ　OAuth 2.0</li></ol></div>
+<div class='mq'><span class='qn'>問42</span>　組織のネットワーク内の端末の挙動を監視し、侵入後の不審な活動を検知して隔離などの対応を行う製品はどれか。<ol><li>ア　DLP</li><li>イ　EDR</li><li>ウ　UTM</li><li>エ　WAF</li></ol></div>
+<div class='mq'><span class='qn'>問43</span>　JIS Q 27000における「否認防止」の説明として、適切なものはどれか。<ol><li>ア　認可されたエンティティが要求したときに、アクセス及び使用が可能である特性</li><li>イ　エンティティが主張するとおりのものであるという特性</li><li>ウ　主張された事象又は処置の発生、及びそれを引き起こしたエンティティを証明する能力</li><li>エ　正確さ及び完全さの特性</li></ol></div>
+<div class='mq'><span class='qn'>問44</span>　ソフトウェアを構成するOSSなどの部品の一覧を作成し、脆弱性が公表されたときに影響を受ける製品を特定しやすくするものはどれか。<ol><li>ア　CRL</li><li>イ　CVSS</li><li>ウ　SLA</li><li>エ　SBOM</li></ol></div>
+<div class='mq'><span class='qn'>問45</span>　ランサムウェアへの備えとして、バックアップの取り方で最も適切なものはどれか。<ol><li>ア　バックアップは取らず、身代金の支払いで復旧する</li><li>イ　ネットワークから切り離した媒体や書換え不可の領域に、複数世代のバックアップを保管する</li><li>ウ　常時接続した共有フォルダに最新の1世代だけを保管する</li><li>エ　業務PCの同じドライブにバックアップを保管する</li></ol></div>
+<div class='mq'><span class='qn'>問46</span>　モジュール間の結合度について、結合度が最も弱いものはどれか。<ol><li>ア　制御結合</li><li>イ　スタンプ結合</li><li>ウ　共通結合</li><li>エ　データ結合</li></ol></div>
+<div class='mq'><span class='qn'>問47</span>　UMLのクラス図で、全体と部分の関係のうち、全体が消滅すると部分も消滅する強い関係を表すものはどれか。<ol><li>ア　依存</li><li>イ　コンポジション</li><li>ウ　実現</li><li>エ　汎化</li></ol></div>
+<div class='mq'><span class='qn'>問48</span>　条件「AかつB」の判定について、判定条件網羅（分岐網羅）を満たす最小のテストケースの組合せはどれか。<ol><li>ア　(A真,B偽) と (A偽,B偽)</li><li>イ　(A真,B真) と (A偽,B真)</li><li>ウ　(A真,B真) だけ</li><li>エ　(A真,B真),(A真,B偽),(A偽,B真),(A偽,B偽)</li></ol></div>
+<div class='mq'><span class='qn'>問49</span>　スクラムで、スプリントの最後にチームが自分たちの進め方を振り返り、改善策を決めるイベントはどれか。<ol><li>ア　スプリントレビュー</li><li>イ　スプリントプランニング</li><li>ウ　デイリースクラム</li><li>エ　スプリントレトロスペクティブ</li></ol></div>
+<div class='mq'><span class='qn'>問50</span>　外部から見た振る舞いを変えずに、ソフトウェアの内部構造を改善することを何というか。<ol><li>ア　リグレッションテスト</li><li>イ　リファクタリング</li><li>ウ　リバースエンジニアリング</li><li>エ　リエンジニアリング</li></ol></div>
+
+<p class='muted' style='margin-top:14px'>── 問51〜問60 はマネジメント系、問61〜問80 はストラテジ系の問題です ──</p>
+<div class='mq'><span class='qn'>問51</span>　EVMで、PV＝800万円、EV＝600万円、AC＝750万円のとき、CPIとSPIの組合せとして適切なものはどれか。<ol><li>ア　CPI＝0.8、SPI＝0.75</li><li>イ　CPI＝1.25、SPI＝1.33</li><li>ウ　CPI＝0.75、SPI＝0.8</li><li>エ　CPI＝0.94、SPI＝0.8</li></ol></div>
+<div class='mq'><span class='qn'>問52</span>　作業A（4日）の後に作業B（3日）と作業C（5日）を並行して行い、BとCがともに終わったら作業D（2日）を行う。作業Bの余裕日数（フロート）は何日か。<ol><li>ア　2</li><li>イ　5</li><li>ウ　0</li><li>エ　3</li></ol></div>
+<div class='mq'><span class='qn'>問53</span>　プロジェクトの作業範囲を階層的に分解し、最下位を見積りや担当割当ての単位とする図はどれか。<ol><li>ア　ガントチャート</li><li>イ　特性要因図</li><li>ウ　WBS</li><li>エ　RACIチャート</li></ol></div>
+<div class='mq'><span class='qn'>問54</span>　リスク対応戦略のうち、リスクの影響を第三者に移すものはどれか。<ol><li>ア　回避</li><li>イ　受容</li><li>ウ　転嫁</li><li>エ　軽減</li></ol></div>
+<div class='mq'><span class='qn'>問55</span>　サービスマネジメントにおける問題管理の活動として、適切なものはどれか。<ol><li>ア　利用者からの問合せを受け付ける</li><li>イ　変更要求を評価して承認する</li><li>ウ　インシデントを記録し、回避策で迅速にサービスを回復する</li><li>エ　繰り返し発生するインシデントの根本原因を特定し、恒久的な解決策を検討する</li></ol></div>
+<div class='mq'><span class='qn'>問56</span>　毎日24時間提供するサービスで、30日間の稼働率を99.9%以上と合意した。許容される停止時間は合計で最大何分か。<ol><li>ア　4.32</li><li>イ　432</li><li>ウ　72</li><li>エ　43.2</li></ol></div>
+<div class='mq'><span class='qn'>問57</span>　データセンタの空調で、サーバラックの吸気側を冷たい通路、排気側を暖かい通路にそろえて冷却効率を高める方式に用いる用語はどれか。<ol><li>ア　コールドアイル／ホットアイル</li><li>イ　免震装置</li><li>ウ　UPS</li><li>エ　フリーアクセスフロア</li></ol></div>
+<div class='mq'><span class='qn'>問58</span>　システム監査人が監査報告書で改善提案を行った後に実施する活動として、適切なものはどれか。<ol><li>ア　被監査部門に改善の実施を命令する</li><li>イ　監査人自らが改善を実施する</li><li>ウ　改善が完了するまで被監査部門の業務を停止させる</li><li>エ　改善計画の実施状況を確認し、その結果を監査の依頼者に報告する</li></ol></div>
+<div class='mq'><span class='qn'>問59</span>　監査人がコンピュータを用いて、本番システムに監査用の架空の口座を設け、その処理結果を検証する技法はどれか。<ol><li>ア　並行シミュレーション法</li><li>イ　テストデータ法</li><li>ウ　ITF法</li><li>エ　スナップショット法</li></ol></div>
+<div class='mq'><span class='qn'>問60</span>　内部統制において、取引の入力担当者と承認者を別の人にすることの主な目的はどれか。<ol><li>ア　入力データの量を減らす</li><li>イ　監査人の作業を減らす</li><li>ウ　業務処理を高速化する</li><li>エ　一人の担当者による不正や誤りを防止する</li></ol></div>
+<div class='mq'><span class='qn'>問61</span>　エンタープライズアーキテクチャで、組織全体の業務と情報システムの理想像を表したモデルはどれか。<ol><li>ア　To-Beモデル</li><li>イ　ザックマンモデル</li><li>ウ　As-Isモデル</li><li>エ　V字モデル</li></ol></div>
+<div class='mq'><span class='qn'>問62</span>　複数の企業が持つ情報システムや業務の機能をAPIで公開・連携し、新たなサービスを生み出す経済圏を表す用語はどれか。<ol><li>ア　サーキュラーエコノミー</li><li>イ　シェアリングエコノミー</li><li>ウ　APIエコノミー</li><li>エ　ギグエコノミー</li></ol></div>
+<div class='mq'><span class='qn'>問63</span>　システム化構想の立案で、最初に行うべき作業として適切なものはどれか。<ol><li>ア　結合テストの計画を立てる</li><li>イ　経営上の課題やニーズを確認する</li><li>ウ　プログラムの詳細設計を行う</li><li>エ　ベンダーと請負契約を締結する</li></ol></div>
+<div class='mq'><span class='qn'>問64</span>　投資額1,000万円のシステムで、毎年300万円の効果が見込まれる。割引を考えない回収期間法で投資額を回収できるのは何年目か。<ol><li>ア　3年目</li><li>イ　5年目</li><li>ウ　4年目</li><li>エ　2年目</li></ol></div>
+<div class='mq'><span class='qn'>問65</span>　ベンダーから提出された提案書を評価する方法として、適切なものはどれか。<ol><li>ア　評価項目と重み付けをRFPの発行前に決めておき、各社の提案を点数化して比較する</li><li>イ　提案書を受け取ってから、価格が最も安い提案に合わせて評価基準を決める</li><li>ウ　価格だけで評価する</li><li>エ　担当者の印象で決める</li></ol></div>
+<div class='mq'><span class='qn'>問66</span>　要件定義で、利害関係者の要求から導いた要件と、設計・テストの成果物との対応を追跡できるようにすることを何というか。<ol><li>ア　フィージビリティスタディ</li><li>イ　トレーサビリティの確保</li><li>ウ　ベンチマーキング</li><li>エ　スコープクリープ</li></ol></div>
+<div class='mq'><span class='qn'>問67</span>　バランススコアカードで、従業員のスキル向上や知識の蓄積を評価する視点はどれか。<ol><li>ア　業務プロセスの視点</li><li>イ　財務の視点</li><li>ウ　学習と成長の視点</li><li>エ　顧客の視点</li></ol></div>
+<div class='mq'><span class='qn'>問68</span>　製品のライフサイクルで、売上の伸びが鈍化し、競合との差別化や価格競争が重要になる段階はどれか。<ol><li>ア　成熟期</li><li>イ　衰退期</li><li>ウ　導入期</li><li>エ　成長期</li></ol></div>
+<div class='mq'><span class='qn'>問69</span>　競争の激しい既存市場ではなく、競争のない新しい市場を創造する戦略はどれか。<ol><li>ア　ブルーオーシャン戦略</li><li>イ　コストリーダーシップ戦略</li><li>ウ　同質化戦略</li><li>エ　ニッチ戦略</li></ol></div>
+<div class='mq'><span class='qn'>問70</span>　新しい技術への期待が、過度な期待のピーク、幻滅期を経て安定期に至るまでの推移を表した図はどれか。<ol><li>ア　技術ロードマップ</li><li>イ　経験曲線</li><li>ウ　プロダクトライフサイクル</li><li>エ　ハイプサイクル</li></ol></div>
+<div class='mq'><span class='qn'>問71</span>　工場で生産設備のセンサーデータを収集し、仮想空間に設備を再現して故障の予兆を分析する取組みに用いる用語はどれか。<ol><li>ア　デジタルディバイド</li><li>イ　デジタルツイン</li><li>ウ　デジタルフォレンジックス</li><li>エ　デジタルサイネージ</li></ol></div>
+<div class='mq'><span class='qn'>問72</span>　電子商取引のうち、消費者どうしが取引する形態はどれか。<ol><li>ア　BtoC</li><li>イ　GtoC</li><li>ウ　CtoC</li><li>エ　BtoB</li></ol></div>
+<div class='mq'><span class='qn'>問73</span>　販売単価2,000円、1個あたりの変動費1,200円、固定費400万円の製品で、損益分岐点となる販売数量はどれか。<ol><li>ア　2,000個</li><li>イ　5,000個</li><li>ウ　10,000個</li><li>エ　3,334個</li></ol></div>
+<div class='mq'><span class='qn'>問74</span>　貸借対照表で、流動資産を流動負債で割った値が示すものはどれか。<ol><li>ア　成長性</li><li>イ　短期的な支払能力</li><li>ウ　資本の効率</li><li>エ　収益性</li></ol></div>
+<div class='mq'><span class='qn'>問75</span>　結果（特性）と、それに影響を与える要因の関係を魚の骨の形に整理する図はどれか。<ol><li>ア　特性要因図</li><li>イ　管理図</li><li>ウ　散布図</li><li>エ　パレート図</li></ol></div>
+<div class='mq'><span class='qn'>問76</span>　製品Xは1個あたり利益4万円で機械時間2時間、製品Yは利益3万円で機械時間1時間を要する。機械時間は月100時間まで、製品Yは月60個までしか売れない。利益を最大にする月間の生産量（X, Y）はどれか。<ol><li>ア　(20, 60)</li><li>イ　(0, 60)</li><li>ウ　(40, 20)</li><li>エ　(50, 0)</li></ol></div>
+<div class='mq'><span class='qn'>問77</span>　部下に権限を委譲し、現場で自律的に判断できるようにすることを表す用語はどれか。<ol><li>ア　コンピテンシー</li><li>イ　エンパワーメント</li><li>ウ　ジョブローテーション</li><li>エ　メンタリング</li></ol></div>
+<div class='mq'><span class='qn'>問78</span>　ソフトウェア開発を準委任契約で受託した場合の記述として、適切なものはどれか。<ol><li>ア　受託者は成果物を完成させる義務を負う</li><li>イ　作業者と発注者の間に雇用関係が生じる</li><li>ウ　発注者が受託者の作業者に直接指揮命令する</li><li>エ　受託者は善良な管理者の注意をもって作業を行う義務を負うが、成果物の完成責任は負わない</li></ol></div>
+<div class='mq'><span class='qn'>問79</span>　他人のID・パスワードを用いて、アクセス制御機能のあるサーバに無断でログインする行為を禁止している法律はどれか。<ol><li>ア　不正アクセス禁止法</li><li>イ　個人情報保護法</li><li>ウ　不正競争防止法</li><li>エ　電子署名法</li></ol></div>
+<div class='mq'><span class='qn'>問80</span>　著作権法上、著作者人格権に含まれないものはどれか。<ol><li>ア　複製権</li><li>イ　同一性保持権</li><li>ウ　公表権</li><li>エ　氏名表示権</li></ol></div></section><section class='chapter' id='02_a_sheet'><span class='mark'>CHMARK02asheetEND</span><div class='ch-banner'><span class='ch-no'>科目A</span><span class='ch-title'>科目A 解答用紙</span></div><table class='ansgrid'><tr><th>問</th><th>解答</th><th>問</th><th>解答</th><th>問</th><th>解答</th><th>問</th><th>解答</th></tr><tr><td>1</td><td></td><td>21</td><td></td><td>41</td><td></td><td>61</td><td></td></tr><tr><td>2</td><td></td><td>22</td><td></td><td>42</td><td></td><td>62</td><td></td></tr><tr><td>3</td><td></td><td>23</td><td></td><td>43</td><td></td><td>63</td><td></td></tr><tr><td>4</td><td></td><td>24</td><td></td><td>44</td><td></td><td>64</td><td></td></tr><tr><td>5</td><td></td><td>25</td><td></td><td>45</td><td></td><td>65</td><td></td></tr><tr><td>6</td><td></td><td>26</td><td></td><td>46</td><td></td><td>66</td><td></td></tr><tr><td>7</td><td></td><td>27</td><td></td><td>47</td><td></td><td>67</td><td></td></tr><tr><td>8</td><td></td><td>28</td><td></td><td>48</td><td></td><td>68</td><td></td></tr><tr><td>9</td><td></td><td>29</td><td></td><td>49</td><td></td><td>69</td><td></td></tr><tr><td>10</td><td></td><td>30</td><td></td><td>50</td><td></td><td>70</td><td></td></tr><tr><td>11</td><td></td><td>31</td><td></td><td>51</td><td></td><td>71</td><td></td></tr><tr><td>12</td><td></td><td>32</td><td></td><td>52</td><td></td><td>72</td><td></td></tr><tr><td>13</td><td></td><td>33</td><td></td><td>53</td><td></td><td>73</td><td></td></tr><tr><td>14</td><td></td><td>34</td><td></td><td>54</td><td></td><td>74</td><td></td></tr><tr><td>15</td><td></td><td>35</td><td></td><td>55</td><td></td><td>75</td><td></td></tr><tr><td>16</td><td></td><td>36</td><td></td><td>56</td><td></td><td>76</td><td></td></tr><tr><td>17</td><td></td><td>37</td><td></td><td>57</td><td></td><td>77</td><td></td></tr><tr><td>18</td><td></td><td>38</td><td></td><td>58</td><td></td><td>78</td><td></td></tr><tr><td>19</td><td></td><td>39</td><td></td><td>59</td><td></td><td>79</td><td></td></tr><tr><td>20</td><td></td><td>40</td><td></td><td>60</td><td></td><td>80</td><td></td></tr></table>
+
+<p>正解数：　　　　問 ／ 80問　　得点（正解数×1.25）：　　　　点</p></section><section class='chapter' id='101_b'><span class='mark'>CHMARK101bEND</span><div class='ch-banner'><span class='ch-no'>問1</span><span class='ch-title'>情報セキュリティ（必須）</span></div><p><b>ランサムウェア被害を受けた製造業の再発防止策に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｋ社は従業員300名の部品メーカーである。社内LANには業務用PC、ファイルサーバ、生産管理サーバがあり、インターネットとの境界にファイアウォール（FW）を設置している。社外から社内LANへの接続には、VPN装置を使ったリモートアクセスを利用している。VPN装置の認証は、利用者IDとパスワードだけで行っている。</p>
+<h4>〔インシデントの発生〕</h4>
+<p>ある月曜日の朝、複数の業務用PCとファイルサーバのファイルが暗号化され、身代金を要求するメッセージが表示された。情報システム課のＬ主任は、まず ① 被害を受けたPCのLANケーブルを抜き、ファイルサーバをネットワークから切り離した。</p>
+<p>調査の結果、次のことが分かった。</p>
+<p>(1) 攻撃者は、VPN装置の脆弱性を悪用して入手した認証情報を使い、土曜日の深夜に退職者の利用者IDでVPN接続していた。この利用者IDは、退職後も削除されていなかった。<br>(2) 攻撃者は社内LANに侵入した後、管理者権限を奪取し、ファイルサーバと業務用PCにランサムウェアを配布していた。<br>(3) ファイルサーバのバックアップは、ファイルサーバと同じLANに接続したNASに毎日取得していたが、NAS上のバックアップも暗号化されていた。<br>(4) VPN装置の脆弱性を修正するファームウェアは3か月前に公開されていたが、適用されていなかった。</p>
+<h4>〔再発防止策の検討〕</h4>
+<p>Ｌ主任は、表1の再発防止策を検討した。</p>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 再発防止策</caption><tr><th>項番</th><th>対策</th></tr><tr><td>1</td><td>VPN装置のファームウェアを最新にし、以後は脆弱性情報を定期的に確認して速やかに適用する</td></tr><tr><td>2</td><td>VPN接続の認証に [ a ] を導入する</td></tr><tr><td>3</td><td>人事部から退職者の情報を受け取り、 [ b ] する手順を定める</td></tr><tr><td>4</td><td>バックアップを ② ネットワークから切り離した媒体にも取得し、複数世代を保管する</td></tr></table>
+</div>
+
+<div class='bq'><b>設問1</b>　本文中の下線①の対応を行った目的を、25字以内で述べよ。</div>
+<div class='bq'><b>設問2</b>　表1中の [ a ] に入れる適切な字句を、10字以内で答えよ。</div>
+<div class='bq'><b>設問3</b>　表1中の [ b ] に入れる適切な字句を、15字以内で答えよ。</div>
+<div class='bq'><b>設問4</b>　本文中の下線②の対策が必要な理由を、本文中の事実を踏まえて35字以内で述べよ。</div>
+<div class='bq'><b>設問5</b>　今回の侵入の起点となった、Ｋ社の管理上の問題点を二つ、それぞれ20字以内で述べよ。</div></section><section class='chapter' id='102_b'><span class='mark'>CHMARK102bEND</span><div class='ch-banner'><span class='ch-no'>問2</span><span class='ch-title'>経営戦略（選択）</span></div><p><b>地方スーパーマーケットの事業戦略に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｍ社は、地方都市で食品スーパー8店舗を運営している。地元の農家と直接取引した新鮮な野菜と、店内調理の総菜が強みで、来店客の約7割が50歳以上である。近年、近隣に大手ディスカウントストアが出店し、加工食品の価格競争で客数が減少している。一方、地域では共働き世帯が増え、夕方に短時間で買い物を済ませたいという要望が高まっている。</p>
+<h4>〔昨年度の業績〕</h4>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 昨年度の業績</caption><tr><th>項目</th><th>金額（百万円）</th></tr><tr><td>売上高</td><td>4,000</td></tr><tr><td>変動費</td><td>3,000</td></tr><tr><td>固定費</td><td>900</td></tr><tr><td>営業利益</td><td>100</td></tr></table>
+<h4>〔新たな施策〕</h4>
+<p>Ｍ社の経営企画部は、次の施策を検討している。<br>(1) スマートフォンで事前に注文し、店舗で受け取るサービス（ネットスーパー型の店舗受取）を開始する。<br>(2) 地元農家の野菜を使った総菜を、共働き世帯向けに少量パックで販売する。<br>(3) 加工食品の価格競争には追随せず、 ① 地元産の生鮮食品と総菜に経営資源を集中する。</p>
+<p>施策(1)の導入により、固定費が年間60百万円増加するが、変動費率は変わらないと想定している。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　本文中の事実を SWOT 分析に当てはめるとき、「大手ディスカウントストアの出店」と「共働き世帯の増加」は、それぞれ何に分類されるか答えよ。</div>
+<div class='bq'><b>設問2</b>　昨年度の損益分岐点売上高（百万円）を求めよ。</div>
+<div class='bq'><b>設問3</b>　施策(1)を導入した後、昨年度と同じ営業利益100百万円を確保するために必要な売上高（百万円）を求めよ。</div>
+<div class='bq'><b>設問4</b>　本文中の下線①の戦略は、ポーターの競争戦略のうちどれに該当するか。また、Ｍ社がこの戦略をとる理由を、Ｍ社の強みに触れて35字以内で述べよ。</div></section><section class='chapter' id='103_b'><span class='mark'>CHMARK103bEND</span><div class='ch-banner'><span class='ch-no'>問3</span><span class='ch-title'>プログラミング（選択）</span></div><p><b>在庫データの区間集計（累積和）に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｎ社の倉庫では、1日ごとの出荷数を配列 ship に記録している。ship[i] は i 日目の出荷数である（i は 1 から n、配列の添字は1から始まる）。利用者は「s 日目から t 日目までの出荷数の合計」を何度も問い合わせる。</p>
+<p>単純な方法では、問合せのたびに ship[s] から ship[t] までを足し合わせるため、1回の問合せに最大 n 回の加算が必要になる。そこで、あらかじめ累積和の配列 acc を作っておき、各問合せを1回の引き算で答える方法を考えた。acc[0] ＝ 0 とし、acc[i] は 1 日目から i 日目までの出荷数の合計とする。</p>
+<pre>○makeAcc(整数型の配列: ship, 整数型: n)
+  acc[0] ← 0
+  for (i を 1 から n まで 1 ずつ増やす)
+    acc[i] ← [ ア ]
+  endfor
+
+○整数型: query(整数型: s, 整数型: t)
+  return [ イ ]</pre>
+<p>例えば ship ＝ {5, 3, 8, 2, 6} （n ＝ 5）のとき、acc は {0, 5, 8, 16, 18, 24} となる。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　プログラム中の [ ア ] に入れる適切な字句を答えよ。</div>
+<div class='bq'><b>設問2</b>　プログラム中の [ イ ] に入れる適切な字句を答えよ。</div>
+<div class='bq'><b>設問3</b>　本文の例で、query(2, 4) が返す値を答えよ。</div>
+<div class='bq'><b>設問4</b>　問合せが q 回あるとき、単純な方法と累積和を使う方法の、問合せ処理全体の計算量をそれぞれオーダー記法で答えよ。ただし、累積和を作る処理を含めて考えること。</div></section><section class='chapter' id='104_b'><span class='mark'>CHMARK104bEND</span><div class='ch-banner'><span class='ch-no'>問4</span><span class='ch-title'>システムアーキテクチャ（選択）</span></div><p><b>Webサービスのクラウド移行と性能設計に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｐ社は、会員向けのWebサービスを自社のサーバ室で運用している。現在の構成は、Webサーバ1台とDBサーバ1台である。会員数の増加に伴い、ピーク時の応答時間が長くなっているため、クラウドサービスへの移行を検討している。</p>
+<h4>〔現状の測定結果〕</h4>
+<p>ピーク時の要求数は毎秒120件である。1件の要求の処理に、Webサーバで CPU 時間 5ミリ秒、DBサーバで CPU 時間 4ミリ秒を要する（各サーバのCPUは1コアとして考える）。</p>
+<h4>〔移行後の構成案〕</h4>
+<p>クラウド上に、ロードバランサ（LB）と、同じ性能のWebサーバを複数台、DBサーバ1台を配置する。WebサーバのCPU使用率は、ピーク時でも60%以下にする方針である。将来の会員増加に備え、 ① Webサーバの台数は負荷に応じて自動的に増減させる。</p>
+<p>また、移行後は、仮想サーバの稼働率を 0.99、LBの稼働率を 0.999 とする。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　現状のピーク時における、WebサーバとDBサーバのCPU使用率（%）をそれぞれ求めよ。</div>
+<div class='bq'><b>設問2</b>　会員が2倍になり、ピーク時の要求数が毎秒240件になったとき、方針を満たすために必要なWebサーバの最少台数を求めよ。</div>
+<div class='bq'><b>設問3</b>　本文中の下線①のように、負荷に応じてサーバの台数を自動で増減させる機能を何というか。</div>
+<div class='bq'><b>設問4</b>　移行後、LB・Webサーバ2台（並列、どちらか1台が稼働していればよい）・DBサーバ1台を直列に接続した構成の稼働率を、小数第4位を四捨五入して求めよ。</div>
+<div class='bq'><b>設問5</b>　設問4の構成で、稼働率を最も効果的に高めるための構成変更を、25字以内で述べよ。</div></section><section class='chapter' id='105_b'><span class='mark'>CHMARK105bEND</span><div class='ch-banner'><span class='ch-no'>問5</span><span class='ch-title'>ネットワーク（選択）</span></div><p><b>本社と営業所を結ぶネットワークの再構築に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｑ社は本社と営業所の2拠点を持つ。本社LANは 192.168.1.0/24、営業所LANは 192.168.2.0/24 である。両拠点はインターネットVPNで接続している。営業所のPCは、本社のファイルサーバ（192.168.1.10）を利用している。</p>
+<h4>〔ネットワークの構成〕</h4>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 ルータのアドレス</caption><tr><th>機器</th><th>インタフェース</th><th>IPアドレス</th></tr><tr><td>本社ルータ</td><td>LAN側</td><td>192.168.1.1</td></tr><tr><td>本社ルータ</td><td>インターネット側</td><td>203.0.113.10</td></tr><tr><td>営業所ルータ</td><td>LAN側</td><td>192.168.2.1</td></tr><tr><td>営業所ルータ</td><td>インターネット側</td><td>198.51.100.20</td></tr></table>
+<p>両拠点のルータはIPsecでトンネルを構成し、相手拠点のLAN宛てのパケットを暗号化してトンネルに送る。営業所のPCは、DHCPでIPアドレス、デフォルトゲートウェイ、DNSサーバのアドレスを取得する。</p>
+<h4>〔障害の発生〕</h4>
+<p>ある日、営業所のPC1からファイルサーバに接続できなくなった。営業所の担当者は、まずPC1から ① 営業所ルータのLAN側アドレスにpingを送り、応答があることを確認した。次に、ファイルサーバのアドレスにpingを送ると応答がなかった。本社に確認したところ、本社ルータの設定変更作業で ② IPsecの設定を誤って削除していたことが分かった。</p>
+<h4>〔ネットワークの拡張〕</h4>
+<p>営業所の人員増加に伴い、営業所LANを /24 から /23 に拡張することになった。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　営業所のPCに設定されるデフォルトゲートウェイのIPアドレスを答えよ。</div>
+<div class='bq'><b>設問2</b>　本文中の下線①の確認によって分かることを、25字以内で述べよ。</div>
+<div class='bq'><b>設問3</b>　本文中の下線②のとき、営業所から本社のファイルサーバ宛てのパケットはどうなるか。トンネルを通る場合と比較して、30字以内で述べよ。</div>
+<div class='bq'><b>設問4</b>　トンネル区間で、インターネット上を流れるパケットの外側のIPヘッダの送信元アドレスを答えよ（営業所から本社宛ての通信）。</div>
+<div class='bq'><b>設問5</b>　拡張後の営業所LAN（192.168.2.0/23）のブロードキャストアドレスと、割り当て可能なホストの最大数を答えよ。</div></section><section class='chapter' id='106_b'><span class='mark'>CHMARK106bEND</span><div class='ch-banner'><span class='ch-no'>問6</span><span class='ch-title'>データベース（選択）</span></div><p><b>図書館の貸出管理システムに関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｒ市立図書館は、貸出管理システムを再構築している。主な業務ルールは次のとおりである。<br>(1) 利用者は利用者番号で識別する。1人の利用者は同時に最大10冊まで借りられる。<br>(2) 図書は資料番号で識別する。同じ書名の本が複数冊ある場合、1冊ごとに資料番号を付ける。<br>(3) 1回の貸出で1冊を貸し出し、返却日が記録されるまで貸出中とする。</p>
+<h4>〔表の構造〕</h4>
+<p>利用者（利用者番号, 氏名, 住所）<br>書誌（ISBN, 書名, 著者名）<br>資料（資料番号, ISBN）<br>貸出（貸出番号, 利用者番号, 資料番号, 貸出日, 返却期限日, 返却日）<br>※下線の代わりに、各表の最初の列を主キーとする。資料.ISBN、貸出.利用者番号、貸出.資料番号は外部キーである。返却されていない貸出の返却日は NULL とする。</p>
+<h4>〔SQL文〕</h4>
+<pre>-- 現在貸出中の冊数が10冊に達している利用者の利用者番号を求める
+SELECT 利用者番号
+  FROM 貸出
+ WHERE [ a ]
+ GROUP BY 利用者番号
+[ b ] COUNT(*) &gt;= 10
+
+-- 返却期限を過ぎて未返却の資料の書名を求める（基準日は :today）
+SELECT DISTINCT 書誌.書名
+  FROM 貸出
+  JOIN 資料 ON 貸出.資料番号 = 資料.資料番号
+  JOIN 書誌 ON [ c ]
+ WHERE 貸出.返却日 IS NULL
+   AND 貸出.返却期限日 &lt; :today</pre>
+</div>
+
+<div class='bq'><b>設問1</b>　「書誌」と「資料」の関係の多重度（カーディナリティ）を答えよ。また、そのように判断した根拠となる業務ルールを本文中の番号で答えよ。</div>
+<div class='bq'><b>設問2</b>　SQL文中の [ a ] 〜 [ c ] に入れる適切な字句を答えよ。</div>
+<div class='bq'><b>設問3</b>　「貸出」表に「書名」の列を追加した場合に生じる問題を、35字以内で述べよ。</div>
+<div class='bq'><b>設問4</b>　業務ルール(1)の「最大10冊まで」の制約を、貸出の登録時に確認するために利用できるSQL文は、〔SQL文〕のどちらか。前者・後者で答えよ。</div></section><section class='chapter' id='107_b'><span class='mark'>CHMARK107bEND</span><div class='ch-banner'><span class='ch-no'>問7</span><span class='ch-title'>組込みシステム開発（選択）</span></div><p><b>自動給水装置の設計に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｓ社は、家庭の植木鉢向けの自動給水装置を開発している。装置は、土壌水分センサー、給水ポンプ、制御部、電池で構成される。</p>
+<h4>〔動作仕様〕</h4>
+<p>(1) 制御部は通常 <b>休止</b> 状態で、30分ごとにタイマ割込みで <b>計測</b> 状態に移り、土壌水分を測定する（計測に5秒）。<br>(2) 測定値がしきい値未満なら <b>給水</b> 状態に移り、ポンプを10秒間動かしてから休止状態に戻る。しきい値以上ならそのまま休止状態に戻る。<br>(3) 給水中に水タンクの水位センサーが空を検知した場合は、ポンプを止めて <b>異常</b> 状態に移り、LEDを点滅させる。異常状態は、利用者がリセットボタンを押すと休止状態に戻る。</p>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 状態ごとの消費電流</caption><tr><th>状態</th><th>消費電流</th></tr><tr><td>休止</td><td>0.02mA</td></tr><tr><td>計測</td><td>15mA</td></tr><tr><td>給水</td><td>200mA</td></tr></table>
+<p>給水は1日に平均2回行われるものとする。</p>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表2 状態遷移表（―は遷移しない）</caption><tr><th>現在の状態＼イベント</th><th>タイマ割込み</th><th>計測完了（しきい値未満）</th><th>計測完了（しきい値以上）</th><th>給水完了</th><th>水位空を検知</th><th>リセット</th></tr><tr><td>休止</td><td>計測</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td></tr><tr><td>計測</td><td>―</td><td>[ a ]</td><td>休止</td><td>―</td><td>―</td><td>―</td></tr><tr><td>給水</td><td>―</td><td>―</td><td>―</td><td>[ b ]</td><td>[ c ]</td><td>―</td></tr><tr><td>異常</td><td>―</td><td>―</td><td>―</td><td>―</td><td>―</td><td>休止</td></tr></table>
+</div>
+
+<div class='bq'><b>設問1</b>　次の状態遷移表の [ a ] 〜 [ c ] に入れる状態名を答えよ。</div>
+<div class='bq'><b>設問2</b>　1日（24時間）のうち、計測状態の合計時間（秒）と、給水状態の合計時間（秒）を求めよ。</div>
+<div class='bq'><b>設問3</b>　1日の平均消費電流（mA）を、小数第3位を四捨五入して求めよ。ただし、1日は86,400秒とし、休止状態の時間は1日から計測と給水の時間を引いたものとする。</div>
+<div class='bq'><b>設問4</b>　異常状態でポンプを止める仕様にしている理由を、25字以内で述べよ。</div></section><section class='chapter' id='108_b'><span class='mark'>CHMARK108bEND</span><div class='ch-banner'><span class='ch-no'>問8</span><span class='ch-title'>情報システム開発（選択）</span></div><p><b>オンライン予約システムのテスト設計に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｔ社は、スポーツ施設のオンライン予約システムを開発している。予約画面では、利用人数と利用時間を入力し、料金を計算する。</p>
+<h4>〔料金計算の仕様〕</h4>
+<p>(1) 利用人数は1〜20人の整数とする。範囲外の値はエラーとする。<br>(2) 利用時間は1〜4時間の整数とする。範囲外の値はエラーとする。<br>(3) 基本料金は1時間あたり3,000円とする。<br>(4) 利用人数が10人以上の場合は、基本料金を2割引きにする。</p>
+<h4>〔テストの方針〕</h4>
+<p>開発チームのＵ氏は、まず ① 同値分割と限界値分析でテストケースを設計し、次に料金計算の処理について ② 判定条件網羅（分岐網羅）を満たすことを確認する方針とした。また、料金計算の処理は他の画面からも呼び出されるため、 ③ 単体テストでは料金計算モジュールを呼び出す仮のモジュールを用意する。</p>
+<p>結合テストの後、仕様変更で割引の条件が「10人以上」から「8人以上」に変わった。修正後は、 ④ 変更していない機能に影響がないことも確認する。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　本文中の下線①について、利用人数の限界値分析で用いるテストデータの値をすべて答えよ。ただし、割引の境界も含めること。</div>
+<div class='bq'><b>設問2</b>　利用人数12人、利用時間3時間のときの料金を求めよ。</div>
+<div class='bq'><b>設問3</b>　本文中の下線③の仮のモジュールを何というか。</div>
+<div class='bq'><b>設問4</b>　本文中の下線④のテストを何というか。</div>
+<div class='bq'><b>設問5</b>　仕様変更後に追加すべき、利用人数の限界値のテストデータを二つ答え、その理由を25字以内で述べよ。</div></section><section class='chapter' id='109_b'><span class='mark'>CHMARK109bEND</span><div class='ch-banner'><span class='ch-no'>問9</span><span class='ch-title'>プロジェクトマネジメント（選択）</span></div><p><b>基幹システム刷新プロジェクトの進捗管理に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｖ社は、販売管理システムを刷新するプロジェクトを進めている。プロジェクトマネージャ（PM）はＷ課長である。開発は外部のＸ社に請負契約で委託し、総予算（BAC）は 6,000万円、期間は12か月である。</p>
+<h4>〔6か月目終了時点の状況〕</h4>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 EVMの指標</caption><tr><th>指標</th><th>金額（万円）</th></tr><tr><td>PV（計画価値）</td><td>3,000</td></tr><tr><td>EV（出来高）</td><td>2,400</td></tr><tr><td>AC（実コスト）</td><td>3,000</td></tr></table>
+<p>遅れの主な原因は、次の2点であった。<br>(1) 要件定義の段階で、利用部門の要望が確定しないまま設計に入ったため、設計の手戻りが多発した。<br>(2) Ｘ社の担当者が、Ｖ社の販売業務の特殊な締め処理を理解しておらず、仕様の確認に時間がかかった。</p>
+<h4>〔対策の検討〕</h4>
+<p>Ｗ課長は、残りの期間で遅れを取り戻すため、 ① 一部の工程で、前の工程の完了を待たずに次の工程を並行して進めることを検討した。また、 ② 要件の追加・変更を受け付ける際のルールを利用部門と合意することにした。さらに、予算の超過分について、 ③ プロジェクトの承認権限を持つステアリングコミッティに報告し、対応を相談することにした。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　表1から、SV と CPI を求めよ。</div>
+<div class='bq'><b>設問2</b>　現在のコスト効率が続く場合の、完了時総コスト見積り（EAC）を求めよ。</div>
+<div class='bq'><b>設問3</b>　本文中の下線①のスケジュール短縮技法を何というか。また、この技法の採用によって高まるリスクを20字以内で述べよ。</div>
+<div class='bq'><b>設問4</b>　本文中の下線②のルールで定めるべき内容を、遅れの原因(1)を踏まえて30字以内で述べよ。</div>
+<div class='bq'><b>設問5</b>　本文中の下線③を行う理由を、25字以内で述べよ。</div></section><section class='chapter' id='110_b'><span class='mark'>CHMARK110bEND</span><div class='ch-banner'><span class='ch-no'>問10</span><span class='ch-title'>サービスマネジメント（選択）</span></div><p><b>社内ヘルプデスクの改善に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>Ｙ社の情報システム部は、社員向けにヘルプデスク（サービスデスク）を運営している。受付時間は平日9時〜18時（1日9時間、月20日）である。</p>
+<h4>〔現状〕</h4>
+<p>(1) 月平均の問合せは1,800件で、そのうち約40%がパスワードの再設定の依頼である。<br>(2) 1件の対応時間は平均12分である。担当者1人が1日に問合せ対応に使える時間は6時間である。<br>(3) 先月、メールシステムに接続できない障害が月に5回発生した。いずれもサーバを再起動して回復したが、 ① 原因の調査は行われていない。</p>
+<h4>〔改善策〕</h4>
+<p>情報システム部のＺ課長は、次の改善策を検討している。<br>(1) パスワードの再設定を、社員が自分で行える ② セルフサービスの仕組みを導入する。<br>(2) 繰り返し発生するメールの障害について、 ③ 問題管理のプロセスを適用する。<br>(3) サービスレベルを社員の所属部門と合意する。</p>
+</div>
+
+<div class='bq'><b>設問1</b>　現状の問合せに対応するために必要な担当者の最少人数を求めよ。</div>
+<div class='bq'><b>設問2</b>　本文中の下線②の導入でパスワード再設定の問合せがすべてなくなった場合、必要な担当者の最少人数を求めよ。</div>
+<div class='bq'><b>設問3</b>　本文中の下線①の状態のままでは、どのような問題があるか。25字以内で述べよ。</div>
+<div class='bq'><b>設問4</b>　本文中の下線③で行う活動として、適切なものを解答群から二つ選べ。<br>ア 障害の根本原因を調査する　イ サーバを再起動して回復させる　ウ 根本原因と回避策を既知の誤りとして記録する　エ 利用者からの問合せを受け付ける</div>
+<div class='bq'><b>設問5</b>　改善策(3)で合意する文書を何というか。</div></section><section class='chapter' id='111_b'><span class='mark'>CHMARK111bEND</span><div class='ch-banner'><span class='ch-no'>問11</span><span class='ch-title'>システム監査（選択）</span></div><p><b>経費精算システムの監査に関する次の記述を読んで、設問に答えよ。</b></p>
+<div class='bcase'>
+<p>ＡＢ社は、社員が出張費などの経費を申請する経費精算システムを運用している。内部監査室は、経費精算業務を対象にシステム監査を行うことにした。</p>
+<h4>〔業務の流れ〕</h4>
+<p>(1) 社員は、経費精算システムに経費を入力し、領収書の画像を添付して申請する。<br>(2) 申請は、申請者の上長が承認する。システムでは、 ① 上長が不在の場合に、上長が指定した代理承認者が承認できる設定がある。<br>(3) 承認された申請は、経理部が月末にまとめて支払処理を行う。<br>(4) 承認者の設定は、各部門の管理者が申請し、情報システム部が登録する。</p>
+<h4>〔予備調査の結果〕</h4>
+<p>(1) 代理承認者の設定は、一度登録されると解除の手続がなく、多くの代理承認者が登録されたままになっていた。<br>(2) 申請者本人を代理承認者に指定することを防ぐシステム上のチェックはなかった。<br>(3) 経理部は、支払処理の前に、領収書の画像と申請内容の金額が一致しているかを全件確認していると説明した。</p>
+<h4>〔監査手続の検討〕</h4>
+<p>内部監査室は、予備調査の結果を踏まえ、監査手続を表1のように検討した。</p>
+<table><caption style='caption-side:top;text-align:left;font-weight:700;color:#173a63'>表1 監査手続（抜粋）</caption><tr><th>項番</th><th>監査要点</th><th>監査手続</th></tr><tr><td>1</td><td>承認の職務分掌が確保されているか</td><td>[ a ]</td></tr><tr><td>2</td><td>不要な代理承認者の設定が残っていないか</td><td>代理承認者の一覧と人事異動の記録を突き合わせ、不要な設定が残っていないかを確かめる</td></tr><tr><td>3</td><td>経理部の確認が実施されているか</td><td>[ b ]</td></tr></table>
+</div>
+
+<div class='bq'><b>設問1</b>　本文中の下線①の設定について、予備調査の結果(2)から想定される不正のリスクを、40字以内で述べよ。</div>
+<div class='bq'><b>設問2</b>　表1中の [ a ] に入れる監査手続を、40字以内で述べよ。</div>
+<div class='bq'><b>設問3</b>　表1中の [ b ] に入れる監査手続として、経理部の説明を裏付けるために確認すべき監査証拠を含めて40字以内で述べよ。</div>
+<div class='bq'><b>設問4</b>　監査の結果、代理承認者の解除手続がないことが判明した。システム監査人がとるべき対応として、適切なものを解答群から選べ。<br>ア 情報システム部に代理承認者の設定を削除させる　イ 監査報告書で指摘し、解除手続の整備を改善提案する　ウ 監査人が自ら代理承認者の設定を削除する　エ 経費精算システムの利用を停止させる</div></section><section class='chapter' id='199_b_sheet'><span class='mark'>CHMARK199bsheetEND</span><div class='ch-banner'><span class='ch-no'>科目B</span><span class='ch-title'>科目B 解答用紙</span></div><p>選択欄（問1は必須）：　問1 ／ 問＿＿ ／ 問＿＿ ／ 問＿＿ ／ 問＿＿</p>
+<h3>選択1　問＿＿</h3>
+<div class='write l'></div>
+<h3>選択2　問＿＿</h3>
+<div class='write l'></div>
+<h3>選択3　問＿＿</h3>
+<div class='write l'></div>
+<h3>選択4　問＿＿</h3>
+<div class='write l'></div>
+<h3>選択5　問＿＿</h3>
+<div class='write l'></div></section></body></html>
